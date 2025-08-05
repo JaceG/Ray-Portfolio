@@ -75,7 +75,10 @@ export default function Home() {
 						</li>
 					</ul>
 				</div>
-				<div className='navbar-end'>
+				<div className='navbar-end space-x-2'>
+					<a href='/auth' className='btn btn-ghost btn-sm'>
+						Client Login
+					</a>
 					<a href='#contact' className='btn btn-primary'>
 						Free Consultation
 					</a>

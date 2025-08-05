@@ -101,8 +101,11 @@ export default function Dashboard() {
 				<div className='navbar-center'>
 					<h1 className='text-xl font-semibold'>Client Dashboard</h1>
 				</div>
-				<div className='navbar-end'>
+				<div className='navbar-end space-x-2'>
 					<div className='text-sm opacity-70'>{currentMonth}</div>
+					<Link href='/auth' className='btn btn-ghost btn-sm'>
+						Logout
+					</Link>
 				</div>
 			</div>
 
