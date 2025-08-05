@@ -112,6 +112,15 @@ export default function Home() {
 							</a>
 						</div>
 
+						{/* Demo Dashboard Link */}
+						<div className='mt-8'>
+							<a
+								href='/dashboard'
+								className='btn btn-secondary btn-sm'>
+								📊 View Sample Client Dashboard
+							</a>
+						</div>
+
 						{/* Trust Signals */}
 						<div className='flex flex-wrap justify-center items-center gap-8 mt-12 opacity-70'>
 							<div className='text-sm font-semibold'>
