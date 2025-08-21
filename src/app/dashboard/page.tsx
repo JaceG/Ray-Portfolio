@@ -102,6 +102,16 @@ export default function Dashboard() {
 					<h1 className='text-xl font-semibold'>Client Dashboard</h1>
 				</div>
 				<div className='navbar-end space-x-2'>
+					{/* Real-time Status Indicator */}
+					<div className='flex items-center space-x-2'>
+						<div className='flex items-center space-x-1'>
+							<div className='w-2 h-2 bg-success rounded-full animate-pulse'></div>
+							<span className='text-xs text-success'>Live</span>
+						</div>
+						<div className='text-sm opacity-70'>
+							Last updated: 2 min ago
+						</div>
+					</div>
 					<div className='text-sm opacity-70'>{currentMonth}</div>
 					<Link href='/auth' className='btn btn-ghost btn-sm'>
 						Logout
@@ -112,12 +122,57 @@ export default function Dashboard() {
 			<div className='p-6'>
 				{/* Dashboard Header */}
 				<div className='mb-8'>
-					<h2 className='text-3xl font-bold mb-2'>
-						Welcome back, Sarah!
-					</h2>
-					<p className='text-lg opacity-70'>
-						Here's your financial overview for {currentMonth}
-					</p>
+					<div className='flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4'>
+						<div>
+							<h2 className='text-3xl font-bold mb-2'>
+								Welcome back, Sarah!
+							</h2>
+							<p className='text-lg opacity-70'>
+								Here's your financial overview for{' '}
+								{currentMonth}
+							</p>
+						</div>
+
+						{/* Ray's Work Status */}
+						<div className='card bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20'>
+							<div className='card-body py-4 px-6'>
+								<div className='flex items-center space-x-3'>
+									<div className='avatar placeholder'>
+										<div className='bg-primary text-primary-content rounded-full w-10'>
+											<span className='text-sm'>RG</span>
+										</div>
+									</div>
+									<div>
+										<p className='text-sm font-semibold'>
+											Ray is working on your books
+										</p>
+										<p className='text-xs opacity-70'>
+											Currently: November reconciliation •
+											2 hours ago
+										</p>
+									</div>
+									<div className='text-primary'>
+										<svg
+											className='w-4 h-4 animate-spin'
+											fill='none'
+											viewBox='0 0 24 24'>
+											<circle
+												className='opacity-25'
+												cx='12'
+												cy='12'
+												r='10'
+												stroke='currentColor'
+												strokeWidth='4'></circle>
+											<path
+												className='opacity-75'
+												fill='currentColor'
+												d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'></path>
+										</svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				{/* Financial Overview Cards */}
@@ -437,32 +492,108 @@ export default function Dashboard() {
 								</h3>
 								<div className='space-y-2'>
 									<button className='btn btn-outline btn-sm w-full'>
-										Upload Receipt
+										📷 Upload Receipt
 									</button>
 									<button className='btn btn-outline btn-sm w-full'>
-										Schedule Meeting
+										📅 Schedule Meeting
 									</button>
 									<button className='btn btn-outline btn-sm w-full'>
-										Download Reports
+										📊 Download Reports
 									</button>
-									<button className='btn btn-outline btn-sm w-full'>
-										Message Ray
+									<button className='btn btn-primary btn-sm w-full relative'>
+										💬 Message Ray
+										<div className='badge badge-error badge-xs absolute -top-1 -right-1'>
+											2
+										</div>
 									</button>
 								</div>
+							</div>
+						</div>
+
+						{/* Recent Messages */}
+						<div className='card bg-base-100 shadow-xl'>
+							<div className='card-body'>
+								<h3 className='card-title text-lg mb-4'>
+									Recent Messages
+								</h3>
+								<div className='space-y-3'>
+									<div className='flex items-start space-x-3'>
+										<div className='avatar placeholder'>
+											<div className='bg-primary text-primary-content rounded-full w-8'>
+												<span className='text-xs'>
+													RG
+												</span>
+											</div>
+										</div>
+										<div className='flex-1'>
+											<p className='text-sm'>
+												<span className='font-semibold'>
+													Ray:
+												</span>{' '}
+												November books are looking
+												great! Found a few tax
+												deductions for you.
+											</p>
+											<p className='text-xs opacity-70'>
+												3 hours ago
+											</p>
+										</div>
+									</div>
+									<div className='flex items-start space-x-3'>
+										<div className='avatar placeholder'>
+											<div className='bg-secondary text-secondary-content rounded-full w-8'>
+												<span className='text-xs'>
+													SM
+												</span>
+											</div>
+										</div>
+										<div className='flex-1'>
+											<p className='text-sm'>
+												<span className='font-semibold'>
+													You:
+												</span>{' '}
+												Thanks! Can we schedule a call
+												this week?
+											</p>
+											<p className='text-xs opacity-70'>
+												1 day ago
+											</p>
+										</div>
+									</div>
+								</div>
+								<button className='btn btn-outline btn-xs mt-3'>
+									View All Messages
+								</button>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				{/* Footer Note */}
-				<div className='text-center mt-12 p-6 bg-base-100 rounded-lg'>
+				<div className='text-center mt-12 p-6 bg-gradient-to-r from-base-100 to-base-200 rounded-lg border'>
+					<div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-4'>
+						<div className='flex items-center space-x-2'>
+							<div className='w-3 h-3 bg-success rounded-full animate-pulse'></div>
+							<span className='text-sm font-semibold'>
+								Live Data Connection
+							</span>
+						</div>
+						<div className='flex items-center space-x-2'>
+							<span className='text-lg'>🔒</span>
+							<span className='text-sm'>Bank-Level Security</span>
+						</div>
+						<div className='flex items-center space-x-2'>
+							<span className='text-lg'>✅</span>
+							<span className='text-sm'>ProAdvisor Verified</span>
+						</div>
+					</div>
 					<p className='text-sm opacity-70 mb-2'>
-						📊 This dashboard is updated in real-time with your
-						latest financial data
+						📊 Your financial data syncs automatically from
+						QuickBooks and your bank accounts
 					</p>
 					<p className='text-xs opacity-50'>
 						All calculations verified by Ray Galloway, QuickBooks
-						ProAdvisor
+						ProAdvisor • Data updated every 15 minutes
 					</p>
 				</div>
 			</div>

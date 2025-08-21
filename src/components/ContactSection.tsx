@@ -5,12 +5,26 @@ export default function ContactSection() {
 				<div className='max-w-4xl mx-auto'>
 					<div className='text-center mb-12'>
 						<h2 className='text-4xl font-bold mb-4'>
-							Ready to Get Your Books in Order?
+							Contact Us Today
 						</h2>
-						<p className='text-xl opacity-90'>
-							Schedule a free 15-minute consultation to discuss
-							your bookkeeping needs
+						<p className='text-xl opacity-90 mb-6'>
+							I want to learn more about your business! Tell me
+							about your strengths, goals, and any bookkeeping
+							challenges you have faced. Contact me now for a FREE
+							evaluation of your books!
 						</p>
+
+						{/* Direct Contact Info */}
+						<div className='flex flex-col sm:flex-row gap-6 justify-center items-center text-lg font-semibold'>
+							<div className='flex items-center gap-2'>
+								<span>📧</span>
+								<span>ray@gallowaybookkeeping.com</span>
+							</div>
+							<div className='flex items-center gap-2'>
+								<span>📱</span>
+								<span>(555) 123-4567</span>
+							</div>
+						</div>
 					</div>
 
 					<div className='grid md:grid-cols-2 gap-12 items-center'>
@@ -18,7 +32,7 @@ export default function ContactSection() {
 						<div className='card bg-base-100 text-base-content shadow-xl'>
 							<div className='card-body'>
 								<h3 className='card-title mb-4'>
-									Get Your Free Consultation
+									Get Your FREE Book Evaluation
 								</h3>
 								<form className='space-y-4'>
 									<div className='form-control'>
@@ -85,7 +99,7 @@ export default function ContactSection() {
 										<button
 											type='submit'
 											className='btn btn-primary'>
-											Schedule Free Consultation
+											Get FREE Book Evaluation
 										</button>
 									</div>
 								</form>
@@ -146,14 +160,16 @@ export default function ContactSection() {
 									What to expect:
 								</h4>
 								<ul className='space-y-2 opacity-90'>
-									<li>• Free 15-minute consultation call</li>
+									<li>
+										• Free book evaluation and consultation
+									</li>
 									<li>
 										• Assessment of your current situation
 									</li>
 									<li>
 										• Customized service recommendations
 									</li>
-									<li>• Transparent pricing discussion</li>
+									<li>• First-time client pricing offer</li>
 									<li>• No pressure, just helpful advice</li>
 								</ul>
 							</div>

@@ -14,23 +14,28 @@ export default function AboutSection() {
 						</div>
 					</div>
 					<div className='lg:w-2/3'>
-						<h2 className='text-4xl font-bold mb-6'>
-							Meet Ray Galloway
-						</h2>
+						<h2 className='text-4xl font-bold mb-6'>Hi, I'm Ray</h2>
 						<p className='text-lg mb-6 opacity-90'>
-							With over 10 years of experience in financial
-							management and bookkeeping, I help small businesses
-							and freelancers take control of their finances. My
-							passion is turning messy books into clear,
-							actionable financial insights that drive business
-							growth.
+							I'm ready to help you save an extra 60 hours on
+							average per year by streamlining your bookkeeping!
+							Let's work together to not only save you time, but
+							eliminate costly errors in your books!
+						</p>
+						<p className='text-lg mb-6 opacity-90'>
+							I have my Bachelor's degree in Accounting. I started
+							my bookkeeping business because I love watching
+							businesses grow and succeed. I have owned my own
+							retail shops and consulting practice, so I
+							understand the importance of having accurate and
+							up-to-date books.
 						</p>
 						<p className='text-lg mb-8 opacity-90'>
-							As a QuickBooks ProAdvisor and trusted partner to
-							local CPAs, I provide reliable, accurate bookkeeping
-							services that give you confidence in your financial
-							decisions and more time to focus on what you do
-							best.
+							I want to learn more about your business. Tell me
+							about your strengths, goals, and any bookkeeping
+							challenges you have faced. I can tailor my services
+							to fit your needs. Contact me now for a FREE
+							evaluation of your books and to learn more about my
+							first time client pricing offer!
 						</p>
 
 						{/* Credentials */}
