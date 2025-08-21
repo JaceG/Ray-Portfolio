@@ -1,10 +1,6 @@
-@import "tailwindcss";
-@plugin "daisyui";
-
-@theme {
-  --font-family-sans: var(--font-geist-sans);
-  --font-family-mono: var(--font-geist-mono);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
