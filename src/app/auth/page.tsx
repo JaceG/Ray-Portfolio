@@ -2,296 +2,305 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from '@/components/ui/select';
+import { ArrowLeft, Info } from 'lucide-react';
 
 export default function AuthPage() {
-	const [isLogin, setIsLogin] = useState(true);
-
 	return (
-		<div data-theme='business' className='min-h-screen bg-base-200'>
+		<div className='min-h-screen bg-gray-50'>
 			{/* Header */}
-			<div className='navbar bg-base-100 shadow-lg'>
-				<div className='navbar-start'>
-					<Link href='/' className='btn btn-ghost text-xl font-bold'>
-						← Back to Ray Galloway Bookkeeping
-					</Link>
+			<header className='bg-white border-b'>
+				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+					<div className='flex justify-between items-center h-16'>
+						<Link
+							href='/'
+							className='flex items-center text-lg font-medium hover:text-primary transition-colors'>
+							<ArrowLeft className='mr-2 h-4 w-4' />
+							Back to Ray Galloway Bookkeeping
+						</Link>
+						<h1 className='text-xl font-semibold'>Client Portal</h1>
+						<div className='w-40'></div>
+					</div>
 				</div>
-				<div className='navbar-center'>
-					<h1 className='text-xl font-semibold'>Client Portal</h1>
-				</div>
-				<div className='navbar-end'></div>
-			</div>
+			</header>
 
 			<div className='flex items-center justify-center min-h-[calc(100vh-4rem)] p-6'>
-				<div className='card w-full max-w-md bg-base-100 shadow-xl'>
-					<div className='card-body'>
-						{/* Tab Headers */}
-						<div className='tabs tabs-boxed mb-6'>
-							<button
-								className={`tab flex-1 ${
-									isLogin ? 'tab-active' : ''
-								}`}
-								onClick={() => setIsLogin(true)}>
-								Login
-							</button>
-							<button
-								className={`tab flex-1 ${
-									!isLogin ? 'tab-active' : ''
-								}`}
-								onClick={() => setIsLogin(false)}>
-								Register
-							</button>
-						</div>
+				<Card className='w-full max-w-md'>
+					<CardHeader>
+						<CardTitle className='text-center'>
+							Welcome to Your Dashboard
+						</CardTitle>
+						<CardDescription className='text-center'>
+							Access your financial reports and communicate with
+							Ray
+						</CardDescription>
+					</CardHeader>
+					<CardContent>
+						<Tabs defaultValue='login' className='w-full'>
+							<TabsList className='grid w-full grid-cols-2'>
+								<TabsTrigger value='login'>Login</TabsTrigger>
+								<TabsTrigger value='register'>
+									Register
+								</TabsTrigger>
+							</TabsList>
 
-						{isLogin ? (
-							/* Login Form */
-							<div>
-								<h2 className='text-2xl font-bold text-center mb-6'>
-									Welcome Back!
-								</h2>
-								<p className='text-center text-sm opacity-70 mb-6'>
-									Access your financial dashboard and reports
-								</p>
-
-								<form className='space-y-4'>
-									<div className='form-control'>
-										<label className='label'>
-											<span className='label-text'>
-												Email
-											</span>
-										</label>
-										<input
-											type='email'
-											placeholder='Enter your email'
-											className='input input-bordered'
-											defaultValue='sarah@example.com'
-										/>
+							<TabsContent value='login'>
+								<div className='space-y-4'>
+									<div className='text-center mb-4'>
+										<h2 className='text-2xl font-bold'>
+											Welcome Back!
+										</h2>
+										<p className='text-sm text-muted-foreground mt-1'>
+											Access your financial dashboard and
+											reports
+										</p>
 									</div>
 
-									<div className='form-control'>
-										<label className='label'>
-											<span className='label-text'>
-												Password
-											</span>
-										</label>
-										<input
-											type='password'
-											placeholder='Enter your password'
-											className='input input-bordered'
-											defaultValue='password123'
-										/>
-									</div>
-
-									<div className='form-control'>
-										<label className='label cursor-pointer justify-start space-x-2'>
-											<input
-												type='checkbox'
-												className='checkbox checkbox-sm'
+									<form className='space-y-4'>
+										<div className='space-y-2'>
+											<Label htmlFor='email'>Email</Label>
+											<Input
+												id='email'
+												type='email'
+												placeholder='Enter your email'
+												defaultValue='sarah@example.com'
 											/>
-											<span className='label-text text-sm'>
+										</div>
+
+										<div className='space-y-2'>
+											<Label htmlFor='password'>
+												Password
+											</Label>
+											<Input
+												id='password'
+												type='password'
+												placeholder='Enter your password'
+												defaultValue='password123'
+											/>
+										</div>
+
+										<div className='flex items-center space-x-2'>
+											<Checkbox id='remember' />
+											<label
+												htmlFor='remember'
+												className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
 												Remember me
+											</label>
+										</div>
+
+										<Button asChild className='w-full'>
+											<Link href='/dashboard'>
+												Login to Dashboard
+											</Link>
+										</Button>
+									</form>
+
+									<div className='relative'>
+										<div className='absolute inset-0 flex items-center'>
+											<span className='w-full border-t' />
+										</div>
+										<div className='relative flex justify-center text-xs uppercase'>
+											<span className='bg-white px-2 text-muted-foreground'>
+												Demo Credentials
 											</span>
-										</label>
+										</div>
 									</div>
 
-									<div className='form-control mt-6'>
-										<Link
-											href='/dashboard'
-											className='btn btn-primary w-full'>
-											Login to Dashboard
-										</Link>
+									<div className='bg-qb-green-50 p-3 rounded-lg text-center'>
+										<p className='text-sm text-muted-foreground mb-1'>
+											Try it out with:
+										</p>
+										<p className='text-xs font-mono'>
+											Email: sarah@example.com
+											<br />
+											Password: password123
+										</p>
 									</div>
-								</form>
 
-								<div className='divider'>OR</div>
-
-								<div className='text-center space-y-2'>
-									<p className='text-sm opacity-70'>
-										Demo Credentials:
-									</p>
-									<p className='text-xs font-mono bg-base-200 p-2 rounded'>
-										Email: sarah@example.com
-										<br />
-										Password: password123
-									</p>
+									<div className='text-center'>
+										<a
+											href='#'
+											className='text-sm text-primary hover:underline'>
+											Forgot your password?
+										</a>
+									</div>
 								</div>
+							</TabsContent>
 
-								<div className='text-center mt-4'>
-									<a
-										href='#'
-										className='link link-primary text-sm'>
-										Forgot your password?
-									</a>
-								</div>
-							</div>
-						) : (
-							/* Registration Form */
-							<div>
-								<h2 className='text-2xl font-bold text-center mb-6'>
-									Create Account
-								</h2>
-								<p className='text-center text-sm opacity-70 mb-6'>
-									Get started with professional bookkeeping
-									services
-								</p>
+							<TabsContent value='register'>
+								<div className='space-y-4'>
+									<div className='text-center mb-4'>
+										<h2 className='text-2xl font-bold'>
+											Create Account
+										</h2>
+										<p className='text-sm text-muted-foreground mt-1'>
+											Get started with professional
+											bookkeeping services
+										</p>
+									</div>
 
-								<form className='space-y-4'>
-									<div className='grid grid-cols-2 gap-4'>
-										<div className='form-control'>
-											<label className='label'>
-												<span className='label-text'>
+									<form className='space-y-4'>
+										<div className='grid grid-cols-2 gap-4'>
+											<div className='space-y-2'>
+												<Label htmlFor='firstName'>
 													First Name
-												</span>
-											</label>
-											<input
-												type='text'
-												placeholder='First name'
-												className='input input-bordered'
-											/>
-										</div>
-										<div className='form-control'>
-											<label className='label'>
-												<span className='label-text'>
+												</Label>
+												<Input
+													id='firstName'
+													placeholder='First name'
+												/>
+											</div>
+											<div className='space-y-2'>
+												<Label htmlFor='lastName'>
 													Last Name
-												</span>
-											</label>
-											<input
-												type='text'
-												placeholder='Last name'
-												className='input input-bordered'
+												</Label>
+												<Input
+													id='lastName'
+													placeholder='Last name'
+												/>
+											</div>
+										</div>
+
+										<div className='space-y-2'>
+											<Label htmlFor='businessName'>
+												Business Name
+											</Label>
+											<Input
+												id='businessName'
+												placeholder='Your business name'
 											/>
 										</div>
-									</div>
 
-									<div className='form-control'>
-										<label className='label'>
-											<span className='label-text'>
-												Business Name
-											</span>
-										</label>
-										<input
-											type='text'
-											placeholder='Your business name'
-											className='input input-bordered'
-										/>
-									</div>
-
-									<div className='form-control'>
-										<label className='label'>
-											<span className='label-text'>
+										<div className='space-y-2'>
+											<Label htmlFor='registerEmail'>
 												Email
-											</span>
-										</label>
-										<input
-											type='email'
-											placeholder='Enter your email'
-											className='input input-bordered'
-										/>
-									</div>
-
-									<div className='form-control'>
-										<label className='label'>
-											<span className='label-text'>
-												Phone
-											</span>
-										</label>
-										<input
-											type='tel'
-											placeholder='(555) 123-4567'
-											className='input input-bordered'
-										/>
-									</div>
-
-									<div className='form-control'>
-										<label className='label'>
-											<span className='label-text'>
-												Business Type
-											</span>
-										</label>
-										<select className='select select-bordered'>
-											<option disabled selected>
-												Select your business type
-											</option>
-											<option>
-												Freelancer / Consultant
-											</option>
-											<option>E-commerce</option>
-											<option>
-												Restaurant / Food Service
-											</option>
-											<option>Retail</option>
-											<option>
-												Professional Services
-											</option>
-											<option>Other</option>
-										</select>
-									</div>
-
-									<div className='form-control'>
-										<label className='label'>
-											<span className='label-text'>
-												Password
-											</span>
-										</label>
-										<input
-											type='password'
-											placeholder='Create a password'
-											className='input input-bordered'
-										/>
-									</div>
-
-									<div className='form-control'>
-										<label className='label cursor-pointer justify-start space-x-2'>
-											<input
-												type='checkbox'
-												className='checkbox checkbox-sm'
-												required
+											</Label>
+											<Input
+												id='registerEmail'
+												type='email'
+												placeholder='Enter your email'
 											/>
-											<span className='label-text text-sm'>
+										</div>
+
+										<div className='space-y-2'>
+											<Label htmlFor='phone'>Phone</Label>
+											<Input
+												id='phone'
+												type='tel'
+												placeholder='(555) 123-4567'
+											/>
+										</div>
+
+										<div className='space-y-2'>
+											<Label htmlFor='businessType'>
+												Business Type
+											</Label>
+											<Select>
+												<SelectTrigger>
+													<SelectValue placeholder='Select your business type' />
+												</SelectTrigger>
+												<SelectContent>
+													<SelectItem value='freelancer'>
+														Freelancer / Consultant
+													</SelectItem>
+													<SelectItem value='ecommerce'>
+														E-commerce
+													</SelectItem>
+													<SelectItem value='restaurant'>
+														Restaurant / Food
+														Service
+													</SelectItem>
+													<SelectItem value='retail'>
+														Retail
+													</SelectItem>
+													<SelectItem value='professional'>
+														Professional Services
+													</SelectItem>
+													<SelectItem value='other'>
+														Other
+													</SelectItem>
+												</SelectContent>
+											</Select>
+										</div>
+
+										<div className='space-y-2'>
+											<Label htmlFor='registerPassword'>
+												Password
+											</Label>
+											<Input
+												id='registerPassword'
+												type='password'
+												placeholder='Create a password'
+											/>
+										</div>
+
+										<div className='flex items-start space-x-2'>
+											<Checkbox
+												id='terms'
+												className='mt-1'
+											/>
+											<label
+												htmlFor='terms'
+												className='text-sm leading-tight peer-disabled:cursor-not-allowed peer-disabled:opacity-70'>
 												I agree to the{' '}
 												<a
 													href='#'
-													className='link link-primary'>
+													className='text-primary hover:underline'>
 													Terms of Service
 												</a>{' '}
 												and{' '}
 												<a
 													href='#'
-													className='link link-primary'>
+													className='text-primary hover:underline'>
 													Privacy Policy
 												</a>
-											</span>
-										</label>
-									</div>
+											</label>
+										</div>
 
-									<div className='form-control mt-6'>
-										<button
-											type='button'
-											className='btn btn-primary w-full'
-											onClick={() => setIsLogin(true)}>
+										<Button className='w-full'>
 											Create Account
-										</button>
-									</div>
-								</form>
+										</Button>
+									</form>
 
-								<div className='alert alert-info mt-4'>
-									<div className='flex items-start space-x-2'>
-										<span>ℹ️</span>
-										<div className='text-sm'>
-											<p className='font-semibold'>
-												What happens next?
-											</p>
-											<p className='text-xs opacity-80'>
-												Ray will review your application
-												and set up your bookkeeping
-												services within 24 hours.
-											</p>
+									<div className='bg-blue-50 border border-blue-200 rounded-lg p-4'>
+										<div className='flex items-start space-x-2'>
+											<Info className='h-5 w-5 text-blue-600 mt-0.5' />
+											<div className='text-sm'>
+												<p className='font-semibold text-blue-900'>
+													What happens next?
+												</p>
+												<p className='text-blue-700 text-xs mt-1'>
+													Ray will review your
+													application and set up your
+													bookkeeping services within
+													24 hours.
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						)}
-					</div>
-				</div>
+							</TabsContent>
+						</Tabs>
+					</CardContent>
+				</Card>
 			</div>
 		</div>
 	);
