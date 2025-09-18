@@ -1,8 +1,7 @@
 import { Button } from './ui/button';
-import { ArrowRight, Calculator, TrendingUp, Clock, Play } from 'lucide-react';
+import { ArrowRight, Calculator, TrendingUp, Clock } from 'lucide-react';
 import { CalendlyModal } from './CalendlyModal';
 import { HeroTrustBadges } from './TrustBadges';
-import { VideoEmbed } from './VideoEmbed';
 import Link from 'next/link';
 
 export function HeroSection() {
@@ -142,37 +141,6 @@ export function HeroSection() {
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-
-				{/* Optional Hero Video Section */}
-				<div className='mt-16 text-center'>
-					<div className='max-w-2xl mx-auto'>
-						<h3 className='text-2xl font-bold mb-4'>
-							See Ray in Action
-						</h3>
-						<p className='text-muted-foreground mb-6'>
-							Watch this 2-minute overview of how Ray helps
-							Delaware businesses streamline their bookkeeping.
-						</p>
-						<VideoEmbed
-							title='Ray Galloway Introduction'
-							description='See how professional bookkeeping transforms Delaware businesses'
-							duration='2:15'
-							aspectRatio='16:9'
-							className='shadow-xl'
-							// TODO: Add actual hero video when available
-							// videoUrl='/videos/hero-introduction.mp4'
-							onPlay={() => console.log('Hero video played')}
-						/>
-						<div className='mt-4'>
-							<Link
-								href='/training-video'
-								className='inline-flex items-center gap-2 text-primary hover:underline font-medium'>
-								<Play className='h-4 w-4' />
-								Watch Full Training Video
-							</Link>
 						</div>
 					</div>
 				</div>

@@ -2,17 +2,15 @@
 
 import { HeroSection } from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
-import GrowthSection from '@/components/GrowthSection';
 import { BenefitsSection } from '@/components/BenefitsSection';
 import AboutSection from '@/components/AboutSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
 import { CalendlyModal } from '@/components/CalendlyModal';
 import { TrustSection } from '@/components/TrustSection';
-import { LeadMagnetSection } from '@/components/LeadMagnetSection';
+import { ROICalculator } from '@/components/ROICalculator';
 import Link from 'next/link';
 
 export default function Home() {
@@ -88,12 +86,17 @@ export default function Home() {
 			<main>
 				<HeroSection />
 				<ServicesSection />
-				<GrowthSection />
 				<BenefitsSection />
-				<LeadMagnetSection />
+				<div className='py-16 bg-gray-50'>
+					<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+						<ROICalculator
+							title='Calculate Your Bookkeeping ROI'
+							description='See how much time and money you could save with professional bookkeeping'
+						/>
+					</div>
+				</div>
 				<TrustSection />
 				<AboutSection />
-				<TestimonialsSection />
 				<ContactSection />
 			</main>
 

@@ -160,33 +160,6 @@ export default function AboutSection() {
 								</div>
 							</div>
 						</div>
-
-						{/* Local Service Area */}
-						<div className='mt-6 text-center'>
-							<p className='text-sm font-medium text-primary mb-2'>
-								Proudly Serving the Columbus Area
-							</p>
-							<div className='flex flex-wrap justify-center gap-2 text-xs text-muted-foreground'>
-								<span className='px-2 py-1 bg-qb-green-100 rounded'>
-									Delaware
-								</span>
-								<span className='px-2 py-1 bg-qb-green-100 rounded'>
-									Powell
-								</span>
-								<span className='px-2 py-1 bg-qb-green-100 rounded'>
-									Dublin
-								</span>
-								<span className='px-2 py-1 bg-qb-green-100 rounded'>
-									Worthington
-								</span>
-								<span className='px-2 py-1 bg-qb-green-100 rounded'>
-									Westerville
-								</span>
-								<span className='px-2 py-1 bg-qb-green-100 rounded'>
-									Columbus
-								</span>
-							</div>
-						</div>
 					</div>
 
 					{/* Video Section */}
