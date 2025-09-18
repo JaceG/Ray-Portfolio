@@ -18,9 +18,9 @@ export default function Footer() {
 							</span>
 						</div>
 						<p className='text-qb-green-100 mb-4'>
-							Professional bookkeeping services for growing
-							businesses. Accurate books, expert insights, peace
-							of mind.
+							Professional bookkeeping services for Delaware and
+							Columbus area businesses. Accurate books, expert
+							insights, peace of mind.
 						</p>
 						<Badge
 							variant='outline'
@@ -42,15 +42,18 @@ export default function Footer() {
 					</div>
 
 					<div>
-						<h3 className='font-medium mb-4'>Industries</h3>
+						<h3 className='font-medium mb-4'>Service Areas</h3>
 						<ul className='space-y-2 text-qb-green-100'>
-							<li>Retail & E-commerce</li>
-							<li>Restaurants & Food Service</li>
-							<li>Professional Services</li>
-							<li>Healthcare</li>
-							<li>Construction</li>
-							<li>Consulting</li>
+							<li>Delaware, OH</li>
+							<li>Powell, OH</li>
+							<li>Dublin, OH</li>
+							<li>Worthington, OH</li>
+							<li>Westerville, OH</li>
+							<li>Greater Columbus Area</li>
 						</ul>
+						<p className='text-xs text-qb-green-200 mt-3'>
+							Remote services available nationwide
+						</p>
 					</div>
 
 					<div>
@@ -66,7 +69,7 @@ export default function Footer() {
 							</div>
 							<div className='flex items-center gap-2'>
 								<MapPin className='h-4 w-4' />
-								<span>Available Nationwide</span>
+								<span>Delaware, OH & Columbus Area</span>
 							</div>
 						</div>
 					</div>
