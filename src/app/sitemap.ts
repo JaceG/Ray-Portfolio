@@ -78,12 +78,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: 'monthly',
 			priority: 0.7,
 		},
-		// Future pages (uncomment when created)
-		// {
-		//   url: `${baseUrl}/pricing`,
-		//   lastModified: new Date(),
-		//   changeFrequency: 'monthly',
-		//   priority: 0.8,
-		// },
+		// Pricing Page
+		{
+			url: `${baseUrl}/pricing`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.9,
+		},
 	];
 }

@@ -58,6 +58,11 @@ export default function Home() {
 								className='text-sm font-medium hover:text-primary transition-colors'>
 								Blog
 							</Link>
+							<Link
+								href='/pricing'
+								className='text-sm font-medium hover:text-primary transition-colors'>
+								Pricing
+							</Link>
 							<a
 								href='#contact'
 								className='text-sm font-medium hover:text-primary transition-colors'>
