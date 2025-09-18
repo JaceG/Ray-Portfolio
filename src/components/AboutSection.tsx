@@ -1,5 +1,6 @@
 import { CalendlyModal } from './CalendlyModal';
-import { MapPin, Heart, Users } from 'lucide-react';
+import { MapPin, Heart, Users, Play } from 'lucide-react';
+import { HeroVideoEmbed } from './VideoEmbed';
 import Image from 'next/image';
 
 export default function AboutSection() {
@@ -14,7 +15,8 @@ export default function AboutSection() {
 								<div className='bg-gradient-to-br from-primary to-primary/80 w-full h-full flex items-center justify-center text-white text-6xl font-bold'>
 									RG
 								</div>
-								{/* Uncomment and use this when you have Ray's photo:
+								{/* 
+								Uncomment and use this when you have Ray's photo:
 								<Image
 									src="/images/ray-profile.jpg"
 									alt="Ray Galloway - QuickBooks ProAdvisor"
@@ -184,6 +186,46 @@ export default function AboutSection() {
 									Columbus
 								</span>
 							</div>
+						</div>
+					</div>
+
+					{/* Video Section */}
+					<div className='mt-20'>
+						<div className='text-center mb-12'>
+							<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
+								Meet Ray in Person
+							</h2>
+							<p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
+								Watch this quick introduction to learn more
+								about Ray's approach to helping Delaware and
+								Columbus area businesses succeed.
+							</p>
+						</div>
+
+						<div className='max-w-4xl mx-auto'>
+							<HeroVideoEmbed
+								title='Meet Ray Galloway - Your Delaware Bookkeeping Expert'
+								description="Learn about Ray's background and approach to helping local businesses"
+								duration='3:45'
+								onPlay={() =>
+									console.log('Introduction video started')
+								}
+								onComplete={() =>
+									console.log('Introduction video completed')
+								}
+							/>
+						</div>
+
+						{/* Video CTA */}
+						<div className='mt-8 text-center'>
+							<p className='text-muted-foreground mb-4'>
+								Ready to work with Ray? Let's discuss your
+								bookkeeping needs.
+							</p>
+							<CalendlyModal
+								buttonText='Schedule Your Free Consultation'
+								buttonSize='lg'
+							/>
 						</div>
 					</div>
 				</div>

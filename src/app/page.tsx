@@ -13,6 +13,7 @@ import { Calendar } from 'lucide-react';
 import { CalendlyModal } from '@/components/CalendlyModal';
 import { TrustSection } from '@/components/TrustSection';
 import { LeadMagnetSection } from '@/components/LeadMagnetSection';
+import Link from 'next/link';
 
 export default function Home() {
 	const scrollToContact = () => {
@@ -52,11 +53,11 @@ export default function Home() {
 								className='text-sm font-medium hover:text-primary transition-colors'>
 								About
 							</a>
-							<a
-								href='#testimonials'
+							<Link
+								href='/blog'
 								className='text-sm font-medium hover:text-primary transition-colors'>
-								Testimonials
-							</a>
+								Blog
+							</Link>
 							<a
 								href='#contact'
 								className='text-sm font-medium hover:text-primary transition-colors'>

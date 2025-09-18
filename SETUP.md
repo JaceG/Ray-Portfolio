@@ -140,6 +140,70 @@ This guide will help you customize the website with Ray's actual content, photos
 
 ---
 
+## 🎯 New Pages Added
+
+### Lead Magnet Landing Page
+
+**Page:** `/free-guide`
+**File:** `src/app/free-guide/page.tsx`
+**Purpose:** High-converting landing page for "7 Financial Tricks" PDF download
+**Features:**
+- Professional lead capture form
+- Detailed benefit explanations
+- Social proof and testimonials
+- Thank you page with download functionality
+
+### Lead Magnet Components
+
+**Files created:**
+- `src/components/LeadMagnetForm.tsx` - Reusable form component
+- `src/components/LeadMagnetSection.tsx` - Homepage integration section
+- `public/downloads/` - Directory for PDF files
+
+**Integration points:**
+- Homepage section (after Benefits)
+- Standalone landing page
+- Reusable form components
+
+### Training Video Page
+
+**Page:** `/training-video`
+**File:** `src/app/training-video/page.tsx`
+**Purpose:** Educational video content for lead magnet
+**Features:**
+- Video player with progress tracking
+- Related content suggestions
+- Download and booking CTAs
+
+### Video Components
+
+**Files created:**
+- `src/components/VideoEmbed.tsx` - Reusable video player component
+- `src/components/YouTubeEmbed.tsx` - YouTube integration
+- `src/components/VimeoEmbed.tsx` - Vimeo integration
+- `public/videos/` - Directory for video files
+
+**Integration points:**
+- Hero section (introduction video)
+- About section ("Meet Ray" video)
+- Training video page
+- Reusable throughout site
+
+### Local SEO Pages
+
+**Pages created:**
+- `/services/delaware-oh` - Delaware, Ohio services
+- `/services/columbus` - Columbus, Ohio services  
+- `/services/dublin` - Dublin, Ohio services
+
+**Features:**
+- Location-specific content and testimonials
+- Local business resources and directories
+- SEO-optimized meta tags for local search
+- Lead capture forms tailored to each area
+
+---
+
 ## 📅 Calendly Integration
 
 ### Step 1: Get Your Calendly Link
@@ -252,6 +316,7 @@ export const metadata = {
 **Files to create/update:**
 - `src/app/book-a-call/page.tsx` - Add metadata export
 - `src/app/dashboard/page.tsx` - Add metadata export
+- `src/app/free-guide/page.tsx` - Add metadata export for lead magnet page
 - Future pages: `/pricing`, `/services`, etc.
 
 ---
