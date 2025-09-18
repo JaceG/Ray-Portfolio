@@ -2,14 +2,16 @@
 
 import { HeroSection } from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
-import GrowthSection from '@/components/GrowthSection';
 import { BenefitsSection } from '@/components/BenefitsSection';
 import AboutSection from '@/components/AboutSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
+import { CalendlyModal } from '@/components/CalendlyModal';
+import { TrustSection } from '@/components/TrustSection';
+import { ROICalculator } from '@/components/ROICalculator';
+import Link from 'next/link';
 
 export default function Home() {
 	const scrollToContact = () => {
@@ -49,11 +51,16 @@ export default function Home() {
 								className='text-sm font-medium hover:text-primary transition-colors'>
 								About
 							</a>
-							<a
-								href='#testimonials'
+							<Link
+								href='/blog'
 								className='text-sm font-medium hover:text-primary transition-colors'>
-								Testimonials
-							</a>
+								Blog
+							</Link>
+							<Link
+								href='/pricing'
+								className='text-sm font-medium hover:text-primary transition-colors'>
+								Pricing
+							</Link>
 							<a
 								href='#contact'
 								className='text-sm font-medium hover:text-primary transition-colors'>
@@ -67,9 +74,10 @@ export default function Home() {
 								className='hidden sm:block text-sm font-medium hover:text-primary transition-colors'>
 								Client Login
 							</a>
-							<Button onClick={scrollToContact} size='sm'>
-								Free Consultation
-							</Button>
+							<CalendlyModal
+								buttonText='Free Consultation'
+								buttonSize='sm'
+							/>
 						</div>
 					</div>
 				</div>
@@ -78,10 +86,17 @@ export default function Home() {
 			<main>
 				<HeroSection />
 				<ServicesSection />
-				<GrowthSection />
 				<BenefitsSection />
+				<div className='py-16 bg-gray-50'>
+					<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+						<ROICalculator
+							title='Calculate Your Bookkeeping ROI'
+							description='See how much time and money you could save with professional bookkeeping'
+						/>
+					</div>
+				</div>
+				<TrustSection />
 				<AboutSection />
-				<TestimonialsSection />
 				<ContactSection />
 			</main>
 
@@ -89,13 +104,11 @@ export default function Home() {
 
 			{/* Floating CTA Button */}
 			<div className='fixed bottom-6 right-6 z-50'>
-				<Button
-					onClick={scrollToContact}
-					size='lg'
-					className='shadow-lg hover:shadow-xl transition-shadow duration-200 px-6 py-3'>
-					<Calendar className='mr-2 h-5 w-5' />
-					Book Free Call
-				</Button>
+				<CalendlyModal
+					buttonText='Book Free Call'
+					buttonSize='lg'
+					buttonClassName='shadow-lg hover:shadow-xl transition-shadow duration-200 px-6 py-3'
+				/>
 			</div>
 		</div>
 	);

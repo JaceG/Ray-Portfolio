@@ -1,5 +1,8 @@
 import { Button } from './ui/button';
 import { ArrowRight, Calculator, TrendingUp, Clock } from 'lucide-react';
+import { CalendlyModal } from './CalendlyModal';
+import { HeroTrustBadges } from './TrustBadges';
+import Link from 'next/link';
 
 export function HeroSection() {
 	const scrollToContact = () => {
@@ -34,23 +37,23 @@ export function HeroSection() {
 							communication with Ray.
 						</p>
 						<div className='mt-10 sm:flex sm:justify-center lg:justify-start gap-4'>
-							<Button
-								onClick={scrollToContact}
-								size='lg'
-								className='w-full sm:w-auto text-lg px-8 py-6'>
-								Get Your FREE Book Evaluation
-								<ArrowRight className='ml-2 h-5 w-5' />
-							</Button>
+							<CalendlyModal
+								buttonText='Get Your FREE Book Evaluation'
+								buttonSize='lg'
+								buttonClassName='w-full sm:w-auto text-lg px-8 py-6'>
+								<Button
+									size='lg'
+									className='w-full sm:w-auto text-lg px-8 py-6'>
+									Get Your FREE Book Evaluation
+									<ArrowRight className='ml-2 h-5 w-5' />
+								</Button>
+							</CalendlyModal>
 							<Button
 								variant='outline'
 								size='lg'
 								className='w-full sm:w-auto text-lg px-8 py-6 mt-3 sm:mt-0'
-								onClick={() =>
-									document
-										.getElementById('services')
-										?.scrollIntoView({ behavior: 'smooth' })
-								}>
-								Explore Services
+								asChild>
+								<Link href='/book-a-call'>Book a Call</Link>
 							</Button>
 						</div>
 						<div className='mt-10 grid grid-cols-3 gap-8 text-center lg:text-left'>
@@ -123,12 +126,18 @@ export function HeroSection() {
 											</span>
 										</div>
 									</div>
-									<div className='mt-4 text-center'>
-										<a
+									<div className='mt-4 text-center space-y-2'>
+										<Link
 											href='/dashboard'
-											className='text-primary hover:underline text-sm font-medium'>
+											className='block text-primary hover:underline text-sm font-medium'>
 											Experience Your Live Dashboard →
-										</a>
+										</Link>
+										<Link
+											href='/book-a-call'
+											className='block text-xs text-muted-foreground hover:text-primary transition-colors'>
+											Schedule a call to get your own
+											dashboard
+										</Link>
 									</div>
 								</div>
 							</div>
@@ -137,38 +146,7 @@ export function HeroSection() {
 				</div>
 
 				{/* Trust badges */}
-				<div className='flex flex-wrap justify-center items-center gap-8 mt-16'>
-					<div className='text-center'>
-						<div className='text-2xl mb-1'>🏆</div>
-						<div className='text-sm font-semibold'>QuickBooks</div>
-						<div className='text-xs text-muted-foreground'>
-							ProAdvisor Certified
-						</div>
-					</div>
-					<div className='text-center'>
-						<div className='text-2xl mb-1'>🎓</div>
-						<div className='text-sm font-semibold'>
-							Bachelor's Degree
-						</div>
-						<div className='text-xs text-muted-foreground'>
-							Accounting
-						</div>
-					</div>
-					<div className='text-center'>
-						<div className='text-2xl mb-1'>📊</div>
-						<div className='text-sm font-semibold'>10+ Years</div>
-						<div className='text-xs text-muted-foreground'>
-							Experience
-						</div>
-					</div>
-					<div className='text-center'>
-						<div className='text-2xl mb-1'>⭐</div>
-						<div className='text-sm font-semibold'>CPA</div>
-						<div className='text-xs text-muted-foreground'>
-							Recommended
-						</div>
-					</div>
-				</div>
+				<HeroTrustBadges className='mt-16' />
 			</div>
 		</section>
 	);
