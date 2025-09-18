@@ -13,6 +13,7 @@ This guide will help you customize the website with Ray's actual content, photos
 - [Testimonials & Reviews](#testimonials--reviews)
 - [Service Areas](#service-areas)
 - [SEO & Meta Tags](#seo--meta-tags)
+- [Lead Magnet System](#lead-magnet-system)
 - [Email Integration](#email-integration)
 
 ---
@@ -252,6 +253,147 @@ export const metadata = {
 - `src/app/book-a-call/page.tsx` - Add metadata export
 - `src/app/dashboard/page.tsx` - Add metadata export
 - Future pages: `/pricing`, `/services`, etc.
+
+---
+
+## 📥 Lead Magnet System
+
+The website includes a comprehensive lead magnet system with "7 Financial Tricks for Delaware Service Businesses" PDF download.
+
+### PDF Creation
+
+**Create the actual PDF guide:**
+1. **Content Topics** (suggested 15-20 pages):
+   - Delaware-specific tax advantages
+   - Cash flow optimization strategies
+   - QuickBooks shortcuts and tips
+   - Expense tracking systems
+   - Year-end tax preparation
+   - Local business resources
+   - Audit-proof documentation
+
+2. **Design Tools:**
+   - **Canva**: Easy templates for professional PDFs
+   - **Adobe InDesign**: Professional layout design
+   - **Google Docs/Word**: Simple option, export as PDF
+
+3. **File Requirements:**
+   - **Name**: `7-financial-tricks-delaware-service-businesses.pdf`
+   - **Location**: `public/downloads/`
+   - **Size**: Keep under 5MB for fast downloads
+   - **Format**: PDF with proper bookmarks and navigation
+
+### Lead Capture Forms
+
+**Files that handle lead capture:**
+- `src/app/free-guide/page.tsx` - Main landing page
+- `src/components/LeadMagnetForm.tsx` - Reusable form component
+- `src/components/LeadMagnetSection.tsx` - Homepage section
+
+**Form data collected:**
+- First Name (required)
+- Last Name
+- Email Address (required)
+- Business Name
+- Business Type (dropdown)
+
+### Email Integration Setup
+
+**Current status:** Forms log to console (development mode)
+
+**To integrate with email service:**
+
+1. **ConvertKit Integration** (recommended):
+```tsx
+// In LeadMagnetForm.tsx, replace the TODO section:
+const response = await fetch('https://api.convertkit.com/v3/forms/YOUR_FORM_ID/subscribe', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    api_key: 'YOUR_API_KEY',
+    email: formData.email,
+    first_name: formData.firstName,
+    fields: {
+      last_name: formData.lastName,
+      business_name: formData.businessName,
+      business_type: formData.businessType,
+    }
+  }),
+});
+```
+
+2. **Mailchimp Integration**:
+```tsx
+// Alternative integration with Mailchimp API
+const response = await fetch('/api/mailchimp-subscribe', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(formData),
+});
+```
+
+### Download Functionality
+
+**Current implementation:**
+- Forms redirect to thank you page
+- Thank you page has download button
+- PDF placeholder in `public/downloads/`
+
+**To enable actual downloads:**
+1. Add your PDF to `public/downloads/7-financial-tricks-delaware-service-businesses.pdf`
+2. Update download button in thank you page:
+```tsx
+onClick={() => {
+  window.open('/downloads/7-financial-tricks-delaware-service-businesses.pdf', '_blank');
+}}
+```
+
+### Customization Options
+
+**Landing Page Content** (`src/app/free-guide/page.tsx`):
+- Hero headline and description
+- Benefit list (currently 7 benefits)
+- Testimonials (replace with real ones)
+- Social proof numbers
+
+**Form Variants** (`src/components/LeadMagnetForm.tsx`):
+- `default` - Full form with all fields
+- `compact` - Minimal form for sidebars
+- Custom styling and messaging
+
+**Homepage Integration** (`src/components/LeadMagnetSection.tsx`):
+- Section appears after Benefits section
+- Can be moved or duplicated elsewhere
+- Includes social proof and testimonials
+
+### Email Sequence Setup
+
+**Recommended follow-up sequence:**
+1. **Email 1** (immediate): Download link + welcome
+2. **Email 2** (day 2): Implementation tips
+3. **Email 3** (day 5): Local Delaware resources
+4. **Email 4** (day 7): Case study + consultation offer
+5. **Email 5** (day 14): Advanced strategies + booking reminder
+
+### Analytics Tracking
+
+**Track lead magnet performance:**
+```javascript
+// Add to Google Analytics
+gtag('event', 'lead_magnet_download', {
+  event_category: 'Lead Generation',
+  event_label: 'Financial Guide',
+  value: 1
+});
+```
+
+**Key metrics to monitor:**
+- Landing page conversion rate
+- Email open rates
+- PDF download completion
+- Consultation bookings from leads
 
 ---
 

@@ -12,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Calendar } from 'lucide-react';
 import { CalendlyModal } from '@/components/CalendlyModal';
 import { TrustSection } from '@/components/TrustSection';
+import { LeadMagnetSection } from '@/components/LeadMagnetSection';
 
 export default function Home() {
 	const scrollToContact = () => {
@@ -83,6 +84,7 @@ export default function Home() {
 				<ServicesSection />
 				<GrowthSection />
 				<BenefitsSection />
+				<LeadMagnetSection />
 				<TrustSection />
 				<AboutSection />
 				<TestimonialsSection />
