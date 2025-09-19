@@ -158,12 +158,29 @@ This guide will help you customize the website with Ray's actual content, photos
 **Files created:**
 - `src/components/LeadMagnetForm.tsx` - Reusable form component
 - `src/components/LeadMagnetSection.tsx` - Homepage integration section
+- `src/components/EmailCollectionModal.tsx` - Email collection popup modal
 - `public/downloads/` - Directory for PDF files
 
 **Integration points:**
 - Homepage section (after Benefits)
 - Standalone landing page
+- Email collection modal on free-guide page
 - Reusable form components
+
+### Email Collection Flow
+
+**New User Journey:**
+1. User clicks "Get Your Free Guide" button on homepage or free-guide page
+2. Email collection modal appears asking "Where should I send a link to the training?"
+3. User enters name and email
+4. User is redirected to `/training-video` page
+5. After watching 90% of video, Calendly booking button appears
+6. User can book consultation directly from video page
+
+**Components:**
+- `EmailCollectionModal.tsx` - Handles email collection
+- `training-video/page.tsx` - Video page with progress tracking
+- `CalendlyModal.tsx` - Updated to support popup, modal, and inline modes
 
 ### Training Video Page
 
@@ -188,6 +205,109 @@ This guide will help you customize the website with Ray's actual content, photos
 - About section ("Meet Ray" video)
 - Training video page
 - Reusable throughout site
+
+### Video Setup Instructions
+
+**Training Video Page** (`src/app/training-video/page.tsx`):
+
+The training video page currently has a placeholder video player. To integrate with your actual video:
+
+1. **For YouTube Videos:**
+   ```tsx
+   // Replace the placeholder div with:
+   <iframe
+     width="100%"
+     height="400"
+     src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+     title="7 Financial Tricks Training"
+     frameBorder="0"
+     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowFullScreen
+   />
+   ```
+
+2. **For Vimeo Videos:**
+   ```tsx
+   // Replace the placeholder div with:
+   <iframe
+     src="https://player.vimeo.com/video/YOUR_VIDEO_ID"
+     width="100%"
+     height="400"
+     frameBorder="0"
+     allow="autoplay; fullscreen; picture-in-picture"
+     allowFullScreen
+   />
+   ```
+
+3. **For Self-Hosted Videos:**
+   ```tsx
+   // Replace the placeholder div with:
+   <video
+     width="100%"
+     height="400"
+     controls
+     onTimeUpdate={handleVideoProgress}
+     onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+   >
+     <source src="/videos/training-video.mp4" type="video/mp4" />
+     Your browser does not support the video tag.
+   </video>
+   ```
+
+**Video Progress Tracking:**
+
+The page includes progress tracking that shows a Calendly booking button after 90% completion. To implement real progress tracking:
+
+1. **For HTML5 Video:**
+   ```tsx
+   const handleVideoProgress = (e) => {
+     const video = e.currentTarget;
+     const progress = (video.currentTime / video.duration) * 100;
+     setVideoProgress(progress);
+     setCurrentTime(video.currentTime);
+   };
+   ```
+
+2. **For YouTube API:**
+   ```tsx
+   // Use YouTube Player API to track progress
+   const onPlayerStateChange = (event) => {
+     if (event.data === YT.PlayerState.PLAYING) {
+       const interval = setInterval(() => {
+         const currentTime = player.getCurrentTime();
+         const duration = player.getDuration();
+         const progress = (currentTime / duration) * 100;
+         setVideoProgress(progress);
+         if (progress >= 90) {
+           clearInterval(interval);
+         }
+       }, 1000);
+     }
+   };
+   ```
+
+3. **For Vimeo API:**
+   ```tsx
+   // Use Vimeo Player API
+   player.on('timeupdate', (data) => {
+     const progress = (data.seconds / data.duration) * 100;
+     setVideoProgress(progress);
+   });
+   ```
+
+**Video File Setup:**
+
+1. Create the `public/videos/` directory if it doesn't exist
+2. Add your training video file (recommended: MP4 format, under 100MB)
+3. Update the video source path in the component
+4. Test video playback and progress tracking
+
+**Recommended Video Specifications:**
+- Format: MP4 (H.264 codec)
+- Resolution: 1920x1080 (1080p) or 1280x720 (720p)
+- Duration: 20-30 minutes optimal for engagement
+- File size: Under 100MB for web delivery
+- Audio: Clear, professional quality
 
 ### Local SEO Pages
 
@@ -214,9 +334,9 @@ This guide will help you customize the website with Ray's actual content, photos
 
 ### Step 2: Update Components
 
-**File:** `src/components/CalendlyModal.tsx` (line 18)
-**Current:** `calendlyUrl = 'https://calendly.com/your-link'`
-**Replace with:** Your actual Calendly URL
+**File:** `src/components/CalendlyModal.tsx` (line 25)
+**Current:** `calendlyUrl = 'https://calendly.com/d/demo'` (Demo URL for testing)
+**Replace with:** Your actual Calendly URL (e.g., `https://calendly.com/ray-galloway/consultation`)
 
 **File:** `src/app/book-a-call/page.tsx` (lines 95-110)
 **Replace the placeholder div with:**

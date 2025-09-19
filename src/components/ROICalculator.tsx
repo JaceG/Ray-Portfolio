@@ -1,355 +1,211 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { CalendlyModal } from './CalendlyModal';
-import {
-	Calculator,
-	DollarSign,
-	Clock,
-	TrendingUp,
-	CheckCircle,
-} from 'lucide-react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Label } from './ui/label';
+import { Calculator, DollarSign, Clock, TrendingUp } from 'lucide-react';
 
 interface ROICalculatorProps {
-	variant?: 'full' | 'compact';
-	className?: string;
 	title?: string;
 	description?: string;
+	className?: string;
 }
 
 export function ROICalculator({
-	variant = 'full',
+	title = 'Calculate Your Bookkeeping ROI',
+	description = 'See how much time and money you could save with professional bookkeeping',
 	className = '',
-	title = 'ROI Calculator for Construction Companies',
-	description = 'See how much you could save with professional bookkeeping',
 }: ROICalculatorProps) {
 	const [inputs, setInputs] = useState({
-		monthlyRevenue: 100000,
-		hoursSpentOnBooks: 20,
-		hourlyRate: 75,
-		errorCosts: 2000,
-		packageCost: 497,
+		monthlyRevenue: '',
+		hoursSpentBookkeeping: '',
+		hourlyRate: '',
 	});
+	const [results, setResults] = useState<{
+		timeSaved: number;
+		moneySaved: number;
+		yearlyTimeSaved: number;
+		yearlyMoneySaved: number;
+	} | null>(null);
 
-	const calculateROI = () => {
-		const timeSavings = inputs.hoursSpentOnBooks * 0.7; // 70% time savings
-		const timeSavingsValue = timeSavings * inputs.hourlyRate;
-		const errorSavings = inputs.errorCosts * 0.8; // 80% error reduction
-		const totalMonthlySavings = timeSavingsValue + errorSavings;
-		const netSavings = totalMonthlySavings - inputs.packageCost;
-		const annualROI = ((netSavings * 12) / (inputs.packageCost * 12)) * 100;
-
-		return {
-			timeSavingsHours: timeSavings,
-			timeSavingsValue,
-			errorSavings,
-			totalMonthlySavings,
-			netSavings,
-			annualROI,
-		};
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setInputs({
+			...inputs,
+			[e.target.name]: e.target.value,
+		});
 	};
 
-	const roi = calculateROI();
+	const calculateROI = () => {
+		const revenue = parseFloat(inputs.monthlyRevenue) || 0;
+		const hours = parseFloat(inputs.hoursSpentBookkeeping) || 0;
+		const rate = parseFloat(inputs.hourlyRate) || 0;
 
-	if (variant === 'compact') {
-		return (
-			<Card
-				className={`bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20 ${className}`}>
-				<CardHeader>
-					<CardTitle className='text-lg'>
-						Quick ROI Estimate
-					</CardTitle>
-				</CardHeader>
-				<CardContent className='space-y-4'>
-					<div className='grid grid-cols-2 gap-3'>
-						<div>
-							<label className='block text-xs font-medium mb-1'>
-								Monthly Revenue
-							</label>
-							<div className='relative'>
-								<DollarSign className='absolute left-2 top-1/2 transform -translate-y-1/2 h-3 w-3 text-gray-400' />
-								<input
-									type='number'
-									value={inputs.monthlyRevenue}
-									onChange={(e) =>
-										setInputs({
-											...inputs,
-											monthlyRevenue:
-												parseInt(e.target.value) || 0,
-										})
-									}
-									className='w-full pl-7 pr-2 py-2 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary'
-								/>
-							</div>
-						</div>
-						<div>
-							<label className='block text-xs font-medium mb-1'>
-								Hours on Books
-							</label>
-							<div className='relative'>
-								<Clock className='absolute left-2 top-1/2 transform -translate-y-1/2 h-3 w-3 text-gray-400' />
-								<input
-									type='number'
-									value={inputs.hoursSpentOnBooks}
-									onChange={(e) =>
-										setInputs({
-											...inputs,
-											hoursSpentOnBooks:
-												parseInt(e.target.value) || 0,
-										})
-									}
-									className='w-full pl-7 pr-2 py-2 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-primary'
-								/>
-							</div>
-						</div>
-					</div>
+		// Assume professional bookkeeping saves 75% of time spent
+		const timeSavedPerMonth = hours * 0.75;
+		const moneySavedPerMonth = timeSavedPerMonth * rate;
+		const yearlyTimeSaved = timeSavedPerMonth * 12;
+		const yearlyMoneySaved = moneySavedPerMonth * 12;
 
-					<div className='bg-white rounded-lg p-3 text-center'>
-						<p className='text-sm text-muted-foreground mb-1'>
-							Estimated Monthly Savings
-						</p>
-						<p className='text-xl font-bold text-primary'>
-							${roi.netSavings.toLocaleString()}
-						</p>
-						<p className='text-xs text-muted-foreground'>
-							{roi.annualROI.toFixed(0)}% annual ROI
-						</p>
-					</div>
-
-					<CalendlyModal
-						buttonText='Discuss My ROI'
-						buttonSize='sm'
-						buttonClassName='w-full'
-					/>
-				</CardContent>
-			</Card>
-		);
-	}
+		setResults({
+			timeSaved: timeSavedPerMonth,
+			moneySaved: moneySavedPerMonth,
+			yearlyTimeSaved,
+			yearlyMoneySaved,
+		});
+	};
 
 	return (
-		<div className={className}>
-			<div className='text-center mb-8'>
-				<h2 className='text-3xl font-bold mb-4'>{title}</h2>
+		<Card className={`max-w-4xl mx-auto ${className}`}>
+			<CardHeader className='text-center'>
+				<div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4'>
+					<Calculator className='h-8 w-8 text-primary' />
+				</div>
+				<CardTitle className='text-2xl sm:text-3xl'>{title}</CardTitle>
 				<p className='text-muted-foreground'>{description}</p>
-			</div>
+			</CardHeader>
+			<CardContent>
+				<div className='grid md:grid-cols-2 gap-8'>
+					{/* Input Section */}
+					<div className='space-y-4'>
+						<h3 className='text-lg font-semibold mb-4'>
+							Tell us about your business:
+						</h3>
 
-			<div className='grid lg:grid-cols-2 gap-8'>
-				{/* Calculator Inputs */}
-				<Card>
-					<CardHeader>
-						<CardTitle className='flex items-center gap-2'>
-							<Calculator className='h-5 w-5 text-primary' />
-							Your Construction Business Details
-						</CardTitle>
-					</CardHeader>
-					<CardContent className='space-y-4'>
 						<div>
-							<label className='block text-sm font-medium mb-2'>
-								Monthly Revenue
-							</label>
-							<div className='relative'>
-								<DollarSign className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400' />
-								<input
-									type='number'
-									value={inputs.monthlyRevenue}
-									onChange={(e) =>
-										setInputs({
-											...inputs,
-											monthlyRevenue:
-												parseInt(e.target.value) || 0,
-										})
-									}
-									className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent'
-									placeholder='100,000'
-								/>
-							</div>
+							<Label htmlFor='monthlyRevenue'>
+								Monthly Revenue ($)
+							</Label>
+							<Input
+								id='monthlyRevenue'
+								name='monthlyRevenue'
+								type='number'
+								placeholder='25000'
+								value={inputs.monthlyRevenue}
+								onChange={handleInputChange}
+								className='mt-1'
+							/>
 						</div>
 
 						<div>
-							<label className='block text-sm font-medium mb-2'>
+							<Label htmlFor='hoursSpentBookkeeping'>
 								Hours spent on bookkeeping per month
-							</label>
-							<div className='relative'>
-								<Clock className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400' />
-								<input
-									type='number'
-									value={inputs.hoursSpentOnBooks}
-									onChange={(e) =>
-										setInputs({
-											...inputs,
-											hoursSpentOnBooks:
-												parseInt(e.target.value) || 0,
-										})
-									}
-									className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent'
-									placeholder='20'
-								/>
-							</div>
+							</Label>
+							<Input
+								id='hoursSpentBookkeeping'
+								name='hoursSpentBookkeeping'
+								type='number'
+								placeholder='20'
+								value={inputs.hoursSpentBookkeeping}
+								onChange={handleInputChange}
+								className='mt-1'
+							/>
 						</div>
 
 						<div>
-							<label className='block text-sm font-medium mb-2'>
-								Your hourly rate (what your time is worth)
-							</label>
-							<div className='relative'>
-								<DollarSign className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400' />
-								<input
-									type='number'
-									value={inputs.hourlyRate}
-									onChange={(e) =>
-										setInputs({
-											...inputs,
-											hourlyRate:
-												parseInt(e.target.value) || 0,
-										})
-									}
-									className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent'
-									placeholder='75'
-								/>
-							</div>
+							<Label htmlFor='hourlyRate'>
+								Your hourly rate/value ($)
+							</Label>
+							<Input
+								id='hourlyRate'
+								name='hourlyRate'
+								type='number'
+								placeholder='75'
+								value={inputs.hourlyRate}
+								onChange={handleInputChange}
+								className='mt-1'
+							/>
 						</div>
 
-						<div>
-							<label className='block text-sm font-medium mb-2'>
-								Monthly cost of bookkeeping errors
-							</label>
-							<div className='relative'>
-								<DollarSign className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400' />
-								<input
-									type='number'
-									value={inputs.errorCosts}
-									onChange={(e) =>
-										setInputs({
-											...inputs,
-											errorCosts:
-												parseInt(e.target.value) || 0,
-										})
-									}
-									className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent'
-									placeholder='2,000'
-								/>
-							</div>
-						</div>
+						<Button
+							onClick={calculateROI}
+							className='w-full mt-6'
+							size='lg'>
+							<Calculator className='mr-2 h-4 w-4' />
+							Calculate My Savings
+						</Button>
+					</div>
 
-						<div>
-							<label className='block text-sm font-medium mb-2'>
-								Bookkeeping Package Cost
-							</label>
-							<div className='relative'>
-								<DollarSign className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400' />
-								<input
-									type='number'
-									value={inputs.packageCost}
-									onChange={(e) =>
-										setInputs({
-											...inputs,
-											packageCost:
-												parseInt(e.target.value) || 0,
-										})
-									}
-									className='w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent'
-									placeholder='497'
-								/>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
+					{/* Results Section */}
+					<div className='bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg p-6'>
+						<h3 className='text-lg font-semibold mb-4'>
+							Your Potential Savings:
+						</h3>
 
-				{/* ROI Results */}
-				<Card className='bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20'>
-					<CardHeader>
-						<CardTitle className='flex items-center gap-2'>
-							<TrendingUp className='h-5 w-5 text-primary' />
-							Your ROI Results
-						</CardTitle>
-					</CardHeader>
-					<CardContent className='space-y-6'>
-						<div className='grid grid-cols-2 gap-4'>
-							<div className='bg-white rounded-lg p-4 text-center'>
-								<p className='text-sm text-muted-foreground mb-1'>
-									Time Savings
-								</p>
-								<p className='text-xl font-bold text-primary'>
-									{roi.timeSavingsHours.toFixed(1)} hrs
-								</p>
-								<p className='text-xs text-muted-foreground'>
-									${roi.timeSavingsValue.toLocaleString()}{' '}
-									value
-								</p>
-							</div>
-							<div className='bg-white rounded-lg p-4 text-center'>
-								<p className='text-sm text-muted-foreground mb-1'>
-									Error Savings
-								</p>
-								<p className='text-xl font-bold text-primary'>
-									${roi.errorSavings.toLocaleString()}
-								</p>
-								<p className='text-xs text-muted-foreground'>
-									Per month
-								</p>
-							</div>
-						</div>
+						{results ? (
+							<div className='space-y-4'>
+								<div className='flex items-center justify-between p-3 bg-white rounded-lg'>
+									<div className='flex items-center'>
+										<Clock className='h-5 w-5 text-primary mr-2' />
+										<span className='font-medium'>
+											Time Saved/Month
+										</span>
+									</div>
+									<span className='text-lg font-bold text-primary'>
+										{results.timeSaved.toFixed(1)} hours
+									</span>
+								</div>
 
-						<div className='bg-white rounded-lg p-6 text-center'>
-							<p className='text-sm text-muted-foreground mb-2'>
-								Total Monthly Savings
-							</p>
-							<p className='text-3xl font-bold text-primary mb-1'>
-								${roi.totalMonthlySavings.toLocaleString()}
-							</p>
-							<p className='text-sm text-muted-foreground mb-4'>
-								Package Cost: $
-								{inputs.packageCost.toLocaleString()}
-							</p>
-							<div className='border-t pt-4'>
-								<p className='text-lg font-semibold text-primary'>
-									Net Monthly Savings: $
-									{roi.netSavings.toLocaleString()}
-								</p>
-								<p className='text-sm text-muted-foreground'>
-									Annual ROI: {roi.annualROI.toFixed(0)}%
-								</p>
-							</div>
-						</div>
+								<div className='flex items-center justify-between p-3 bg-white rounded-lg'>
+									<div className='flex items-center'>
+										<DollarSign className='h-5 w-5 text-primary mr-2' />
+										<span className='font-medium'>
+											Money Saved/Month
+										</span>
+									</div>
+									<span className='text-lg font-bold text-primary'>
+										${results.moneySaved.toFixed(0)}
+									</span>
+								</div>
 
-						<div className='space-y-3'>
-							<div className='flex items-center gap-2'>
-								<CheckCircle className='h-4 w-4 text-primary' />
-								<span className='text-sm'>
-									Save {roi.timeSavingsHours.toFixed(0)} hours
-									per month
-								</span>
-							</div>
-							<div className='flex items-center gap-2'>
-								<CheckCircle className='h-4 w-4 text-primary' />
-								<span className='text-sm'>
-									Reduce errors by 80%
-								</span>
-							</div>
-							<div className='flex items-center gap-2'>
-								<CheckCircle className='h-4 w-4 text-primary' />
-								<span className='text-sm'>
-									Improve cash flow visibility
-								</span>
-							</div>
-							<div className='flex items-center gap-2'>
-								<CheckCircle className='h-4 w-4 text-primary' />
-								<span className='text-sm'>
-									Better job profitability tracking
-								</span>
-							</div>
-						</div>
+								<div className='border-t pt-4'>
+									<div className='flex items-center justify-between p-3 bg-primary text-white rounded-lg'>
+										<div className='flex items-center'>
+											<TrendingUp className='h-5 w-5 mr-2' />
+											<span className='font-medium'>
+												Yearly Savings
+											</span>
+										</div>
+										<div className='text-right'>
+											<div className='text-lg font-bold'>
+												$
+												{results.yearlyMoneySaved.toFixed(
+													0
+												)}
+											</div>
+											<div className='text-sm opacity-90'>
+												{results.yearlyTimeSaved.toFixed(
+													0
+												)}{' '}
+												hours
+											</div>
+										</div>
+									</div>
+								</div>
 
-						<CalendlyModal
-							buttonText='Schedule Free ROI Discussion'
-							buttonSize='lg'
-							buttonClassName='w-full py-4'
-						/>
-					</CardContent>
-				</Card>
-			</div>
-		</div>
+								<div className='text-center mt-6'>
+									<p className='text-sm text-muted-foreground mb-4'>
+										Ready to get your time back and reduce
+										financial stress?
+									</p>
+									<Button size='lg' className='w-full'>
+										Get Your Free Consultation
+									</Button>
+								</div>
+							</div>
+						) : (
+							<div className='text-center py-8'>
+								<Calculator className='h-12 w-12 text-muted-foreground mx-auto mb-4' />
+								<p className='text-muted-foreground'>
+									Fill out the form to see your potential
+									savings with professional bookkeeping.
+								</p>
+							</div>
+						)}
+					</div>
+				</div>
+			</CardContent>
+		</Card>
 	);
 }

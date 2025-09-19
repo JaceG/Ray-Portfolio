@@ -69,11 +69,11 @@ export default function Home() {
 						</nav>
 
 						<div className='flex items-center space-x-4'>
-							<a
+							{/* <a
 								href='/auth'
 								className='hidden sm:block text-sm font-medium hover:text-primary transition-colors'>
 								Client Login
-							</a>
+							</a> */}
 							<CalendlyModal
 								buttonText='Free Consultation'
 								buttonSize='sm'

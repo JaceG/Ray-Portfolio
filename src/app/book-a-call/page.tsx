@@ -10,6 +10,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
+import { CalendlyModal } from '@/components/CalendlyModal';
 
 export default function BookACall() {
 	return (
@@ -199,36 +200,11 @@ export default function BookACall() {
 									</CardDescription>
 								</CardHeader>
 								<CardContent>
-									{/* Calendly Embed Placeholder */}
-									<div className='bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center min-h-[600px] flex items-center justify-center'>
-										<div className='max-w-md'>
-											<Calendar className='h-16 w-16 text-gray-400 mx-auto mb-4' />
-											<h3 className='text-lg font-semibold text-gray-600 mb-2'>
-												Calendly Integration Placeholder
-											</h3>
-											<p className='text-gray-500 mb-4'>
-												Replace this section with your
-												actual Calendly embed code:
-											</p>
-											<div className='bg-white p-4 rounded border text-left text-sm font-mono text-gray-700'>
-												{`<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" 
-     data-url="https://calendly.com/your-link" 
-     style="min-width:320px;height:630px;">
-</div>
-<script type="text/javascript" 
-        src="https://assets.calendly.com/assets/external/widget.js" 
-        async>
-</script>
-<!-- Calendly inline widget end -->`}
-											</div>
-											<p className='text-xs text-gray-500 mt-4'>
-												Add your Calendly URL and this
-												will show your actual booking
-												calendar
-											</p>
-										</div>
-									</div>
+									{/* Calendly Inline Widget */}
+									<CalendlyModal
+										mode='inline'
+										className='min-h-[630px]'
+									/>
 								</CardContent>
 							</Card>
 						</div>

@@ -1,6 +1,6 @@
 import { TrustBadges } from './TrustBadges';
 import { Card, CardContent } from './ui/card';
-import { Shield, Award, Star, Users, CheckCircle, Quote } from 'lucide-react';
+import { Shield, Star, Users, CheckCircle, Quote } from 'lucide-react';
 
 // TODO: Replace placeholder testimonials with actual client reviews
 // See SETUP.md for detailed instructions on customizing content
@@ -32,9 +32,9 @@ export function TrustSection() {
 									"Ray transformed our messy books into a
 									clear financial picture. We went from
 									spending 15 hours a month on bookkeeping to
-									zero. His dashboard shows us exactly where
-									our Delaware construction business stands at
-									any moment."
+									zero. His detailed reports show us exactly
+									where our Columbus area construction
+									business stands at any moment."
 								</p>
 								<div className='flex items-center'>
 									<div className='w-10 h-10 bg-qb-green-100 rounded-full flex items-center justify-center mr-3'>
@@ -47,7 +47,7 @@ export function TrustSection() {
 											John Miller
 										</p>
 										<p className='text-xs text-muted-foreground'>
-											Miller Construction, Delaware OH
+											Miller Construction, Columbus OH
 										</p>
 									</div>
 								</div>
@@ -70,9 +70,9 @@ export function TrustSection() {
 								<p className='text-sm text-muted-foreground mb-4 italic'>
 									"As a busy restaurant owner in Powell, I
 									needed someone who understood food service
-									accounting. Ray's expertise and live
-									dashboard have been game-changers for our
-									cash flow management."
+									accounting. Ray's expertise and detailed
+									financial reports have been game-changers
+									for our cash flow management."
 								</p>
 								<div className='flex items-center'>
 									<div className='w-10 h-10 bg-qb-green-100 rounded-full flex items-center justify-center mr-3'>
@@ -182,7 +182,7 @@ export function TrustSection() {
 									Local & Trusted
 								</h4>
 								<p className='text-sm text-muted-foreground'>
-									Delaware, Ohio local with deep roots in the
+									Columbus area local with deep roots in the
 									community and a reputation built on trust
 									and results.
 								</p>
@@ -193,8 +193,8 @@ export function TrustSection() {
 					{/* Call to Action */}
 					<div className='mt-12 text-center'>
 						<p className='text-lg text-muted-foreground mb-4'>
-							Join 100+ Delaware and Columbus area businesses that
-							trust Ray with their books
+							Join 100+ Columbus area businesses that trust Ray
+							with their books
 						</p>
 						<div className='text-sm text-muted-foreground'>
 							<span className='inline-flex items-center gap-2 mr-6'>

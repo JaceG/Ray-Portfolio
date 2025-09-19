@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { EmailCollectionModal } from '@/components/EmailCollectionModal';
 import {
 	ArrowLeft,
 	Download,
@@ -23,6 +25,8 @@ import {
 } from 'lucide-react';
 
 export default function FreeGuide() {
+	const router = useRouter();
+	const [showEmailModal, setShowEmailModal] = useState(false);
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
@@ -40,6 +44,24 @@ export default function FreeGuide() {
 			...formData,
 			[e.target.name]: e.target.value,
 		});
+	};
+
+	const handleEmailModalSubmit = async (data: {
+		name: string;
+		email: string;
+	}) => {
+		// TODO: Integrate with email service (ConvertKit, Mailchimp, etc.)
+		console.log('Email collection submitted:', data);
+
+		// Simulate API call
+		await new Promise((resolve) => setTimeout(resolve, 1000));
+
+		// Redirect to training video page
+		router.push('/training-video');
+	};
+
+	const handleGetGuideClick = () => {
+		setShowEmailModal(true);
 	};
 
 	const handleSubmit = async (e: React.FormEvent) => {
@@ -500,20 +522,11 @@ export default function FreeGuide() {
 										</div>
 
 										<Button
-											type='submit'
+											type='button'
 											className='w-full text-lg py-6 mt-6'
-											disabled={isSubmitting}>
-											{isSubmitting ? (
-												<>
-													<div className='animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2'></div>
-													Preparing Your Guide...
-												</>
-											) : (
-												<>
-													<Download className='mr-2 h-5 w-5' />
-													Get My Free Guide Now
-												</>
-											)}
+											onClick={handleGetGuideClick}>
+											<Download className='mr-2 h-5 w-5' />
+											Get My Free Guide Now
 										</Button>
 
 										<p className='text-xs text-muted-foreground text-center mt-4'>
@@ -563,6 +576,16 @@ export default function FreeGuide() {
 					</div>
 				</div>
 			</div>
+
+			{/* Email Collection Modal */}
+			<EmailCollectionModal
+				isOpen={showEmailModal}
+				onClose={() => setShowEmailModal(false)}
+				onSubmit={handleEmailModalSubmit}
+				title='Where should I send a link to the training?'
+				description='Enter your details below to get instant access to the video training'
+				buttonText='Send Me The Training Link'
+			/>
 		</div>
 	);
 }

@@ -11,7 +11,6 @@ import {
 	BarChart3,
 	Shield,
 	Clock,
-	Users,
 	Settings,
 	Wrench,
 } from 'lucide-react';
@@ -149,41 +148,6 @@ export default function ServicesSection() {
 							</CardContent>
 						</Card>
 					))}
-				</div>
-
-				{/* Additional QuickBooks Training Service */}
-				<div className='mt-12 max-w-3xl mx-auto'>
-					<Card className='border-2 hover:border-primary/50 transition-colors duration-200'>
-						<CardHeader>
-							<div className='w-12 h-12 bg-qb-green-100 rounded-lg flex items-center justify-center mb-4 mx-auto'>
-								<Users className='h-6 w-6 text-primary' />
-							</div>
-							<CardTitle className='text-xl text-center'>
-								QuickBooks Training
-							</CardTitle>
-						</CardHeader>
-						<CardContent className='text-center'>
-							<CardDescription className='text-base leading-relaxed mb-4'>
-								Learn to manage your own books with personalized
-								training and ongoing support for QuickBooks.
-							</CardDescription>
-							<div className='grid grid-cols-2 gap-4 text-sm text-muted-foreground mb-6'>
-								<div>• One-on-one training sessions</div>
-								<div>• Custom workflow setup</div>
-								<div>• Best practices guidance</div>
-								<div>• Ongoing support</div>
-							</div>
-							<Button
-								onClick={() =>
-									document
-										.getElementById('contact')
-										?.scrollIntoView({ behavior: 'smooth' })
-								}
-								size='sm'>
-								Book Training Session
-							</Button>
-						</CardContent>
-					</Card>
 				</div>
 			</div>
 		</section>

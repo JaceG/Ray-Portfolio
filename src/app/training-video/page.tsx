@@ -1,45 +1,48 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+import { CalendlyModal } from '@/components/CalendlyModal';
 import {
 	ArrowLeft,
 	Play,
-	Download,
+	Pause,
+	Volume2,
+	Maximize,
+	CheckCircle,
 	Clock,
 	Users,
 	Star,
-	CheckCircle,
-	BookOpen,
 	Calendar,
-	Gift,
-	Volume2,
-	Maximize,
-	Share2,
 } from 'lucide-react';
 
 export default function TrainingVideo() {
+	const [videoProgress, setVideoProgress] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
-	const [watchTime, setWatchTime] = useState(0);
-	const [hasWatched, setHasWatched] = useState(false);
+	const [showCalendlyButton, setShowCalendlyButton] = useState(false);
+	const [currentTime, setCurrentTime] = useState(0);
+	const [duration, setDuration] = useState(0);
 
-	// Simulate video progress
-	const handleVideoPlay = () => {
-		setIsPlaying(true);
-		// In a real implementation, this would track actual video progress
-		const interval = setInterval(() => {
-			setWatchTime((prev) => {
-				if (prev >= 100) {
-					clearInterval(interval);
-					setHasWatched(true);
-					setIsPlaying(false);
-					return 100;
-				}
-				return prev + 2;
-			});
-		}, 200);
+	// Show Calendly button when user has watched 90% of the video
+	useEffect(() => {
+		if (videoProgress >= 90) {
+			setShowCalendlyButton(true);
+		}
+	}, [videoProgress]);
+
+	// Simulate video progress (replace with actual video player integration)
+	const handleVideoProgress = (progress: number) => {
+		setVideoProgress(progress);
+	};
+
+	// Format time in MM:SS format
+	const formatTime = (seconds: number) => {
+		const mins = Math.floor(seconds / 60);
+		const secs = Math.floor(seconds % 60);
+		return `${mins}:${secs.toString().padStart(2, '0')}`;
 	};
 
 	return (
@@ -49,14 +52,14 @@ export default function TrainingVideo() {
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='flex justify-between items-center h-16'>
 						<Link
-							href='/'
+							href='/free-guide'
 							className='flex items-center text-lg font-medium hover:text-primary transition-colors'>
 							<ArrowLeft className='mr-2 h-4 w-4' />
-							Ray Galloway Bookkeeping
+							Back to Guide
 						</Link>
 						<div className='flex items-center space-x-4'>
 							<span className='text-sm font-medium text-primary'>
-								🎥 Free Training Video
+								Free Training Video
 							</span>
 						</div>
 					</div>
@@ -64,362 +67,367 @@ export default function TrainingVideo() {
 			</header>
 
 			<div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-				<div className='max-w-5xl mx-auto'>
-					{/* Video Header */}
+				<div className='max-w-6xl mx-auto'>
+					{/* Header Section */}
 					<div className='text-center mb-8'>
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
-							<Play className='h-4 w-4 text-primary' />
+							<Star className='h-4 w-4 text-primary' />
 							<span className='text-sm font-medium text-primary'>
-								FREE TRAINING
+								EXCLUSIVE TRAINING
 							</span>
 						</div>
 
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-							Master Your Business Finances in
+							7 Financial Tricks for
 							<br />
 							<span className='text-primary'>
-								Just 15 Minutes
+								Delaware Service Businesses
 							</span>
 						</h1>
 
-						<p className='text-xl text-muted-foreground max-w-3xl mx-auto mb-8'>
-							Watch Ray walk you through the exact system he uses
-							to help Delaware and Columbus area businesses save
-							60+ hours per year on bookkeeping.
+						<p className='text-xl text-muted-foreground mb-6 max-w-3xl mx-auto'>
+							Watch this exclusive 25-minute training to discover
+							the insider strategies that help Delaware businesses
+							save 60+ hours per year and increase profit margins
+							by 18%.
 						</p>
 
-						{/* Video Stats */}
+						{/* Social Proof */}
 						<div className='flex flex-wrap justify-center items-center gap-6 mb-8'>
-							<div className='flex items-center gap-2'>
-								<Clock className='h-5 w-5 text-primary' />
-								<span className='text-sm font-medium'>
-									15 minutes
-								</span>
-							</div>
 							<div className='flex items-center gap-2'>
 								<Users className='h-5 w-5 text-primary' />
 								<span className='text-sm font-medium'>
-									1,200+ views
+									Watched by 1,200+ business owners
 								</span>
 							</div>
 							<div className='flex items-center gap-2'>
-								<Star className='h-5 w-5 text-yellow-400 fill-current' />
+								<Clock className='h-5 w-5 text-primary' />
 								<span className='text-sm font-medium'>
-									4.9/5 rating
+									25 minutes
+								</span>
+							</div>
+							<div className='flex items-center gap-2'>
+								<CheckCircle className='h-5 w-5 text-primary' />
+								<span className='text-sm font-medium'>
+									Actionable strategies
 								</span>
 							</div>
 						</div>
 					</div>
 
-					{/* Video Player Section */}
-					<div className='grid lg:grid-cols-3 gap-8 mb-12'>
-						{/* Video Player */}
+					<div className='grid lg:grid-cols-3 gap-8'>
+						{/* Main Video Column */}
 						<div className='lg:col-span-2'>
-							<Card className='overflow-hidden shadow-2xl'>
-								<div className='relative bg-black aspect-video'>
-									{/* Video Placeholder */}
-									{!isPlaying ? (
-										<div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800'>
-											<div className='text-center'>
-												<div
-													className='w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-primary/90 transition-colors cursor-pointer'
-													onClick={handleVideoPlay}>
-													<Play className='h-8 w-8 text-white ml-1' />
-												</div>
-												<h3 className='text-white text-xl font-semibold mb-2'>
-													7 Financial Tricks for
-													Delaware Service Businesses
-												</h3>
-												<p className='text-gray-300 text-sm'>
-													Click to start the training
-													video
-												</p>
+							<Card className='border-2 border-primary/20 mb-6'>
+								<CardContent className='p-0'>
+									{/* Video Player Placeholder */}
+									<div className='relative bg-black rounded-t-lg aspect-video flex items-center justify-center'>
+										{/* TODO: Replace with actual video player */}
+										<div className='text-center text-white'>
+											<div className='w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4'>
+												<Play className='h-10 w-10 ml-1' />
 											</div>
+											<h3 className='text-xl font-semibold mb-2'>
+												Video Training Placeholder
+											</h3>
+											<p className='text-gray-300 mb-4'>
+												Replace this with your actual
+												video player
+											</p>
+											<Button
+												onClick={() => {
+													setIsPlaying(!isPlaying);
+													// Simulate video progress for demo
+													if (!isPlaying) {
+														const interval =
+															setInterval(() => {
+																setCurrentTime(
+																	(prev) => {
+																		const newTime =
+																			prev +
+																			1;
+																		const progress =
+																			(newTime /
+																				1500) *
+																			100; // 25 minutes = 1500 seconds
+																		setVideoProgress(
+																			progress
+																		);
+																		if (
+																			progress >=
+																			100
+																		) {
+																			clearInterval(
+																				interval
+																			);
+																			setIsPlaying(
+																				false
+																			);
+																		}
+																		return newTime;
+																	}
+																);
+															}, 1000);
+													}
+												}}
+												className='bg-primary hover:bg-primary/90'>
+												{isPlaying ? (
+													<>
+														<Pause className='mr-2 h-4 w-4' />
+														Pause Training
+													</>
+												) : (
+													<>
+														<Play className='mr-2 h-4 w-4' />
+														Start Training
+													</>
+												)}
+											</Button>
+										</div>
+									</div>
 
-											{/* Video Overlay Info */}
-											<div className='absolute top-4 left-4 bg-black/50 rounded-lg px-3 py-2'>
-												<div className='flex items-center gap-2 text-white text-sm'>
-													<Clock className='h-4 w-4' />
-													<span>15:42</span>
-												</div>
-											</div>
-
-											<div className='absolute top-4 right-4 flex gap-2'>
-												<button className='bg-black/50 rounded-lg p-2 text-white hover:bg-black/70 transition-colors'>
+									{/* Video Controls */}
+									<div className='p-4 bg-gray-900 text-white rounded-b-lg'>
+										<div className='flex items-center justify-between mb-2'>
+											<span className='text-sm'>
+												{formatTime(currentTime)} /{' '}
+												{formatTime(1500)}
+											</span>
+											<span className='text-sm'>
+												{Math.round(videoProgress)}%
+												watched
+											</span>
+										</div>
+										<Progress
+											value={videoProgress}
+											className='mb-3'
+										/>
+										<div className='flex items-center justify-between'>
+											<div className='flex items-center gap-2'>
+												<Button
+													size='sm'
+													variant='ghost'
+													className='text-white hover:bg-gray-800'>
+													{isPlaying ? (
+														<Pause className='h-4 w-4' />
+													) : (
+														<Play className='h-4 w-4' />
+													)}
+												</Button>
+												<Button
+													size='sm'
+													variant='ghost'
+													className='text-white hover:bg-gray-800'>
 													<Volume2 className='h-4 w-4' />
-												</button>
-												<button className='bg-black/50 rounded-lg p-2 text-white hover:bg-black/70 transition-colors'>
-													<Maximize className='h-4 w-4' />
-												</button>
-												<button className='bg-black/50 rounded-lg p-2 text-white hover:bg-black/70 transition-colors'>
-													<Share2 className='h-4 w-4' />
-												</button>
+												</Button>
 											</div>
+											<Button
+												size='sm'
+												variant='ghost'
+												className='text-white hover:bg-gray-800'>
+												<Maximize className='h-4 w-4' />
+											</Button>
 										</div>
-									) : (
-										<div className='absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary/40'>
-											<div className='text-center text-white'>
-												<div className='animate-pulse mb-4'>
-													<Play className='h-16 w-16 mx-auto' />
-												</div>
-												<p className='text-lg font-semibold mb-2'>
-													Video Playing...
-												</p>
-												<div className='w-64 bg-white/20 rounded-full h-2 mx-auto'>
-													<div
-														className='bg-white rounded-full h-2 transition-all duration-200'
-														style={{
-															width: `${watchTime}%`,
-														}}></div>
-												</div>
-												<p className='text-sm mt-2'>
-													{Math.round(watchTime)}%
-													complete
-												</p>
-											</div>
-										</div>
-									)}
-								</div>
-
-								{/* Video Description */}
-								<CardContent className='pt-6'>
-									<h3 className='text-xl font-bold mb-3'>
-										What You'll Learn in This Training
-									</h3>
-									<div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
-										{[
-											'Delaware-specific tax strategies',
-											'QuickBooks automation shortcuts',
-											'Cash flow optimization system',
-											'Error-proof documentation',
-											'Year-end preparation checklist',
-											'Local business resources',
-										].map((item, index) => (
-											<div
-												key={index}
-												className='flex items-center gap-2'>
-												<CheckCircle className='h-4 w-4 text-primary flex-shrink-0' />
-												<span className='text-sm'>
-													{item}
-												</span>
-											</div>
-										))}
 									</div>
 								</CardContent>
 							</Card>
-						</div>
 
-						{/* Sidebar */}
-						<div className='space-y-6'>
-							{/* Video Progress */}
-							{watchTime > 0 && (
-								<Card>
+							{/* Calendly Button - Only shows after 90% completion */}
+							{showCalendlyButton && (
+								<Card className='border-2 border-green-500 bg-green-50'>
 									<CardContent className='pt-6'>
-										<div className='flex items-center gap-3 mb-4'>
-											<Clock className='h-5 w-5 text-primary' />
-											<h3 className='font-semibold'>
-												Your Progress
+										<div className='text-center'>
+											<CheckCircle className='h-12 w-12 text-green-500 mx-auto mb-4' />
+											<h3 className='text-xl font-bold mb-2'>
+												Congratulations! 🎉
 											</h3>
-										</div>
-										<div className='space-y-3'>
-											<div className='w-full bg-gray-200 rounded-full h-2'>
-												<div
-													className='bg-primary rounded-full h-2 transition-all duration-300'
-													style={{
-														width: `${watchTime}%`,
-													}}></div>
-											</div>
-											<p className='text-sm text-muted-foreground'>
-												{Math.round(watchTime)}%
-												complete (
-												{Math.round(
-													(watchTime * 15.42) / 100
-												)}{' '}
-												min watched)
+											<p className='text-muted-foreground mb-6'>
+												You've completed the training!
+												Ready to implement these
+												strategies in your business?
+												Let's schedule a free
+												consultation to create your
+												custom plan.
 											</p>
+											<CalendlyModal
+												mode='modal'
+												buttonText='Schedule My Free Strategy Session'
+												buttonSize='lg'
+												buttonClassName='w-full text-lg py-6 bg-green-600 hover:bg-green-700'
+											/>
 										</div>
 									</CardContent>
 								</Card>
 							)}
 
-							{/* Download Guide CTA */}
-							<Card className='bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20'>
-								<CardContent className='pt-6'>
-									<div className='text-center'>
-										<Gift className='h-12 w-12 text-primary mx-auto mb-4' />
-										<h3 className='font-bold mb-2'>
-											Get the Written Guide
-										</h3>
-										<p className='text-sm text-muted-foreground mb-4'>
-											Download the PDF version of this
-											training plus bonus worksheets.
-										</p>
-										<Button asChild className='w-full'>
-											<Link href='/free-guide'>
-												<Download className='mr-2 h-4 w-4' />
-												Download Free Guide
-											</Link>
-										</Button>
-									</div>
-								</CardContent>
-							</Card>
+							{/* Progress Indicator */}
+							{!showCalendlyButton && (
+								<Card className='border border-yellow-200 bg-yellow-50'>
+									<CardContent className='pt-6'>
+										<div className='text-center'>
+											<Clock className='h-8 w-8 text-yellow-600 mx-auto mb-3' />
+											<h4 className='font-semibold mb-2'>
+												Keep Watching to Unlock Your
+												Free Consultation
+											</h4>
+											<p className='text-sm text-muted-foreground mb-3'>
+												Watch{' '}
+												{Math.max(
+													0,
+													90 -
+														Math.round(
+															videoProgress
+														)
+												)}
+												% more to unlock your free
+												strategy session
+											</p>
+											<Progress
+												value={videoProgress}
+												className='max-w-xs mx-auto'
+											/>
+										</div>
+									</CardContent>
+								</Card>
+							)}
+						</div>
 
-							{/* Book Consultation CTA */}
+						{/* Sidebar */}
+						<div className='lg:col-span-1 space-y-6'>
+							{/* What You'll Learn */}
 							<Card>
-								<CardContent className='pt-6'>
-									<div className='text-center'>
-										<Calendar className='h-12 w-12 text-primary mx-auto mb-4' />
-										<h3 className='font-bold mb-2'>
-											Ready to Get Started?
-										</h3>
-										<p className='text-sm text-muted-foreground mb-4'>
-											Let's discuss how to implement these
-											strategies for your business.
-										</p>
-										<Button
-											asChild
-											variant='outline'
-											className='w-full'>
-											<Link href='/book-a-call'>
-												Schedule Free Consultation
-											</Link>
-										</Button>
-									</div>
+								<CardHeader>
+									<CardTitle className='text-lg'>
+										What You'll Learn
+									</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<ul className='space-y-3 text-sm'>
+										<li className='flex items-start gap-3'>
+											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
+											<span>
+												Delaware-specific tax advantages
+												most businesses miss
+											</span>
+										</li>
+										<li className='flex items-start gap-3'>
+											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
+											<span>
+												Cash flow optimization
+												strategies for 25% improvement
+											</span>
+										</li>
+										<li className='flex items-start gap-3'>
+											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
+											<span>
+												QuickBooks shortcuts that save
+												10+ hours monthly
+											</span>
+										</li>
+										<li className='flex items-start gap-3'>
+											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
+											<span>
+												Audit-proof documentation system
+											</span>
+										</li>
+										<li className='flex items-start gap-3'>
+											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
+											<span>
+												Year-end tax preparation
+												checklist
+											</span>
+										</li>
+									</ul>
 								</CardContent>
 							</Card>
 
 							{/* About Ray */}
-							<Card>
+							<Card className='bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20'>
 								<CardContent className='pt-6'>
-									<div className='flex items-center gap-3 mb-4'>
-										<div className='w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold'>
+									<div className='text-center'>
+										<div className='w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold'>
 											RG
 										</div>
+										<h3 className='font-semibold mb-2'>
+											Ray Galloway
+										</h3>
+										<p className='text-sm text-muted-foreground mb-3'>
+											QuickBooks ProAdvisor
+										</p>
+										<p className='text-sm text-muted-foreground'>
+											10+ years helping Delaware and
+											Columbus area businesses streamline
+											their bookkeeping and maximize
+											profits.
+										</p>
+									</div>
+								</CardContent>
+							</Card>
+
+							{/* Testimonial */}
+							<Card>
+								<CardContent className='pt-6'>
+									<div className='flex text-yellow-400 mb-3'>
+										{[...Array(5)].map((_, i) => (
+											<Star
+												key={i}
+												className='h-4 w-4 fill-current'
+											/>
+										))}
+									</div>
+									<p className='text-sm italic mb-4'>
+										"This training helped me identify $3,200
+										in missed deductions and cut my
+										bookkeeping time in half. Ray's
+										strategies are game-changing for
+										Delaware businesses."
+									</p>
+									<div className='flex items-center'>
+										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
+											<span className='text-primary font-semibold text-sm'>
+												SM
+											</span>
+										</div>
 										<div>
-											<h3 className='font-semibold'>
-												Ray Galloway
-											</h3>
-											<p className='text-sm text-muted-foreground'>
-												QuickBooks ProAdvisor
+											<p className='font-semibold text-sm'>
+												Sarah Mitchell
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												Mitchell Consulting, Delaware OH
 											</p>
 										</div>
 									</div>
-									<p className='text-sm text-muted-foreground mb-4'>
-										10+ years helping Delaware and Columbus
-										area businesses streamline their
-										bookkeeping and maximize their profits.
-									</p>
-									<div className='flex items-center gap-4 text-xs text-muted-foreground'>
-										<span className='flex items-center gap-1'>
-											<Users className='h-3 w-3' />
-											100+ clients
-										</span>
-										<span className='flex items-center gap-1'>
-											<Star className='h-3 w-3 text-yellow-400 fill-current' />
-											5.0 rating
-										</span>
-									</div>
 								</CardContent>
 							</Card>
-						</div>
-					</div>
 
-					{/* Completion Actions */}
-					{hasWatched && (
-						<Card className='bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20'>
-							<CardContent className='pt-8'>
-								<div className='text-center'>
-									<CheckCircle className='h-16 w-16 text-primary mx-auto mb-4' />
-									<h2 className='text-2xl font-bold mb-4'>
-										Congratulations! Training Complete
-									</h2>
-									<p className='text-muted-foreground mb-6 max-w-2xl mx-auto'>
-										You've learned the key strategies to
-										transform your business finances. Now
-										let's put this knowledge into action for
-										your Delaware business.
-									</p>
-
-									<div className='flex flex-col sm:flex-row gap-4 justify-center'>
-										<Button size='lg' asChild>
-											<Link href='/book-a-call'>
-												<Calendar className='mr-2 h-5 w-5' />
-												Schedule Implementation Call
-											</Link>
-										</Button>
+							{/* Download Guide */}
+							<Card className='border-2 border-primary/20'>
+								<CardContent className='pt-6'>
+									<div className='text-center'>
+										<div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3'>
+											<CheckCircle className='h-6 w-6 text-primary' />
+										</div>
+										<h4 className='font-semibold mb-2'>
+											Get the PDF Guide
+										</h4>
+										<p className='text-sm text-muted-foreground mb-4'>
+											Download the companion PDF guide
+											with all the strategies from this
+											training.
+										</p>
 										<Button
-											size='lg'
 											variant='outline'
-											asChild>
-											<Link href='/free-guide'>
-												<BookOpen className='mr-2 h-5 w-5' />
-												Get Written Materials
-											</Link>
+											size='sm'
+											className='w-full'
+											onClick={() => {
+												// TODO: Trigger PDF download
+												alert(
+													'PDF download would start here. Add actual PDF file to public/downloads/'
+												);
+											}}>
+											Download PDF Guide
 										</Button>
 									</div>
-								</div>
-							</CardContent>
-						</Card>
-					)}
-
-					{/* Related Content */}
-					<div className='mt-12'>
-						<h2 className='text-2xl font-bold mb-8 text-center'>
-							Continue Your Learning
-						</h2>
-
-						<div className='grid md:grid-cols-3 gap-6'>
-							<Card className='hover:shadow-lg transition-shadow cursor-pointer'>
-								<CardContent className='pt-6'>
-									<BookOpen className='h-8 w-8 text-primary mb-4' />
-									<h3 className='font-semibold mb-2'>
-										Written Guide
-									</h3>
-									<p className='text-sm text-muted-foreground mb-4'>
-										Download the complete PDF with
-										worksheets and checklists.
-									</p>
-									<Link
-										href='/free-guide'
-										className='text-primary text-sm font-medium hover:underline'>
-										Download Now →
-									</Link>
-								</CardContent>
-							</Card>
-
-							<Card className='hover:shadow-lg transition-shadow cursor-pointer'>
-								<CardContent className='pt-6'>
-									<Calendar className='h-8 w-8 text-primary mb-4' />
-									<h3 className='font-semibold mb-2'>
-										Free Consultation
-									</h3>
-									<p className='text-sm text-muted-foreground mb-4'>
-										Get personalized advice for your
-										specific business situation.
-									</p>
-									<Link
-										href='/book-a-call'
-										className='text-primary text-sm font-medium hover:underline'>
-										Book Call →
-									</Link>
-								</CardContent>
-							</Card>
-
-							<Card className='hover:shadow-lg transition-shadow cursor-pointer'>
-								<CardContent className='pt-6'>
-									<Users className='h-8 w-8 text-primary mb-4' />
-									<h3 className='font-semibold mb-2'>
-										Client Dashboard
-									</h3>
-									<p className='text-sm text-muted-foreground mb-4'>
-										See how your financial dashboard would
-										look with live data.
-									</p>
-									<Link
-										href='/dashboard'
-										className='text-primary text-sm font-medium hover:underline'>
-										View Demo →
-									</Link>
 								</CardContent>
 							</Card>
 						</div>

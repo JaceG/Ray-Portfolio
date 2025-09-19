@@ -1,204 +1,204 @@
+import { Card, CardContent } from './ui/card';
 import { CalendlyModal } from './CalendlyModal';
-import { MapPin, Heart, Users, Play } from 'lucide-react';
-import { HeroVideoEmbed } from './VideoEmbed';
-import Image from 'next/image';
+import {
+	Award,
+	Users,
+	Clock,
+	CheckCircle,
+	MapPin,
+	GraduationCap,
+	Building,
+} from 'lucide-react';
+
+// TODO: Replace placeholder content with Ray's actual information
+// See SETUP.md for detailed instructions on customizing content
 
 export default function AboutSection() {
 	return (
 		<section id='about' className='py-20 bg-white'>
 			<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-				<div className='flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto'>
-					<div className='lg:w-1/3'>
-						<div className='relative'>
-							<div className='w-64 h-64 rounded-xl shadow-lg overflow-hidden'>
-								{/* Replace with Ray's actual photo: public/images/ray-profile.jpg */}
-								<div className='bg-gradient-to-br from-primary to-primary/80 w-full h-full flex items-center justify-center text-white text-6xl font-bold'>
+				<div className='max-w-6xl mx-auto'>
+					<div className='grid lg:grid-cols-2 gap-12 items-center'>
+						{/* Left Column - Photo and Quick Stats */}
+						<div className='text-center lg:text-left'>
+							{/* Profile Photo Placeholder */}
+							<div className='w-64 h-64 bg-qb-green-100 rounded-xl shadow-lg mx-auto lg:mx-0 mb-8 flex items-center justify-center'>
+								<span className='text-6xl font-bold text-primary'>
 									RG
-								</div>
-								{/* 
-								Uncomment and use this when you have Ray's photo:
-								<Image
-									src="/images/ray-profile.jpg"
-									alt="Ray Galloway - QuickBooks ProAdvisor"
-									width={256}
-									height={256}
-									className="object-cover w-full h-full"
-								/>
-								*/}
-							</div>
-							<div className='absolute -bottom-4 -right-4 bg-qb-green-100 text-primary p-4 rounded-lg shadow-lg'>
-								<div className='text-2xl font-bold'>10+</div>
-								<div className='text-sm'>Years Experience</div>
-							</div>
-						</div>
-					</div>
-					<div className='lg:w-2/3'>
-						<div className='flex items-center gap-3 mb-4'>
-							<h2 className='text-3xl sm:text-4xl font-bold'>
-								Hi, I'm Ray Galloway
-							</h2>
-							<div className='flex items-center gap-2 px-3 py-1 bg-qb-green-100 rounded-full'>
-								<MapPin className='h-4 w-4 text-primary' />
-								<span className='text-sm font-medium text-primary'>
-									Delaware, OH
 								</span>
 							</div>
-						</div>
 
-						<p className='text-lg text-muted-foreground mb-6'>
-							Born and raised in Delaware, Ohio, I've been helping
-							local businesses in the Columbus area streamline
-							their bookkeeping for over 10 years. I'm ready to
-							help you save an extra
-							<span className='font-semibold text-primary'>
-								{' '}
-								60+ hours per year
-							</span>{' '}
-							by taking the bookkeeping burden off your shoulders!
-						</p>
-
-						<p className='text-lg text-muted-foreground mb-6'>
-							With my Bachelor's degree in Accounting and
-							QuickBooks ProAdvisor certification, I started my
-							bookkeeping practice right here in Delaware because
-							I love watching our local businesses grow and
-							succeed. Having owned retail shops on North Sandusky
-							Street and run my own consulting practice, I
-							understand firsthand the challenges of managing
-							books while trying to grow a business.
-						</p>
-
-						<div className='bg-qb-green-50 border-l-4 border-primary p-4 mb-6'>
-							<div className='flex items-start gap-3'>
-								<Heart className='h-5 w-5 text-primary mt-0.5 flex-shrink-0' />
-								<div>
-									<p className='font-medium text-primary mb-1'>
-										My Delaware Community Connection
-									</p>
-									<p className='text-sm text-muted-foreground'>
-										I've helped over 100 businesses from
-										Delaware to Dublin, Powell to
-										Worthington. From the local contractors
-										working on new developments near Alum
-										Creek to service businesses downtown, I
-										understand the unique needs of our
-										growing community.
-									</p>
+							{/* Quick Stats */}
+							<div className='grid grid-cols-2 gap-4 max-w-sm mx-auto lg:mx-0'>
+								<div className='text-center p-4 bg-qb-green-50 rounded-lg'>
+									<div className='text-2xl font-bold text-primary mb-1'>
+										10+
+									</div>
+									<div className='text-sm text-muted-foreground'>
+										Years Experience
+									</div>
+								</div>
+								<div className='text-center p-4 bg-qb-green-50 rounded-lg'>
+									<div className='text-2xl font-bold text-primary mb-1'>
+										100+
+									</div>
+									<div className='text-sm text-muted-foreground'>
+										Happy Clients
+									</div>
+								</div>
+								<div className='text-center p-4 bg-qb-green-50 rounded-lg'>
+									<div className='text-2xl font-bold text-primary mb-1'>
+										4.9★
+									</div>
+									<div className='text-sm text-muted-foreground'>
+										Client Rating
+									</div>
+								</div>
+								<div className='text-center p-4 bg-qb-green-50 rounded-lg'>
+									<div className='text-2xl font-bold text-primary mb-1'>
+										60+
+									</div>
+									<div className='text-sm text-muted-foreground'>
+										Hours Saved
+									</div>
 								</div>
 							</div>
 						</div>
 
-						<p className='text-lg text-muted-foreground mb-8'>
-							I want to learn about <em>your</em> Delaware area
-							business. Tell me about your strengths, goals, and
-							any bookkeeping challenges you've faced. I can
-							tailor my services to fit your needs and help you
-							focus on what you do best while I handle the
-							numbers.
-						</p>
+						{/* Right Column - About Content */}
+						<div>
+							<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
+								Meet Ray Galloway
+								<span className='block text-primary text-2xl font-normal mt-2'>
+									Your Local QuickBooks ProAdvisor
+								</span>
+							</h2>
 
-						<div className='flex flex-col sm:flex-row gap-4 mb-8'>
-							<CalendlyModal
-								buttonText='Schedule My FREE Evaluation'
-								buttonSize='lg'
-								buttonClassName='flex-1 sm:flex-none'
-							/>
-							<div className='text-center sm:text-left'>
-								<p className='text-sm font-medium text-primary'>
-									First-time client special:
-								</p>
-								<p className='text-sm text-muted-foreground'>
-									50% off your first month
-								</p>
-							</div>
-						</div>
+							<p className='text-lg text-muted-foreground mb-6'>
+								Hi, I&apos;m Ray! I&apos;ve been helping
+								Columbus area businesses get their books in
+								order for over 10 years. I know how overwhelming
+								bookkeeping can feel when you&apos;re trying to
+								run a business - that&apos;s exactly why
+								I&apos;m here to help.
+							</p>
 
-						{/* Credentials */}
-						<div className='grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-gray-50 rounded-lg'>
-							<div className='text-center'>
-								<div className='w-12 h-12 bg-qb-green-100 rounded-lg flex items-center justify-center mx-auto mb-2'>
-									<span className='text-2xl'>🏆</span>
+							<p className='text-muted-foreground mb-8'>
+								After earning my degree in Accounting and
+								becoming a certified QuickBooks ProAdvisor,
+								I&apos;ve worked with hundreds of service
+								businesses just like yours. From construction
+								companies to consultants, I understand the
+								unique challenges Columbus area businesses face.
+							</p>
+
+							{/* Credentials */}
+							<div className='space-y-4 mb-8'>
+								<div className='flex items-center'>
+									<Award className='h-5 w-5 text-primary mr-3' />
+									<span className='text-sm'>
+										Certified QuickBooks ProAdvisor
+									</span>
 								</div>
-								<div className='font-semibold text-sm'>
-									QuickBooks
+								<div className='flex items-center'>
+									<GraduationCap className='h-5 w-5 text-primary mr-3' />
+									<span className='text-sm'>
+										Bachelor's Degree in Accounting
+									</span>
 								</div>
-								<div className='text-xs text-muted-foreground'>
-									ProAdvisor Certified
+								<div className='flex items-center'>
+									<MapPin className='h-5 w-5 text-primary mr-3' />
+									<span className='text-sm'>
+										Serving Columbus & Central Ohio
+									</span>
+								</div>
+								<div className='flex items-center'>
+									<Building className='h-5 w-5 text-primary mr-3' />
+									<span className='text-sm'>
+										Specializing in Service-Based Businesses
+									</span>
 								</div>
 							</div>
-							<div className='text-center'>
-								<div className='w-12 h-12 bg-qb-green-100 rounded-lg flex items-center justify-center mx-auto mb-2'>
-									<span className='text-2xl'>🎓</span>
-								</div>
-								<div className='font-semibold text-sm'>
-									Bachelor's
-								</div>
-								<div className='text-xs text-muted-foreground'>
-									Accounting Degree
-								</div>
-							</div>
-							<div className='text-center'>
-								<div className='w-12 h-12 bg-qb-green-100 rounded-lg flex items-center justify-center mx-auto mb-2'>
-									<Users className='h-6 w-6 text-primary' />
-								</div>
-								<div className='font-semibold text-sm'>
-									100+
-								</div>
-								<div className='text-xs text-muted-foreground'>
-									Local Clients
-								</div>
-							</div>
-							<div className='text-center'>
-								<div className='w-12 h-12 bg-qb-green-100 rounded-lg flex items-center justify-center mx-auto mb-2'>
-									<MapPin className='h-6 w-6 text-primary' />
-								</div>
-								<div className='font-semibold text-sm'>
-									Delaware
-								</div>
-								<div className='text-xs text-muted-foreground'>
-									Born & Raised
-								</div>
+
+							{/* CTA */}
+							<div className='flex flex-col sm:flex-row gap-4'>
+								<CalendlyModal
+									buttonText='Schedule Free Consultation'
+									buttonSize='lg'
+									buttonClassName='px-8 py-6 text-lg'
+								/>
 							</div>
 						</div>
 					</div>
 
-					{/* Video Section */}
+					{/* Bottom Section - Why Choose Ray */}
 					<div className='mt-20'>
-						<div className='text-center mb-12'>
-							<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
-								Meet Ray in Person
-							</h2>
-							<p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
-								Watch this quick introduction to learn more
-								about Ray's approach to helping Delaware and
-								Columbus area businesses succeed.
-							</p>
-						</div>
+						<h3 className='text-2xl font-bold text-center mb-12'>
+							Why Columbus Area Businesses Choose Ray
+						</h3>
 
-						<div className='max-w-4xl mx-auto'>
-							<HeroVideoEmbed
-								title='Meet Ray Galloway - Your Delaware Bookkeeping Expert'
-								description="Learn about Ray's background and approach to helping local businesses"
-								duration='3:45'
-								onPlay={() =>
-									console.log('Introduction video started')
-								}
-								onComplete={() =>
-									console.log('Introduction video completed')
-								}
-							/>
-						</div>
+						<div className='grid md:grid-cols-3 gap-8'>
+							<Card className='text-center'>
+								<CardContent className='pt-6'>
+									<Users className='h-12 w-12 text-primary mx-auto mb-4' />
+									<h4 className='font-semibold mb-2'>
+										Local Expertise
+									</h4>
+									<p className='text-sm text-muted-foreground'>
+										Deep understanding of Ohio tax laws and
+										Columbus area business regulations that
+										affect your bottom line.
+									</p>
+								</CardContent>
+							</Card>
 
-						{/* Video CTA */}
-						<div className='mt-8 text-center'>
-							<p className='text-muted-foreground mb-4'>
-								Ready to work with Ray? Let's discuss your
-								bookkeeping needs.
-							</p>
-							<CalendlyModal
-								buttonText='Schedule Your Free Consultation'
-								buttonSize='lg'
-							/>
+							<Card className='text-center'>
+								<CardContent className='pt-6'>
+									<Clock className='h-12 w-12 text-primary mx-auto mb-4' />
+									<h4 className='font-semibold mb-2'>
+										Time-Saving Focus
+									</h4>
+									<p className='text-sm text-muted-foreground'>
+										Streamlined processes that save you 60+
+										hours per year, so you can focus on
+										growing your business.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card className='text-center'>
+								<CardContent className='pt-6'>
+									<CheckCircle className='h-12 w-12 text-primary mx-auto mb-4' />
+									<h4 className='font-semibold mb-2'>
+										Proven Results
+									</h4>
+									<p className='text-sm text-muted-foreground'>
+										100+ satisfied clients with an average
+										18% improvement in profit margins
+										through better financial management.
+									</p>
+								</CardContent>
+							</Card>
+						</div>
+					</div>
+
+					{/* Service Areas */}
+					<div className='mt-16 text-center'>
+						<h4 className='text-lg font-semibold mb-4'>
+							Proudly Serving Central Ohio
+						</h4>
+						<div className='flex flex-wrap justify-center gap-4 text-sm text-muted-foreground'>
+							<span>Columbus, OH</span>
+							<span>•</span>
+							<span>Powell, OH</span>
+							<span>•</span>
+							<span>Dublin, OH</span>
+							<span>•</span>
+							<span>Worthington, OH</span>
+							<span>•</span>
+							<span>Westerville, OH</span>
+							<span>•</span>
+							<span>Columbus</span>
 						</div>
 					</div>
 				</div>

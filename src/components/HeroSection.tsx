@@ -5,12 +5,6 @@ import { HeroTrustBadges } from './TrustBadges';
 import Link from 'next/link';
 
 export function HeroSection() {
-	const scrollToContact = () => {
-		document
-			.getElementById('contact')
-			?.scrollIntoView({ behavior: 'smooth' });
-	};
-
 	return (
 		<section className='relative overflow-hidden bg-gradient-to-br from-qb-green-50 via-white to-qb-green-100 py-20 lg:py-32'>
 			<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
@@ -31,30 +25,26 @@ export function HeroSection() {
 							errors and gives you clear financial insights.
 						</p>
 						<p className='mt-4 text-lg text-muted-foreground'>
-							Watch your books get organized in real-time through
-							your private client dashboard. Expert QuickBooks
-							management with live data updates and direct
+							Expert QuickBooks management with accurate
+							bookkeeping, detailed financial reports, and direct
 							communication with Ray.
 						</p>
 						<div className='mt-10 sm:flex sm:justify-center lg:justify-start gap-4'>
-							<CalendlyModal
-								buttonText='Get Your FREE Book Evaluation'
-								buttonSize='lg'
-								buttonClassName='w-full sm:w-auto text-lg px-8 py-6'>
-								<Button
-									size='lg'
-									className='w-full sm:w-auto text-lg px-8 py-6'>
-									Get Your FREE Book Evaluation
-									<ArrowRight className='ml-2 h-5 w-5' />
-								</Button>
-							</CalendlyModal>
 							<Button
-								variant='outline'
 								size='lg'
-								className='w-full sm:w-auto text-lg px-8 py-6 mt-3 sm:mt-0'
+								className='w-full sm:w-auto text-lg px-8 py-6'
 								asChild>
-								<Link href='/book-a-call'>Book a Call</Link>
+								<Link href='/free-guide'>
+									Get Your Free Guide
+									<ArrowRight className='ml-2 h-5 w-5' />
+								</Link>
 							</Button>
+							<CalendlyModal
+								buttonText='Book Free Consultation'
+								buttonSize='lg'
+								buttonClassName='w-full sm:w-auto text-lg px-8 py-6 mt-3 sm:mt-0'
+								mode='popup'
+							/>
 						</div>
 						<div className='mt-10 grid grid-cols-3 gap-8 text-center lg:text-left'>
 							<div className='flex flex-col items-center lg:items-start'>
@@ -82,12 +72,12 @@ export function HeroSection() {
 							<div className='bg-white rounded-lg p-8 shadow-xl'>
 								<div className='flex items-center justify-between mb-6'>
 									<h3 className='text-lg font-semibold'>
-										Live Dashboard Preview
+										Financial Overview
 									</h3>
 									<div className='flex items-center space-x-1'>
 										<div className='w-2 h-2 bg-green-500 rounded-full animate-pulse'></div>
 										<span className='text-sm text-green-500'>
-											Live
+											Accurate
 										</span>
 									</div>
 								</div>
@@ -127,17 +117,14 @@ export function HeroSection() {
 										</div>
 									</div>
 									<div className='mt-4 text-center space-y-2'>
-										<Link
-											href='/dashboard'
-											className='block text-primary hover:underline text-sm font-medium'>
-											Experience Your Live Dashboard →
-										</Link>
-										<Link
-											href='/book-a-call'
-											className='block text-xs text-muted-foreground hover:text-primary transition-colors'>
-											Schedule a call to get your own
-											dashboard
-										</Link>
+										<CalendlyModal
+											buttonText='Get Your Financial Clarity →'
+											buttonClassName='text-primary hover:underline text-sm font-medium bg-transparent border-none p-0 h-auto'
+										/>
+										<p className='block text-xs text-muted-foreground'>
+											Schedule a call to discuss your
+											bookkeeping needs
+										</p>
 									</div>
 								</div>
 							</div>
