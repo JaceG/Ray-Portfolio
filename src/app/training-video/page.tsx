@@ -1,48 +1,102 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { CalendlyModal } from '@/components/CalendlyModal';
+import { ThankYouModal } from '@/components/ThankYouModal';
 import {
 	ArrowLeft,
 	Play,
-	Pause,
-	Volume2,
-	Maximize,
 	CheckCircle,
-	Clock,
-	Users,
 	Star,
+	Users,
+	Clock,
+	Shield,
+	TrendingUp,
+	DollarSign,
+	FileText,
 	Calendar,
+	Video,
 } from 'lucide-react';
 
 export default function TrainingVideo() {
-	const [videoProgress, setVideoProgress] = useState(0);
-	const [isPlaying, setIsPlaying] = useState(false);
-	const [showCalendlyButton, setShowCalendlyButton] = useState(false);
-	const [currentTime, setCurrentTime] = useState(0);
-	const [duration, setDuration] = useState(0);
+	const [showThankYouModal, setShowThankYouModal] = useState(false);
+	const [formError, setFormError] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
+	const [formData, setFormData] = useState({
+		firstName: '',
+		lastName: '',
+		email: '',
+		businessName: '',
+		businessType: '',
+		grossRevenue: '',
+	});
 
-	// Show Calendly button when user has watched 90% of the video
-	useEffect(() => {
-		if (videoProgress >= 90) {
-			setShowCalendlyButton(true);
+	const handleInputChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+	) => {
+		// Clear any existing error when user starts typing
+		if (formError) {
+			setFormError('');
 		}
-	}, [videoProgress]);
 
-	// Simulate video progress (replace with actual video player integration)
-	const handleVideoProgress = (progress: number) => {
-		setVideoProgress(progress);
+		setFormData({
+			...formData,
+			[e.target.name]: e.target.value,
+		});
 	};
 
-	// Format time in MM:SS format
-	const formatTime = (seconds: number) => {
-		const mins = Math.floor(seconds / 60);
-		const secs = Math.floor(seconds % 60);
-		return `${mins}:${secs.toString().padStart(2, '0')}`;
+	const handleRegisterClick = async () => {
+		// Clear any previous errors
+		setFormError('');
+
+		// Basic validation
+		if (!formData.firstName.trim()) {
+			setFormError('Please enter your first name');
+			return;
+		}
+
+		if (!formData.email.trim()) {
+			setFormError('Please enter your email address');
+			return;
+		}
+
+		// Email format validation
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(formData.email)) {
+			setFormError('Please enter a valid email address');
+			return;
+		}
+
+		setIsLoading(true);
+
+		try {
+			// TODO: Integrate with email service to send webinar registration
+			console.log('Webinar registration for:', formData);
+
+			// Simulate API call
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+
+			// Show thank you modal
+			setShowThankYouModal(true);
+		} catch (error) {
+			console.error('Error registering for webinar:', error);
+			setFormError(
+				'There was an error processing your registration. Please try again.'
+			);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+
+		// Use the same validation as the button click
+		await handleRegisterClick();
 	};
 
 	return (
@@ -52,14 +106,14 @@ export default function TrainingVideo() {
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='flex justify-between items-center h-16'>
 						<Link
-							href='/free-guide'
+							href='/'
 							className='flex items-center text-lg font-medium hover:text-primary transition-colors'>
 							<ArrowLeft className='mr-2 h-4 w-4' />
-							Back to Guide
+							Ray Galloway Bookkeeping
 						</Link>
 						<div className='flex items-center space-x-4'>
 							<span className='text-sm font-medium text-primary'>
-								Free Training Video
+								100% Free • Limited Seats Available
 							</span>
 						</div>
 					</div>
@@ -68,304 +122,163 @@ export default function TrainingVideo() {
 
 			<div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12'>
 				<div className='max-w-6xl mx-auto'>
-					{/* Header Section */}
-					<div className='text-center mb-8'>
-						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
-							<Star className='h-4 w-4 text-primary' />
-							<span className='text-sm font-medium text-primary'>
-								EXCLUSIVE TRAINING
+					{/* Hero Section */}
+					<div className='text-center mb-12'>
+						<div className='inline-flex items-center gap-2 px-4 py-2 bg-red-100 rounded-full mb-6'>
+							<Video className='h-4 w-4 text-red-600' />
+							<span className='text-sm font-medium text-red-600'>
+								LIVE WEBINAR - LIMITED SEATS
 							</span>
 						</div>
 
-						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
+						<h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold mb-6'>
 							7 Financial Tricks for
 							<br />
 							<span className='text-primary'>
-								Delaware Service Businesses
+								Columbus Area Service Businesses
 							</span>
 						</h1>
 
-						<p className='text-xl text-muted-foreground mb-6 max-w-3xl mx-auto'>
-							Watch this exclusive 25-minute training to discover
-							the insider strategies that help Delaware businesses
-							save 60+ hours per year and increase profit margins
-							by 18%.
+						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
+							Join me for an exclusive 45-minute live training
+							where I'll reveal the insider strategies I use to
+							help Columbus area service businesses save 60+ hours
+							per year and increase their profit margins by an
+							average of 18%.
 						</p>
+
+						{/* Webinar Details */}
+						<div className='bg-white rounded-lg border-2 border-primary/20 p-6 mb-8 max-w-2xl mx-auto'>
+							<div className='grid grid-cols-1 md:grid-cols-3 gap-4 text-center'>
+								<div className='flex flex-col items-center'>
+									<Calendar className='h-8 w-8 text-primary mb-2' />
+									<div className='font-semibold'>
+										Next Session
+									</div>
+									<div className='text-sm text-muted-foreground'>
+										Thursday, Dec 14th
+									</div>
+								</div>
+								<div className='flex flex-col items-center'>
+									<Clock className='h-8 w-8 text-primary mb-2' />
+									<div className='font-semibold'>Time</div>
+									<div className='text-sm text-muted-foreground'>
+										7:00 PM EST
+									</div>
+								</div>
+								<div className='flex flex-col items-center'>
+									<Users className='h-8 w-8 text-primary mb-2' />
+									<div className='font-semibold'>
+										Seats Left
+									</div>
+									<div className='text-sm text-red-600 font-medium'>
+										Only 23 remaining
+									</div>
+								</div>
+							</div>
+						</div>
 
 						{/* Social Proof */}
 						<div className='flex flex-wrap justify-center items-center gap-6 mb-8'>
 							<div className='flex items-center gap-2'>
 								<Users className='h-5 w-5 text-primary' />
 								<span className='text-sm font-medium'>
-									Watched by 1,200+ business owners
+									1,200+ business owners trained
 								</span>
 							</div>
 							<div className='flex items-center gap-2'>
 								<Clock className='h-5 w-5 text-primary' />
 								<span className='text-sm font-medium'>
-									25 minutes
+									45-minute live session
 								</span>
 							</div>
 							<div className='flex items-center gap-2'>
-								<CheckCircle className='h-5 w-5 text-primary' />
+								<Shield className='h-5 w-5 text-primary' />
 								<span className='text-sm font-medium'>
-									Actionable strategies
+									100% Free
 								</span>
 							</div>
 						</div>
 					</div>
 
-					<div className='grid lg:grid-cols-3 gap-8'>
-						{/* Main Video Column */}
-						<div className='lg:col-span-2'>
-							<Card className='border-2 border-primary/20 mb-6'>
-								<CardContent className='p-0'>
-									{/* Video Player Placeholder */}
-									<div className='relative bg-black rounded-t-lg aspect-video flex items-center justify-center'>
-										{/* TODO: Replace with actual video player */}
-										<div className='text-center text-white'>
-											<div className='w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4'>
-												<Play className='h-10 w-10 ml-1' />
-											</div>
-											<h3 className='text-xl font-semibold mb-2'>
-												Video Training Placeholder
+					<div className='grid lg:grid-cols-2 gap-12 items-start'>
+						{/* Left Column - Benefits */}
+						<div>
+							<h2 className='text-2xl font-bold mb-6'>
+								What You'll Learn in This Live Training:
+							</h2>
+
+							<div className='space-y-4 mb-8'>
+								{[
+									{
+										icon: (
+											<DollarSign className='h-6 w-6' />
+										),
+										title: 'Columbus Area Tax Strategies',
+										description:
+											'Live demonstration of local tax incentives that 90% of service businesses miss',
+									},
+									{
+										icon: (
+											<TrendingUp className='h-6 w-6' />
+										),
+										title: 'Cash Flow Optimization',
+										description:
+											'Real-time walkthrough of strategies to improve your cash flow by 25% in 90 days',
+									},
+									{
+										icon: <FileText className='h-6 w-6' />,
+										title: 'Expense Tracking Secrets',
+										description:
+											'Live setup of the 5-category system that saves business owners 10+ hours per month',
+									},
+									{
+										icon: (
+											<CheckCircle className='h-6 w-6' />
+										),
+										title: 'QuickBooks Power Session',
+										description:
+											'Screen-share demonstration of shortcuts that cut your bookkeeping time in half',
+									},
+									{
+										icon: <Shield className='h-6 w-6' />,
+										title: 'Audit-Proof Documentation',
+										description:
+											'Step-by-step guide to organize your records so you never fear an IRS audit',
+									},
+									{
+										icon: <Users className='h-6 w-6' />,
+										title: 'Live Q&A Session',
+										description:
+											'Get your specific questions answered during our interactive Q&A portion',
+									},
+									{
+										icon: <Play className='h-6 w-6' />,
+										title: 'Bonus: Recording Access',
+										description:
+											'All attendees get lifetime access to the training recording',
+									},
+								].map((benefit, index) => (
+									<div
+										key={index}
+										className='flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm'>
+										<div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0'>
+											{benefit.icon}
+										</div>
+										<div>
+											<h3 className='font-semibold mb-1'>
+												{benefit.title}
 											</h3>
-											<p className='text-gray-300 mb-4'>
-												Replace this with your actual
-												video player
+											<p className='text-sm text-muted-foreground'>
+												{benefit.description}
 											</p>
-											<Button
-												onClick={() => {
-													setIsPlaying(!isPlaying);
-													// Simulate video progress for demo
-													if (!isPlaying) {
-														const interval =
-															setInterval(() => {
-																setCurrentTime(
-																	(prev) => {
-																		const newTime =
-																			prev +
-																			1;
-																		const progress =
-																			(newTime /
-																				1500) *
-																			100; // 25 minutes = 1500 seconds
-																		setVideoProgress(
-																			progress
-																		);
-																		if (
-																			progress >=
-																			100
-																		) {
-																			clearInterval(
-																				interval
-																			);
-																			setIsPlaying(
-																				false
-																			);
-																		}
-																		return newTime;
-																	}
-																);
-															}, 1000);
-													}
-												}}
-												className='bg-primary hover:bg-primary/90'>
-												{isPlaying ? (
-													<>
-														<Pause className='mr-2 h-4 w-4' />
-														Pause Training
-													</>
-												) : (
-													<>
-														<Play className='mr-2 h-4 w-4' />
-														Start Training
-													</>
-												)}
-											</Button>
 										</div>
 									</div>
-
-									{/* Video Controls */}
-									<div className='p-4 bg-gray-900 text-white rounded-b-lg'>
-										<div className='flex items-center justify-between mb-2'>
-											<span className='text-sm'>
-												{formatTime(currentTime)} /{' '}
-												{formatTime(1500)}
-											</span>
-											<span className='text-sm'>
-												{Math.round(videoProgress)}%
-												watched
-											</span>
-										</div>
-										<Progress
-											value={videoProgress}
-											className='mb-3'
-										/>
-										<div className='flex items-center justify-between'>
-											<div className='flex items-center gap-2'>
-												<Button
-													size='sm'
-													variant='ghost'
-													className='text-white hover:bg-gray-800'>
-													{isPlaying ? (
-														<Pause className='h-4 w-4' />
-													) : (
-														<Play className='h-4 w-4' />
-													)}
-												</Button>
-												<Button
-													size='sm'
-													variant='ghost'
-													className='text-white hover:bg-gray-800'>
-													<Volume2 className='h-4 w-4' />
-												</Button>
-											</div>
-											<Button
-												size='sm'
-												variant='ghost'
-												className='text-white hover:bg-gray-800'>
-												<Maximize className='h-4 w-4' />
-											</Button>
-										</div>
-									</div>
-								</CardContent>
-							</Card>
-
-							{/* Calendly Button - Only shows after 90% completion */}
-							{showCalendlyButton && (
-								<Card className='border-2 border-green-500 bg-green-50'>
-									<CardContent className='pt-6'>
-										<div className='text-center'>
-											<CheckCircle className='h-12 w-12 text-green-500 mx-auto mb-4' />
-											<h3 className='text-xl font-bold mb-2'>
-												Congratulations! 🎉
-											</h3>
-											<p className='text-muted-foreground mb-6'>
-												You've completed the training!
-												Ready to implement these
-												strategies in your business?
-												Let's schedule a free
-												consultation to create your
-												custom plan.
-											</p>
-											<CalendlyModal
-												mode='modal'
-												buttonText='Schedule My Free Strategy Session'
-												buttonSize='lg'
-												buttonClassName='w-full text-lg py-6 bg-green-600 hover:bg-green-700'
-											/>
-										</div>
-									</CardContent>
-								</Card>
-							)}
-
-							{/* Progress Indicator */}
-							{!showCalendlyButton && (
-								<Card className='border border-yellow-200 bg-yellow-50'>
-									<CardContent className='pt-6'>
-										<div className='text-center'>
-											<Clock className='h-8 w-8 text-yellow-600 mx-auto mb-3' />
-											<h4 className='font-semibold mb-2'>
-												Keep Watching to Unlock Your
-												Free Consultation
-											</h4>
-											<p className='text-sm text-muted-foreground mb-3'>
-												Watch{' '}
-												{Math.max(
-													0,
-													90 -
-														Math.round(
-															videoProgress
-														)
-												)}
-												% more to unlock your free
-												strategy session
-											</p>
-											<Progress
-												value={videoProgress}
-												className='max-w-xs mx-auto'
-											/>
-										</div>
-									</CardContent>
-								</Card>
-							)}
-						</div>
-
-						{/* Sidebar */}
-						<div className='lg:col-span-1 space-y-6'>
-							{/* What You'll Learn */}
-							<Card>
-								<CardHeader>
-									<CardTitle className='text-lg'>
-										What You'll Learn
-									</CardTitle>
-								</CardHeader>
-								<CardContent>
-									<ul className='space-y-3 text-sm'>
-										<li className='flex items-start gap-3'>
-											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
-											<span>
-												Delaware-specific tax advantages
-												most businesses miss
-											</span>
-										</li>
-										<li className='flex items-start gap-3'>
-											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
-											<span>
-												Cash flow optimization
-												strategies for 25% improvement
-											</span>
-										</li>
-										<li className='flex items-start gap-3'>
-											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
-											<span>
-												QuickBooks shortcuts that save
-												10+ hours monthly
-											</span>
-										</li>
-										<li className='flex items-start gap-3'>
-											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
-											<span>
-												Audit-proof documentation system
-											</span>
-										</li>
-										<li className='flex items-start gap-3'>
-											<CheckCircle className='h-4 w-4 text-primary mt-0.5 flex-shrink-0' />
-											<span>
-												Year-end tax preparation
-												checklist
-											</span>
-										</li>
-									</ul>
-								</CardContent>
-							</Card>
-
-							{/* About Ray */}
-							<Card className='bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20'>
-								<CardContent className='pt-6'>
-									<div className='text-center'>
-										<div className='w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white text-xl font-bold'>
-											RG
-										</div>
-										<h3 className='font-semibold mb-2'>
-											Ray Galloway
-										</h3>
-										<p className='text-sm text-muted-foreground mb-3'>
-											QuickBooks ProAdvisor
-										</p>
-										<p className='text-sm text-muted-foreground'>
-											10+ years helping Delaware and
-											Columbus area businesses streamline
-											their bookkeeping and maximize
-											profits.
-										</p>
-									</div>
-								</CardContent>
-							</Card>
+								))}
+							</div>
 
 							{/* Testimonial */}
-							<Card>
+							<Card className='bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20'>
 								<CardContent className='pt-6'>
 									<div className='flex text-yellow-400 mb-3'>
 										{[...Array(5)].map((_, i) => (
@@ -376,64 +289,286 @@ export default function TrainingVideo() {
 										))}
 									</div>
 									<p className='text-sm italic mb-4'>
-										"This training helped me identify $3,200
-										in missed deductions and cut my
-										bookkeeping time in half. Ray's
-										strategies are game-changing for
-										Delaware businesses."
+										"I attended Ray's live webinar last
+										month and it was incredible! The
+										interactive format made it easy to
+										follow along, and I implemented his cash
+										flow strategy the next day. Already
+										seeing results - my receivables are down
+										40%!"
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												SM
+												MJ
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Sarah Mitchell
+												Mike Johnson
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Mitchell Consulting, Delaware OH
+												Johnson HVAC Services, Columbus
+												OH
 											</p>
 										</div>
-									</div>
-								</CardContent>
-							</Card>
-
-							{/* Download Guide */}
-							<Card className='border-2 border-primary/20'>
-								<CardContent className='pt-6'>
-									<div className='text-center'>
-										<div className='w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3'>
-											<CheckCircle className='h-6 w-6 text-primary' />
-										</div>
-										<h4 className='font-semibold mb-2'>
-											Get the PDF Guide
-										</h4>
-										<p className='text-sm text-muted-foreground mb-4'>
-											Download the companion PDF guide
-											with all the strategies from this
-											training.
-										</p>
-										<Button
-											variant='outline'
-											size='sm'
-											className='w-full'
-											onClick={() => {
-												// TODO: Trigger PDF download
-												alert(
-													'PDF download would start here. Add actual PDF file to public/downloads/'
-												);
-											}}>
-											Download PDF Guide
-										</Button>
 									</div>
 								</CardContent>
 							</Card>
 						</div>
+
+						{/* Right Column - Form */}
+						<div className='lg:sticky lg:top-24'>
+							<Card className='bg-white shadow-2xl border-2 border-primary/20'>
+								<CardHeader className='text-center pb-6'>
+									<CardTitle className='text-2xl mb-2'>
+										Reserve Your Seat
+									</CardTitle>
+									<p className='text-muted-foreground'>
+										Secure your spot for this exclusive live
+										training
+									</p>
+									<div className='bg-red-50 border border-red-200 rounded-md p-3 mt-4'>
+										<p className='text-sm text-red-600 font-medium'>
+											⚡ Only 23 seats remaining for the
+											next session
+										</p>
+									</div>
+								</CardHeader>
+
+								<CardContent>
+									<form
+										onSubmit={handleSubmit}
+										className='space-y-4'>
+										<div className='grid grid-cols-2 gap-4'>
+											<div>
+												<Label htmlFor='firstName'>
+													First Name *
+												</Label>
+												<Input
+													id='firstName'
+													name='firstName'
+													value={formData.firstName}
+													onChange={handleInputChange}
+													required
+													className='mt-1'
+													placeholder='Ray'
+												/>
+											</div>
+											<div>
+												<Label htmlFor='lastName'>
+													Last Name
+												</Label>
+												<Input
+													id='lastName'
+													name='lastName'
+													value={formData.lastName}
+													onChange={handleInputChange}
+													className='mt-1'
+													placeholder='Galloway'
+												/>
+											</div>
+										</div>
+
+										<div>
+											<Label htmlFor='email'>
+												Email Address *
+											</Label>
+											<Input
+												id='email'
+												name='email'
+												type='email'
+												value={formData.email}
+												onChange={handleInputChange}
+												required
+												className='mt-1'
+												placeholder='ray@yourbusiness.com'
+											/>
+										</div>
+
+										<div>
+											<Label htmlFor='businessName'>
+												Business Name
+											</Label>
+											<Input
+												id='businessName'
+												name='businessName'
+												value={formData.businessName}
+												onChange={handleInputChange}
+												className='mt-1'
+												placeholder='Your Business Name'
+											/>
+										</div>
+
+										<div>
+											<Label htmlFor='businessType'>
+												Business Type
+											</Label>
+											<select
+												id='businessType'
+												name='businessType'
+												value={formData.businessType}
+												onChange={handleInputChange}
+												className='w-full mt-1 px-3 py-2 border border-input rounded-md bg-background'>
+												<option value=''>
+													Select your business type
+												</option>
+												<option value='consulting'>
+													Consulting
+												</option>
+												<option value='construction'>
+													Construction
+												</option>
+												<option value='healthcare'>
+													Healthcare
+												</option>
+												<option value='professional-services'>
+													Professional Services
+												</option>
+												<option value='restaurant'>
+													Restaurant/Food Service
+												</option>
+												<option value='retail'>
+													Retail
+												</option>
+												<option value='other'>
+													Other
+												</option>
+											</select>
+										</div>
+
+										<div>
+											<Label htmlFor='grossRevenue'>
+												Annual Gross Revenue
+											</Label>
+											<select
+												id='grossRevenue'
+												name='grossRevenue'
+												value={formData.grossRevenue}
+												onChange={handleInputChange}
+												className='w-full mt-1 px-3 py-2 border border-input rounded-md bg-background'>
+												<option value=''>
+													Select your revenue range
+												</option>
+												<option value='under-100k'>
+													Under $100,000
+												</option>
+												<option value='100k-250k'>
+													$100,000 - $250,000
+												</option>
+												<option value='250k-500k'>
+													$250,000 - $500,000
+												</option>
+												<option value='500k-1m'>
+													$500,000 - $1,000,000
+												</option>
+												<option value='1m-2m'>
+													$1,000,000 - $2,000,000
+												</option>
+												<option value='over-2m'>
+													Over $2,000,000
+												</option>
+											</select>
+										</div>
+
+										{/* Error Message */}
+										{formError && (
+											<div className='bg-red-50 border border-red-200 rounded-md p-3 mb-4'>
+												<p className='text-sm text-red-600 font-medium'>
+													{formError}
+												</p>
+											</div>
+										)}
+
+										<Button
+											type='button'
+											className='w-full text-lg py-6 mt-6 bg-red-600 hover:bg-red-700'
+											onClick={handleRegisterClick}
+											disabled={isLoading}>
+											{isLoading ? (
+												<>
+													<div className='mr-2 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent' />
+													Registering...
+												</>
+											) : (
+												<>
+													<Video className='mr-2 h-5 w-5' />
+													Reserve My Seat Now
+												</>
+											)}
+										</Button>
+
+										<p className='text-xs text-muted-foreground text-center mt-4'>
+											By registering, you'll receive
+											webinar details and helpful
+											bookkeeping tips via email. You can
+											unsubscribe at any time. No spam,
+											ever.
+										</p>
+									</form>
+								</CardContent>
+							</Card>
+
+							{/* Trust Indicators */}
+							<div className='mt-6 text-center'>
+								<p className='text-sm font-medium text-muted-foreground mb-3'>
+									Trusted by Columbus area businesses
+								</p>
+								<div className='flex justify-center items-center gap-4'>
+									<div className='text-center'>
+										<div className='text-lg font-bold text-primary'>
+											1,200+
+										</div>
+										<div className='text-xs text-muted-foreground'>
+											Trained
+										</div>
+									</div>
+									<div className='text-center'>
+										<div className='text-lg font-bold text-primary'>
+											4.9★
+										</div>
+										<div className='text-xs text-muted-foreground'>
+											Rating
+										</div>
+									</div>
+									<div className='text-center'>
+										<div className='text-lg font-bold text-primary'>
+											98%
+										</div>
+										<div className='text-xs text-muted-foreground'>
+											Satisfaction
+										</div>
+									</div>
+								</div>
+							</div>
+
+							{/* Urgency */}
+							<div className='mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4'>
+								<div className='text-center'>
+									<h4 className='font-semibold text-yellow-800 mb-2'>
+										⏰ Don't Miss Out!
+									</h4>
+									<p className='text-sm text-yellow-700'>
+										This training fills up fast. The last 3
+										sessions sold out within 48 hours.
+										Reserve your seat now to avoid
+										disappointment.
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			{/* Thank You Modal */}
+			<ThankYouModal
+				isOpen={showThankYouModal}
+				onClose={() => setShowThankYouModal(false)}
+				title='Registration Confirmed! 🎉'
+				description="You're all set for the '7 Financial Tricks for Columbus Area Service Businesses' webinar. Check your email for the webinar link and calendar invite."
+				userEmail={formData.email}
+			/>
 		</div>
 	);
 }
