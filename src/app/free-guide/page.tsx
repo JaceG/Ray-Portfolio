@@ -1,14 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { EmailCollectionModal } from '@/components/EmailCollectionModal';
+import { ThankYouModal } from '@/components/ThankYouModal';
 import {
 	ArrowLeft,
 	Download,
@@ -20,209 +18,84 @@ import {
 	TrendingUp,
 	DollarSign,
 	FileText,
-	Mail,
-	Gift,
 } from 'lucide-react';
 
 export default function FreeGuide() {
-	const router = useRouter();
-	const [showEmailModal, setShowEmailModal] = useState(false);
+	const [showThankYouModal, setShowThankYouModal] = useState(false);
+	const [formError, setFormError] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
 		email: '',
 		businessName: '',
 		businessType: '',
+		grossRevenue: '',
 	});
-	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [isSubmitted, setIsSubmitted] = useState(false);
 
 	const handleInputChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
 	) => {
+		// Clear any existing error when user starts typing
+		if (formError) {
+			setFormError('');
+		}
+
 		setFormData({
 			...formData,
 			[e.target.name]: e.target.value,
 		});
 	};
 
-	const handleEmailModalSubmit = async (data: {
-		name: string;
-		email: string;
-	}) => {
-		// TODO: Integrate with email service (ConvertKit, Mailchimp, etc.)
-		console.log('Email collection submitted:', data);
+	const handleGetGuideClick = async () => {
+		// Clear any previous errors
+		setFormError('');
 
-		// Simulate API call
-		await new Promise((resolve) => setTimeout(resolve, 1000));
+		// Basic validation
+		if (!formData.firstName.trim()) {
+			setFormError('Please enter your first name');
+			return;
+		}
 
-		// Redirect to training video page
-		router.push('/training-video');
-	};
+		if (!formData.email.trim()) {
+			setFormError('Please enter your email address');
+			return;
+		}
 
-	const handleGetGuideClick = () => {
-		setShowEmailModal(true);
+		// Email format validation
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(formData.email)) {
+			setFormError('Please enter a valid email address');
+			return;
+		}
+
+		setIsLoading(true);
+
+		try {
+			// TODO: Integrate with email service to send the guide
+			console.log('Guide requested for:', formData);
+
+			// Simulate API call
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+
+			// Show thank you modal
+			setShowThankYouModal(true);
+		} catch (error) {
+			console.error('Error requesting guide:', error);
+			setFormError(
+				'There was an error processing your request. Please try again.'
+			);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
-		// Basic validation
-		if (!formData.firstName || !formData.email) {
-			alert('Please fill in all required fields');
-			return;
-		}
-
-		setIsSubmitting(true);
-
-		// Simulate form submission (replace with actual email service integration)
-		try {
-			// TODO: Integrate with email service (ConvertKit, Mailchimp, etc.)
-			console.log('Lead magnet form submitted:', formData);
-
-			// Simulate API call
-			await new Promise((resolve) => setTimeout(resolve, 2000));
-
-			setIsSubmitted(true);
-		} catch (error) {
-			console.error('Form submission error:', error);
-			alert('There was an error submitting the form. Please try again.');
-		} finally {
-			setIsSubmitting(false);
-		}
+		// Use the same validation as the button click
+		await handleGetGuideClick();
 	};
-
-	if (isSubmitted) {
-		return (
-			<div className='min-h-screen bg-gradient-to-br from-qb-green-50 via-white to-qb-green-100'>
-				{/* Header */}
-				<header className='bg-white border-b sticky top-0 z-50'>
-					<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-						<div className='flex justify-between items-center h-16'>
-							<Link
-								href='/'
-								className='flex items-center text-lg font-medium hover:text-primary transition-colors'>
-								<ArrowLeft className='mr-2 h-4 w-4' />
-								Ray Galloway Bookkeeping
-							</Link>
-						</div>
-					</div>
-				</header>
-
-				{/* Thank You Content */}
-				<div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12'>
-					<div className='max-w-4xl mx-auto text-center'>
-						<div className='mb-8'>
-							<CheckCircle className='h-20 w-20 text-green-500 mx-auto mb-6' />
-							<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-								Thank You, {formData.firstName}!
-							</h1>
-							<p className='text-xl text-muted-foreground mb-8'>
-								Your free guide is ready for download. Check
-								your email for the download link and bonus tips
-								for Delaware service businesses.
-							</p>
-						</div>
-
-						{/* Download Button */}
-						<Card className='bg-white shadow-xl border-2 border-primary/20 mb-8 max-w-2xl mx-auto'>
-							<CardContent className='pt-8'>
-								<div className='flex items-center justify-center mb-6'>
-									<div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4'>
-										<FileText className='h-8 w-8 text-primary' />
-									</div>
-									<div className='text-left'>
-										<h3 className='text-xl font-bold'>
-											7 Financial Tricks for Delaware
-											Service Businesses
-										</h3>
-										<p className='text-muted-foreground'>
-											PDF Guide • 15 pages • Instant
-											download
-										</p>
-									</div>
-								</div>
-
-								<Button
-									size='lg'
-									className='w-full text-lg py-6 mb-4'
-									onClick={() => {
-										// TODO: Trigger actual PDF download
-										console.log('Downloading PDF guide...');
-										alert(
-											'PDF download would start here. Add actual PDF file to public/downloads/'
-										);
-									}}>
-									<Download className='mr-2 h-5 w-5' />
-									Download Your Free Guide Now
-								</Button>
-
-								<p className='text-sm text-muted-foreground'>
-									Can't download? Check your email for the
-									direct link.
-								</p>
-							</CardContent>
-						</Card>
-
-						{/* Next Steps */}
-						<div className='grid md:grid-cols-2 gap-6 mb-12'>
-							<Card>
-								<CardContent className='pt-6'>
-									<Mail className='h-12 w-12 text-primary mx-auto mb-4' />
-									<h3 className='font-bold mb-2'>
-										Check Your Email
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										We've sent you the download link plus 3
-										bonus tips specifically for Delaware and
-										Columbus area businesses.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<Gift className='h-12 w-12 text-primary mx-auto mb-4' />
-									<h3 className='font-bold mb-2'>
-										Bonus Content
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Get access to our exclusive email
-										series: "The Delaware Business Owner's
-										Guide to Stress-Free Bookkeeping"
-									</p>
-								</CardContent>
-							</Card>
-						</div>
-
-						{/* CTA Section */}
-						<div className='bg-white rounded-xl shadow-lg p-8'>
-							<h3 className='text-2xl font-bold mb-4'>
-								Ready to Get Your Books in Order?
-							</h3>
-							<p className='text-muted-foreground mb-6'>
-								Let's discuss how I can help implement these
-								strategies for your{' '}
-								{formData.businessName || 'business'}.
-							</p>
-							<div className='flex flex-col sm:flex-row gap-4 justify-center'>
-								<Button size='lg' asChild>
-									<Link href='/book-a-call'>
-										Schedule Free Consultation
-									</Link>
-								</Button>
-								<Button variant='outline' size='lg' asChild>
-									<Link href='/'>
-										Learn More About My Services
-									</Link>
-								</Button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		);
-	}
 
 	return (
 		<div className='min-h-screen bg-gradient-to-br from-qb-green-50 via-white to-qb-green-100'>
@@ -260,15 +133,15 @@ export default function FreeGuide() {
 							7 Financial Tricks for
 							<br />
 							<span className='text-primary'>
-								Delaware Service Businesses
+								Columbus Area Service Businesses
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
 							Discover the insider strategies I use to help
-							Delaware and Columbus area service businesses save
-							60+ hours per year and increase their profit margins
-							by an average of 18%.
+							Columbus area service businesses save 60+ hours per
+							year and increase their profit margins by an average
+							of 18%.
 						</p>
 
 						{/* Social Proof */}
@@ -307,7 +180,7 @@ export default function FreeGuide() {
 										icon: (
 											<DollarSign className='h-6 w-6' />
 										),
-										title: 'The Delaware Tax Advantage',
+										title: 'Columbus Area Tax Strategies',
 										description:
 											'How to leverage local tax incentives that 90% of service businesses miss',
 									},
@@ -385,8 +258,9 @@ export default function FreeGuide() {
 										"This guide helped me identify $3,200 in
 										missed deductions and streamline my
 										monthly bookkeeping from 8 hours to just
-										2. Ray's local knowledge of Delaware
-										business regulations is invaluable."
+										2. Ray's local knowledge of Columbus
+										area business regulations is
+										invaluable."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
@@ -399,7 +273,7 @@ export default function FreeGuide() {
 												Sarah Mitchell
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Mitchell Consulting, Delaware OH
+												Mitchell Consulting, Columbus OH
 											</p>
 										</div>
 									</div>
@@ -521,12 +395,65 @@ export default function FreeGuide() {
 											</select>
 										</div>
 
+										<div>
+											<Label htmlFor='grossRevenue'>
+												Annual Gross Revenue
+											</Label>
+											<select
+												id='grossRevenue'
+												name='grossRevenue'
+												value={formData.grossRevenue}
+												onChange={handleInputChange}
+												className='w-full mt-1 px-3 py-2 border border-input rounded-md bg-background'>
+												<option value=''>
+													Select your revenue range
+												</option>
+												<option value='under-100k'>
+													Under $100,000
+												</option>
+												<option value='100k-250k'>
+													$100,000 - $250,000
+												</option>
+												<option value='250k-500k'>
+													$250,000 - $500,000
+												</option>
+												<option value='500k-1m'>
+													$500,000 - $1,000,000
+												</option>
+												<option value='1m-2m'>
+													$1,000,000 - $2,000,000
+												</option>
+												<option value='over-2m'>
+													Over $2,000,000
+												</option>
+											</select>
+										</div>
+
+										{/* Error Message */}
+										{formError && (
+											<div className='bg-red-50 border border-red-200 rounded-md p-3 mb-4'>
+												<p className='text-sm text-red-600 font-medium'>
+													{formError}
+												</p>
+											</div>
+										)}
+
 										<Button
 											type='button'
 											className='w-full text-lg py-6 mt-6'
-											onClick={handleGetGuideClick}>
-											<Download className='mr-2 h-5 w-5' />
-											Get My Free Guide Now
+											onClick={handleGetGuideClick}
+											disabled={isLoading}>
+											{isLoading ? (
+												<>
+													<div className='mr-2 h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent' />
+													Sending...
+												</>
+											) : (
+												<>
+													<Download className='mr-2 h-5 w-5' />
+													Get My Free Guide Now
+												</>
+											)}
 										</Button>
 
 										<p className='text-xs text-muted-foreground text-center mt-4'>
@@ -542,8 +469,7 @@ export default function FreeGuide() {
 							{/* Trust Indicators */}
 							<div className='mt-6 text-center'>
 								<p className='text-sm font-medium text-muted-foreground mb-3'>
-									Trusted by Delaware & Columbus area
-									businesses
+									Trusted by Columbus area businesses
 								</p>
 								<div className='flex justify-center items-center gap-4'>
 									<div className='text-center'>
@@ -577,14 +503,13 @@ export default function FreeGuide() {
 				</div>
 			</div>
 
-			{/* Email Collection Modal */}
-			<EmailCollectionModal
-				isOpen={showEmailModal}
-				onClose={() => setShowEmailModal(false)}
-				onSubmit={handleEmailModalSubmit}
-				title='Where should I send a link to the training?'
-				description='Enter your details below to get instant access to the video training'
-				buttonText='Send Me The Training Link'
+			{/* Thank You Modal */}
+			<ThankYouModal
+				isOpen={showThankYouModal}
+				onClose={() => setShowThankYouModal(false)}
+				title='Thank You for Your Request!'
+				description='Your free guide "7 Financial Tricks for Columbus Area Service Businesses" will be emailed to you shortly.'
+				userEmail={formData.email}
 			/>
 		</div>
 	);

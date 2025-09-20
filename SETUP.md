@@ -481,16 +481,24 @@ The website includes a comprehensive lead magnet system with "7 Financial Tricks
 - Email Address (required)
 - Business Name
 - Business Type (dropdown)
+- Annual Gross Revenue (dropdown with ranges)
 
 ### Email Integration Setup
 
-**Current status:** Forms log to console (development mode)
+**Current status:** Forms show thank you modal and log to console (development mode)
+
+**User Flow:**
+1. User fills out form with name, email, business details, and revenue range
+2. User clicks "Get My Free Guide Now" button
+3. Form validates required fields (name and email)
+4. Thank you modal appears confirming guide will be emailed
+5. Form data is logged to console (ready for email service integration)
 
 **To integrate with email service:**
 
 1. **ConvertKit Integration** (recommended):
 ```tsx
-// In LeadMagnetForm.tsx, replace the TODO section:
+// In free-guide/page.tsx, replace the TODO section in handleGetGuideClick:
 const response = await fetch('https://api.convertkit.com/v3/forms/YOUR_FORM_ID/subscribe', {
   method: 'POST',
   headers: {
@@ -504,9 +512,17 @@ const response = await fetch('https://api.convertkit.com/v3/forms/YOUR_FORM_ID/s
       last_name: formData.lastName,
       business_name: formData.businessName,
       business_type: formData.businessType,
+      gross_revenue: formData.grossRevenue,
     }
   }),
 });
+
+if (response.ok) {
+  // Send the PDF guide via email automation in ConvertKit
+  setShowThankYouModal(true);
+} else {
+  alert('There was an error. Please try again.');
+}
 ```
 
 2. **Mailchimp Integration**:
@@ -518,6 +534,12 @@ const response = await fetch('/api/mailchimp-subscribe', {
   body: JSON.stringify(formData),
 });
 ```
+
+3. **Email Service Setup Steps:**
+   - Create email automation sequence in your chosen service
+   - Set up trigger when new subscriber is added
+   - Email 1: Send PDF guide attachment immediately
+   - Email 2-5: Follow-up sequence with tips and consultation offers
 
 ### Download Functionality
 
