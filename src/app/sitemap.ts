@@ -138,6 +138,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: 'monthly',
 			priority: 0.7,
 		},
+		{
+			url: `${baseUrl}/blog/small-business-tax-deductions`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
+		{
+			url: `${baseUrl}/blog/quickbooks-vs-excel-service-business`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
+		{
+			url: `${baseUrl}/blog/monthly-bookkeeping-checklist-service-business`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
+		{
+			url: `${baseUrl}/blog/service-business-pricing-strategy`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
 		// Pricing Page
 		{
 			url: `${baseUrl}/pricing`,
