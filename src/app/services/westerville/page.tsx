@@ -19,17 +19,19 @@ import {
 	Shield,
 	Award,
 	Briefcase,
+	Home,
+	Landmark,
 } from 'lucide-react';
 
 export const metadata = {
-	title: 'Columbus Ohio Bookkeeping Services | QuickBooks Expert | Ray Galloway',
+	title: 'Westerville Ohio Bookkeeping Services | Historic District Business Support',
 	description:
-		'Professional bookkeeping services for Columbus, OH businesses. QuickBooks ProAdvisor with 10+ years experience. Serving downtown Columbus to suburban areas.',
+		'Professional bookkeeping services for Westerville, OH businesses. Supporting Uptown Westerville and surrounding business community with expert QuickBooks management.',
 	keywords:
-		'bookkeeping Columbus Ohio, QuickBooks Columbus OH, accountant Columbus Ohio, small business bookkeeping Columbus, financial services Columbus OH',
+		'bookkeeping Westerville Ohio, QuickBooks Westerville OH, accountant Westerville Ohio, Uptown Westerville business, historic district bookkeeping',
 };
 
-export default function ColumbusServices() {
+export default function WestervilleServices() {
 	return (
 		<div className='min-h-screen bg-white'>
 			{/* Header */}
@@ -59,61 +61,58 @@ export default function ColumbusServices() {
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
 							<MapPin className='h-4 w-4 text-primary' />
 							<span className='text-sm font-medium text-primary'>
-								COLUMBUS, OHIO
+								WESTERVILLE, OHIO
 							</span>
 						</div>
 
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-							Expert Bookkeeping Services for
+							Professional Bookkeeping for
 							<br />
 							<span className='text-primary'>
-								Columbus, Ohio Businesses
+								Westerville, Ohio Businesses
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-							From downtown Columbus to the suburban business
-							districts, Ray Galloway provides professional
-							QuickBooks bookkeeping services to help your
-							business thrive in Central Ohio's competitive
-							market.
+							Serving Westerville's historic business community
+							with modern QuickBooks bookkeeping services. From
+							Uptown Westerville to the surrounding business
+							districts, helping local enterprises achieve
+							financial success.
 						</p>
 
 						<div className='max-w-4xl mx-auto mb-8 p-6 bg-white/80 rounded-lg shadow-sm'>
 							<p className='text-muted-foreground leading-relaxed'>
-								Columbus is the heartbeat of Ohio, and I've been
-								privileged to serve businesses across this
-								dynamic metropolitan area for over a decade.
-								From the bustling financial district downtown
-								where I've worked with Fortune 500 companies
-								near the Huntington Center, to the vibrant Short
-								North Arts District where I regularly attend
-								Gallery Hop and support creative entrepreneurs,
-								I understand the diverse economic landscape that
-								makes Columbus unique. I've helped businesses
+								Westerville's rich history as the former
+								headquarters of the Anti-Saloon League gives
+								this community a unique character that I've come
+								to deeply appreciate through years of serving
+								local businesses. From the vibrant Uptown
+								district with its locally-owned shops and cafes
+								where I often meet clients, to the beautiful
+								Otterbein University campus that brings youthful
+								energy to our business community, I understand
+								the delicate balance between preserving
+								Westerville's historic charm and embracing
+								modern growth. I've worked with businesses
+								throughout the diverse neighborhoods, from the
+								stately historic homes near State Street to the
+								newer developments along Maxtown Road and
+								Schrock Road business districts. Whether you're
+								located near the scenic Alum Creek or closer to
+								Cleveland Avenue's commercial corridor, I
+								appreciate how Westerville's 20-minute proximity
+								to downtown Columbus provides the perfect blend
+								of small-town community feel with big-city
+								business opportunities. I've helped clients
 								navigate everything from the seasonal rhythms of
-								German Village restaurants during Oktoberfest,
-								to the year-round operations of Grandview
-								Heights professional services, and the rapid
-								growth of tech startups in the Arena District.
-								Whether your business is located in the historic
-								Brewery District with its converted warehouses,
-								the family-friendly neighborhoods of
-								Clintonville and Bexley, or the corporate
-								corridors stretching toward New Albany and
-								Dublin, I appreciate how Columbus's central
-								location and diverse economy create
-								opportunities for businesses of every size and
-								industry. I've seen firsthand how this city
-								supports innovation - from the research
-								partnerships with The Ohio State University to
-								the thriving startup ecosystem in places like
-								Rev1 Ventures - and I bring that same
-								forward-thinking approach to financial
-								management, helping Columbus businesses leverage
-								their position in one of America's most
-								business-friendly cities to achieve sustainable
-								growth and success.
+								businesses that serve Otterbein students to the
+								year-round operations of established
+								professional practices, and I understand that
+								Westerville businesses value the same qualities
+								that define this community: integrity,
+								reliability, and a commitment to excellence that
+								honors both tradition and innovation.
 							</p>
 						</div>
 
@@ -135,22 +134,22 @@ export default function ColumbusServices() {
 							</Button>
 						</div>
 
-						{/* Columbus Stats */}
+						{/* Westerville Stats */}
 						<div className='grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto'>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									75+
+									45+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Columbus Clients
+									Westerville Clients
 								</div>
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									10+
+									9+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Years Experience
+									Years Serving Area
 								</div>
 							</div>
 							<div className='text-center'>
@@ -163,7 +162,7 @@ export default function ColumbusServices() {
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									24hr
+									Same Day
 								</div>
 								<div className='text-sm text-muted-foreground'>
 									Response Time
@@ -174,47 +173,47 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus Business Expertise */}
+			{/* Why Westerville Businesses Choose Ray */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Why Columbus Businesses Trust Ray
+								Why Westerville Businesses Choose Ray
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Local expertise for Central Ohio's diverse
-								business landscape
+								Combining historic charm with modern financial
+								expertise
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 							<Card>
 								<CardContent className='pt-6'>
-									<Building className='h-12 w-12 text-primary mb-4' />
+									<Landmark className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Columbus Market Knowledge
+										Historic District Expertise
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Deep understanding of Columbus business
-										environment, from downtown corporations
-										to suburban service businesses in
-										Grandview, Clintonville, and beyond.
+										Deep understanding of Uptown
+										Westerville's unique business
+										environment, from historic storefronts
+										to modern professional offices.
 									</p>
 								</CardContent>
 							</Card>
 
 							<Card>
 								<CardContent className='pt-6'>
-									<Briefcase className='h-12 w-12 text-primary mb-4' />
+									<Building className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Diverse Industry Experience
+										Diverse Business Experience
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Worked with Columbus businesses across
-										industries: professional services,
-										healthcare, restaurants, retail, and
-										technology startups.
+										Extensive experience with Westerville's
+										mix of retail, professional services,
+										healthcare, and educational support
+										businesses.
 									</p>
 								</CardContent>
 							</Card>
@@ -223,13 +222,13 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Users className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Central Ohio Network
+										Community Business Network
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Strong relationships with Columbus area
-										banks, attorneys, CPAs, and business
-										advisors. Connected to the local
-										business community.
+										Strong connections with Westerville Area
+										Chamber of Commerce, local banks, and
+										business professionals throughout the
+										community.
 									</p>
 								</CardContent>
 							</Card>
@@ -238,27 +237,13 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Clock className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Flexible Service Options
+										Reliable Local Service
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Remote services for efficiency, with
-										in-person meetings available throughout
-										the Columbus metro area when needed.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<TrendingUp className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										Growth-Focused Approach
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Understand Columbus's dynamic business
-										growth. Help scale your financial
-										systems as your business expands in
-										Central Ohio.
+										Consistent, dependable service with
+										quick response times and flexible
+										meeting options throughout Westerville
+										and surrounding areas.
 									</p>
 								</CardContent>
 							</Card>
@@ -267,13 +252,28 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Shield className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Ohio Tax Expertise
+										Ohio Compliance Expertise
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Specialized knowledge of Ohio state tax
-										requirements, Columbus city tax
-										implications, and multi-jurisdiction
-										compliance.
+										Thorough knowledge of Ohio state tax
+										requirements, Delaware County
+										regulations, and Westerville business
+										compliance needs.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card>
+								<CardContent className='pt-6'>
+									<Award className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Educational Community Focus
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Understanding of Westerville's
+										educational heritage and support for
+										businesses serving the academic
+										community and families.
 									</p>
 								</CardContent>
 							</Card>
@@ -282,68 +282,68 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus-Specific Services */}
+			{/* Westerville Business Services */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Specialized Services for Columbus Businesses
+								Bookkeeping Services for Westerville Businesses
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Tailored solutions for Central Ohio's business
-								community
+								Modern financial management for historic
+								Westerville
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 gap-8'>
 							{[
 								{
-									icon: <Building className='h-8 w-8' />,
-									title: 'Multi-Location Business Management',
+									icon: <Landmark className='h-8 w-8' />,
+									title: 'Historic District Business Support',
 									description:
-										'Perfect for Columbus businesses with multiple locations across Central Ohio.',
+										'Specialized bookkeeping for Uptown Westerville businesses, from boutiques to professional services.',
 									features: [
-										'Consolidated reporting',
-										'Location-specific P&L',
-										'Inter-company transactions',
-										'Franchise accounting',
+										'Retail point-of-sale integration',
+										'Seasonal business planning',
+										'Historic tax credit tracking',
+										'Tourism revenue management',
 									],
 								},
 								{
-									icon: <Users className='h-8 w-8' />,
-									title: 'Professional Services Bookkeeping',
+									icon: <Briefcase className='h-8 w-8' />,
+									title: 'Professional Services Accounting',
 									description:
-										"Specialized support for Columbus's thriving professional services sector.",
+										'Comprehensive financial management for Westerville professional service providers.',
 									features: [
-										'Project-based accounting',
-										'Time & billing integration',
-										'Client retainer management',
-										'Professional liability tracking',
+										'Client billing & collections',
+										'Project profitability tracking',
+										'Professional liability management',
+										'Partnership accounting',
 									],
 								},
 								{
-									icon: <TrendingUp className='h-8 w-8' />,
-									title: 'Startup & Scale-up Support',
+									icon: <Home className='h-8 w-8' />,
+									title: 'Healthcare & Wellness Support',
 									description:
-										'Help Columbus startups build solid financial foundations for growth.',
+										'Specialized accounting for Westerville healthcare providers and wellness businesses.',
 									features: [
-										'Investor reporting',
-										'Burn rate analysis',
-										'Funding preparation',
-										'Scalable systems setup',
+										'Insurance billing support',
+										'Patient payment tracking',
+										'Medical equipment depreciation',
+										'HIPAA-compliant documentation',
 									],
 								},
 								{
 									icon: <Calculator className='h-8 w-8' />,
-									title: 'Restaurant & Hospitality',
+									title: 'Educational Services Bookkeeping',
 									description:
-										"Specialized accounting for Columbus's vibrant food and hospitality scene.",
+										'Financial management for tutoring centers, educational consultants, and learning centers.',
 									features: [
-										'Cost of goods tracking',
-										'Tip reporting',
-										'Inventory management',
-										'Multi-revenue stream handling',
+										'Student enrollment tracking',
+										'Program revenue analysis',
+										'Educational material costs',
+										'Seasonal cash flow planning',
 									],
 								},
 							].map((service, index) => (
@@ -382,16 +382,16 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus Business Success Stories */}
+			{/* Westerville Success Stories */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Columbus Business Success Stories
+								Westerville Business Success Stories
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Real results from Central Ohio businesses
+								Real results from Westerville business owners
 							</p>
 						</div>
 
@@ -407,25 +407,25 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"Ray helped us scale from one Columbus
-										location to three across Central Ohio.
-										His multi-location expertise and
-										understanding of Ohio tax requirements
-										saved us from major compliance issues."
+										"Ray helped our Uptown Westerville
+										boutique navigate the complexities of
+										retail accounting. His understanding of
+										our historic district business model and
+										seasonal fluctuations was invaluable."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												MR
+												JW
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Maria Rodriguez
+												Jennifer Walsh
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Rodriguez Restaurants, Columbus
-												OH
+												Vintage Charm Boutique,
+												Westerville OH
 											</p>
 										</div>
 									</div>
@@ -443,24 +443,25 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"As a Columbus tech startup, we needed
-										someone who understood both traditional
-										accounting and modern business models.
-										Ray's expertise helped us prepare for
-										Series A funding."
+										"As a Westerville healthcare provider, I
+										needed someone who understood medical
+										billing complexities. Ray's expertise
+										and attention to compliance details gave
+										me complete peace of mind."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												DK
+												DR
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												David Kim
+												Dr. Robert Martinez
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												TechFlow Solutions, Columbus OH
+												Westerville Family Practice,
+												Westerville OH
 											</p>
 										</div>
 									</div>
@@ -478,25 +479,25 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"Ray's knowledge of Columbus's business
-										landscape is incredible. He connected us
-										with the right bank and helped navigate
-										city requirements for our downtown
-										expansion."
+										"Ray's support helped our Westerville
+										tutoring center grow from a small
+										operation to serving hundreds of
+										students. His educational business
+										expertise made all the difference."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												AB
+												LT
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Amanda Brown
+												Lisa Thompson
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Brown & Associates Law, Columbus
-												OH
+												Westerville Learning Center,
+												Westerville OH
 											</p>
 										</div>
 									</div>
@@ -515,24 +516,24 @@ export default function ColumbusServices() {
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
 										"Working with Ray transformed our
-										Columbus medical practice's finances.
-										His healthcare industry knowledge and
-										attention to compliance details gave us
-										complete peace of mind."
+										Westerville law practice's financial
+										management. His professional approach
+										and local knowledge helped us optimize
+										our operations and plan for expansion."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												TP
+												AB
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Dr. Thomas Parker
+												Attorney Brian Adams
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Parker Family Medicine, Columbus
-												OH
+												Adams & Associates Law,
+												Westerville OH
 											</p>
 										</div>
 									</div>
@@ -543,38 +544,31 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Service Areas in Columbus */}
+			{/* Westerville Areas Served */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl font-bold mb-4'>
-								Serving All Columbus Area Neighborhoods
+								Serving All Westerville Business Areas
 							</h2>
 							<p className='text-muted-foreground'>
 								Professional bookkeeping services throughout
-								Central Ohio
+								Westerville, Ohio
 							</p>
 						</div>
 
-						<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+						<div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
 							{[
-								'Downtown Columbus',
-								'Short North',
-								'German Village',
-								'Grandview Heights',
-								'Clintonville',
-								'Bexley',
-								'Upper Arlington',
-								'Hilliard',
-								'Grove City',
-								'Reynoldsburg',
-								'Gahanna',
-								'Pickerington',
-								'New Albany',
-								'Lewis Center',
-								'Powell',
-								'Dublin',
+								'Uptown Westerville',
+								'Otterbein University Area',
+								'Maxtown Road Corridor',
+								'Cleveland Avenue',
+								'Schrock Road Business District',
+								'Sunbury Road',
+								'State Street Historic District',
+								'Westerville North',
+								'Minerva Park',
 							].map((area, index) => (
 								<div
 									key={index}
@@ -589,26 +583,26 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus CTA */}
+			{/* Westerville CTA */}
 			<section className='py-16 bg-gradient-to-br from-primary/5 to-primary/10'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='grid lg:grid-cols-2 gap-12 items-center'>
 							<div>
 								<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
-									Ready to Partner with Columbus's
+									Ready to Partner with Westerville's
 									<br />
 									<span className='text-primary'>
-										Most Trusted Bookkeeping Expert?
+										Trusted Bookkeeping Expert?
 									</span>
 								</h2>
 
 								<p className='text-xl text-muted-foreground mb-8'>
-									Join 75+ Columbus area businesses that rely
-									on Ray for professional financial
-									management. From startups to established
-									companies, get the expertise you need to
-									thrive in Central Ohio.
+									Join 45+ Westerville businesses that trust
+									Ray with their financial management. From
+									historic Uptown businesses to modern
+									professional services, get the expertise you
+									need to thrive.
 								</p>
 
 								<div className='space-y-4 mb-8'>
@@ -619,7 +613,7 @@ export default function ColumbusServices() {
 												(555) 123-4567
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Serving all Columbus metro areas
+												Serving all Westerville areas
 											</p>
 										</div>
 									</div>
@@ -630,7 +624,7 @@ export default function ColumbusServices() {
 												ray@gallowaybookkeeping.com
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Quick response guaranteed
+												Quick local response
 											</p>
 										</div>
 									</div>
@@ -638,11 +632,10 @@ export default function ColumbusServices() {
 										<MapPin className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												Serving Greater Columbus Area
+												Westerville & Surrounding Areas
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Remote & in-person options
-												available
+												In-person meetings available
 											</p>
 										</div>
 									</div>
@@ -668,8 +661,8 @@ export default function ColumbusServices() {
 
 							<div>
 								<LeadMagnetForm
-									title='Get Your Free Columbus Business Guide'
-									description='"7 Financial Tricks for Central Ohio Service Businesses"'
+									title='Get Your Free Westerville Business Guide'
+									description='"7 Financial Strategies for Historic District Businesses"'
 									buttonText='Download Free Guide'
 									variant='default'
 								/>

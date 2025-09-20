@@ -76,6 +76,47 @@ export default function DelawareOHServices() {
 							Delaware's business community.
 						</p>
 
+						<div className='max-w-4xl mx-auto mb-8 p-6 bg-white/80 rounded-lg shadow-sm'>
+							<p className='text-muted-foreground leading-relaxed'>
+								Delaware, Ohio isn't just where I provide
+								bookkeeping services - it's my hometown, and
+								that personal connection makes all the
+								difference in how I serve our local business
+								community. Growing up here, I watched this city
+								evolve from a quiet county seat to a thriving
+								community that perfectly balances small-town
+								charm with modern business opportunities. I know
+								every corner of this town, from the historic
+								downtown district along North Sandusky Street
+								where I actually owned and operated my own
+								retail business for several years, to the newer
+								commercial developments near the Delaware County
+								Fairgrounds where I've helped numerous seasonal
+								and year-round businesses optimize their
+								financial operations. I've walked the same
+								streets as my clients, shopped at the same local
+								businesses, and understand the unique challenges
+								that come with operating in a community where
+								everyone knows everyone. Whether your business
+								is located near Ohio Wesleyan University where
+								I've worked with student-oriented enterprises,
+								along the US-23 corridor that brings steady
+								traffic through our town, or in the residential
+								areas where many home-based businesses thrive, I
+								bring not just professional expertise but
+								genuine community investment to every client
+								relationship. Having been part of Delaware's
+								business community as both an entrepreneur and
+								service provider, I understand the seasonal
+								rhythms of our local economy, the importance of
+								supporting each other during challenging times,
+								and the incredible opportunities that come from
+								being perfectly positioned between Columbus's
+								urban energy and Ohio's beautiful rural
+								landscapes.
+							</p>
+						</div>
+
 						<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
 							<CalendlyModal
 								buttonText='Schedule Free Consultation'

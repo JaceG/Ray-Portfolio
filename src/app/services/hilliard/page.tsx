@@ -19,17 +19,18 @@ import {
 	Shield,
 	Award,
 	Briefcase,
+	Home,
 } from 'lucide-react';
 
 export const metadata = {
-	title: 'Columbus Ohio Bookkeeping Services | QuickBooks Expert | Ray Galloway',
+	title: 'Hilliard Ohio Bookkeeping Services | Local QuickBooks Expert | Ray Galloway',
 	description:
-		'Professional bookkeeping services for Columbus, OH businesses. QuickBooks ProAdvisor with 10+ years experience. Serving downtown Columbus to suburban areas.',
+		'Professional bookkeeping services for Hilliard, OH businesses. Local QuickBooks ProAdvisor serving Hilliard City Schools district and surrounding business community.',
 	keywords:
-		'bookkeeping Columbus Ohio, QuickBooks Columbus OH, accountant Columbus Ohio, small business bookkeeping Columbus, financial services Columbus OH',
+		'bookkeeping Hilliard Ohio, QuickBooks Hilliard OH, accountant Hilliard Ohio, small business bookkeeping Hilliard, financial services Hilliard OH',
 };
 
-export default function ColumbusServices() {
+export default function HilliardServices() {
 	return (
 		<div className='min-h-screen bg-white'>
 			{/* Header */}
@@ -59,61 +60,54 @@ export default function ColumbusServices() {
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
 							<MapPin className='h-4 w-4 text-primary' />
 							<span className='text-sm font-medium text-primary'>
-								COLUMBUS, OHIO
+								HILLIARD, OHIO
 							</span>
 						</div>
 
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-							Expert Bookkeeping Services for
+							Trusted Bookkeeping Services for
 							<br />
 							<span className='text-primary'>
-								Columbus, Ohio Businesses
+								Hilliard, Ohio Businesses
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-							From downtown Columbus to the suburban business
-							districts, Ray Galloway provides professional
-							QuickBooks bookkeeping services to help your
-							business thrive in Central Ohio's competitive
-							market.
+							Serving Hilliard's growing business community with
+							professional QuickBooks bookkeeping services. From
+							Old Hilliard to the Cemetery Road corridor, help
+							your business achieve financial success.
 						</p>
 
 						<div className='max-w-4xl mx-auto mb-8 p-6 bg-white/80 rounded-lg shadow-sm'>
 							<p className='text-muted-foreground leading-relaxed'>
-								Columbus is the heartbeat of Ohio, and I've been
-								privileged to serve businesses across this
-								dynamic metropolitan area for over a decade.
-								From the bustling financial district downtown
-								where I've worked with Fortune 500 companies
-								near the Huntington Center, to the vibrant Short
-								North Arts District where I regularly attend
-								Gallery Hop and support creative entrepreneurs,
-								I understand the diverse economic landscape that
-								makes Columbus unique. I've helped businesses
-								navigate everything from the seasonal rhythms of
-								German Village restaurants during Oktoberfest,
-								to the year-round operations of Grandview
-								Heights professional services, and the rapid
-								growth of tech startups in the Arena District.
-								Whether your business is located in the historic
-								Brewery District with its converted warehouses,
-								the family-friendly neighborhoods of
-								Clintonville and Bexley, or the corporate
-								corridors stretching toward New Albany and
-								Dublin, I appreciate how Columbus's central
-								location and diverse economy create
-								opportunities for businesses of every size and
-								industry. I've seen firsthand how this city
-								supports innovation - from the research
-								partnerships with The Ohio State University to
-								the thriving startup ecosystem in places like
-								Rev1 Ventures - and I bring that same
-								forward-thinking approach to financial
-								management, helping Columbus businesses leverage
-								their position in one of America's most
-								business-friendly cities to achieve sustainable
-								growth and success.
+								Having worked extensively throughout Hilliard, I
+								understand this community's unique blend of
+								historical charm and modern growth. Originally
+								known as Hilliard's Station, this vibrant city
+								developed around the Piqua and Indiana Railroad
+								station that once bisected the farmland, and
+								today that beautifully restored original train
+								station stands as a testament to our rich
+								heritage. I've helped businesses from the Early
+								Television Museum area (the only museum of its
+								kind in the nation!) to the bustling Cemetery
+								Road business corridor, and I'm familiar with
+								everything from the Heritage Trail Dog Park
+								where many of my clients walk their dogs during
+								our meetings, to the local favorites like The
+								Olive Tree Lebanese and Mediterranean Café where
+								I've shared many business lunches. Whether
+								you're located near the historic Hilliard
+								Village with its charming collection of period
+								buildings including the old caboose and log
+								cabin, or you're part of the newer developments
+								stretching toward Big Darby Creek and the Scioto
+								River, I understand the seasonal rhythms of
+								Hilliard businesses and the unique opportunities
+								that come with being perfectly positioned
+								between Columbus's urban energy and Ohio's
+								beautiful countryside.
 							</p>
 						</div>
 
@@ -135,22 +129,22 @@ export default function ColumbusServices() {
 							</Button>
 						</div>
 
-						{/* Columbus Stats */}
+						{/* Hilliard Stats */}
 						<div className='grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto'>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									75+
+									35+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Columbus Clients
+									Hilliard Clients
 								</div>
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									10+
+									8+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Years Experience
+									Years Serving Area
 								</div>
 							</div>
 							<div className='text-center'>
@@ -163,7 +157,7 @@ export default function ColumbusServices() {
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									24hr
+									Same Day
 								</div>
 								<div className='text-sm text-muted-foreground'>
 									Response Time
@@ -174,47 +168,47 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus Business Expertise */}
+			{/* Why Hilliard Businesses Choose Ray */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Why Columbus Businesses Trust Ray
+								Why Hilliard Businesses Choose Ray
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Local expertise for Central Ohio's diverse
-								business landscape
+								Local expertise for Hilliard's diverse business
+								community
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 							<Card>
 								<CardContent className='pt-6'>
-									<Building className='h-12 w-12 text-primary mb-4' />
+									<Home className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Columbus Market Knowledge
+										Hilliard Community Knowledge
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Deep understanding of Columbus business
-										environment, from downtown corporations
-										to suburban service businesses in
-										Grandview, Clintonville, and beyond.
+										Deep understanding of Hilliard's family-
+										oriented business environment, from Old
+										Hilliard's historic charm to the modern
+										developments along Cemetery Road.
 									</p>
 								</CardContent>
 							</Card>
 
 							<Card>
 								<CardContent className='pt-6'>
-									<Briefcase className='h-12 w-12 text-primary mb-4' />
+									<Building className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Diverse Industry Experience
+										Growing Business Focus
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Worked with Columbus businesses across
-										industries: professional services,
-										healthcare, restaurants, retail, and
-										technology startups.
+										Specialized in supporting Hilliard's
+										expanding business landscape, from
+										established family businesses to new
+										enterprises in developing areas.
 									</p>
 								</CardContent>
 							</Card>
@@ -223,13 +217,13 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Users className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Central Ohio Network
+										Local Business Network
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Strong relationships with Columbus area
-										banks, attorneys, CPAs, and business
-										advisors. Connected to the local
-										business community.
+										Strong connections with Hilliard Chamber
+										of Commerce, local banks, and business
+										professionals. Part of the community
+										business ecosystem.
 									</p>
 								</CardContent>
 							</Card>
@@ -238,27 +232,13 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Clock className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Flexible Service Options
+										Responsive Local Service
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Remote services for efficiency, with
-										in-person meetings available throughout
-										the Columbus metro area when needed.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<TrendingUp className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										Growth-Focused Approach
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Understand Columbus's dynamic business
-										growth. Help scale your financial
-										systems as your business expands in
-										Central Ohio.
+										Quick response times and flexible
+										meeting options throughout Hilliard.
+										Available for in-person consultations
+										when needed.
 									</p>
 								</CardContent>
 							</Card>
@@ -267,13 +247,28 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Shield className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Ohio Tax Expertise
+										Ohio Tax Compliance
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Specialized knowledge of Ohio state tax
-										requirements, Columbus city tax
-										implications, and multi-jurisdiction
-										compliance.
+										Expert knowledge of Ohio state tax
+										requirements, Franklin County
+										regulations, and Hilliard business
+										compliance needs.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card>
+								<CardContent className='pt-6'>
+									<Award className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Family Business Expertise
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Understanding of family-owned business
+										dynamics common in Hilliard, including
+										succession planning and multi-
+										generational financial management.
 									</p>
 								</CardContent>
 							</Card>
@@ -282,68 +277,68 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus-Specific Services */}
+			{/* Hilliard-Specific Services */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Specialized Services for Columbus Businesses
+								Bookkeeping Services for Hilliard Businesses
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Tailored solutions for Central Ohio's business
-								community
+								Comprehensive financial management for
+								Hilliard's business community
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 gap-8'>
 							{[
 								{
-									icon: <Building className='h-8 w-8' />,
-									title: 'Multi-Location Business Management',
+									icon: <Calculator className='h-8 w-8' />,
+									title: 'Small Business Bookkeeping',
 									description:
-										'Perfect for Columbus businesses with multiple locations across Central Ohio.',
+										'Complete monthly bookkeeping services tailored for Hilliard small businesses and family enterprises.',
 									features: [
-										'Consolidated reporting',
-										'Location-specific P&L',
-										'Inter-company transactions',
-										'Franchise accounting',
+										'Monthly financial statements',
+										'Bank reconciliation',
+										'Expense tracking',
+										'QuickBooks setup & training',
 									],
 								},
 								{
-									icon: <Users className='h-8 w-8' />,
-									title: 'Professional Services Bookkeeping',
+									icon: <Home className='h-8 w-8' />,
+									title: 'Retail & Service Business Support',
 									description:
-										"Specialized support for Columbus's thriving professional services sector.",
+										'Specialized accounting for Hilliard retail shops, restaurants, and service businesses.',
 									features: [
-										'Project-based accounting',
-										'Time & billing integration',
-										'Client retainer management',
-										'Professional liability tracking',
+										'Point-of-sale integration',
+										'Inventory management',
+										'Sales tax compliance',
+										'Multi-location reporting',
 									],
 								},
 								{
 									icon: <TrendingUp className='h-8 w-8' />,
-									title: 'Startup & Scale-up Support',
+									title: 'Growth Planning & Analysis',
 									description:
-										'Help Columbus startups build solid financial foundations for growth.',
+										'Financial insights and planning to help Hilliard businesses expand and thrive.',
 									features: [
-										'Investor reporting',
-										'Burn rate analysis',
-										'Funding preparation',
-										'Scalable systems setup',
+										'Cash flow forecasting',
+										'Profitability analysis',
+										'Budget planning',
+										'Growth strategy support',
 									],
 								},
 								{
-									icon: <Calculator className='h-8 w-8' />,
-									title: 'Restaurant & Hospitality',
+									icon: <FileText className='h-8 w-8' />,
+									title: 'Tax Preparation Support',
 									description:
-										"Specialized accounting for Columbus's vibrant food and hospitality scene.",
+										'Year-round tax organization and preparation assistance for Hilliard business owners.',
 									features: [
-										'Cost of goods tracking',
-										'Tip reporting',
-										'Inventory management',
-										'Multi-revenue stream handling',
+										'Quarterly tax estimates',
+										'Document organization',
+										'Deduction optimization',
+										'Tax deadline management',
 									],
 								},
 							].map((service, index) => (
@@ -382,16 +377,16 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus Business Success Stories */}
+			{/* Hilliard Success Stories */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Columbus Business Success Stories
+								Hilliard Business Success Stories
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Real results from Central Ohio businesses
+								Real results from Hilliard business owners
 							</p>
 						</div>
 
@@ -407,25 +402,26 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"Ray helped us scale from one Columbus
-										location to three across Central Ohio.
-										His multi-location expertise and
-										understanding of Ohio tax requirements
-										saved us from major compliance issues."
+										"Ray helped our Hilliard family
+										restaurant streamline our bookkeeping
+										and identify cost savings we never knew
+										existed. His local knowledge and
+										personal approach made all the
+										difference."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												MR
+												MG
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Maria Rodriguez
+												Maria Gonzalez
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Rodriguez Restaurants, Columbus
-												OH
+												Gonzalez Family Restaurant,
+												Hilliard OH
 											</p>
 										</div>
 									</div>
@@ -443,95 +439,24 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"As a Columbus tech startup, we needed
-										someone who understood both traditional
-										accounting and modern business models.
-										Ray's expertise helped us prepare for
-										Series A funding."
+										"As a Hilliard home services business,
+										we needed someone who understood our
+										seasonal fluctuations. Ray's cash flow
+										planning helped us navigate slow periods
+										and plan for growth."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												DK
+												BT
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												David Kim
+												Bob Thompson
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												TechFlow Solutions, Columbus OH
-											</p>
-										</div>
-									</div>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<div className='flex text-yellow-400 mb-4'>
-										{[...Array(5)].map((_, i) => (
-											<Star
-												key={i}
-												className='h-4 w-4 fill-current'
-											/>
-										))}
-									</div>
-									<p className='text-muted-foreground italic mb-4'>
-										"Ray's knowledge of Columbus's business
-										landscape is incredible. He connected us
-										with the right bank and helped navigate
-										city requirements for our downtown
-										expansion."
-									</p>
-									<div className='flex items-center'>
-										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
-											<span className='text-primary font-semibold text-sm'>
-												AB
-											</span>
-										</div>
-										<div>
-											<p className='font-semibold text-sm'>
-												Amanda Brown
-											</p>
-											<p className='text-xs text-muted-foreground'>
-												Brown & Associates Law, Columbus
-												OH
-											</p>
-										</div>
-									</div>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<div className='flex text-yellow-400 mb-4'>
-										{[...Array(5)].map((_, i) => (
-											<Star
-												key={i}
-												className='h-4 w-4 fill-current'
-											/>
-										))}
-									</div>
-									<p className='text-muted-foreground italic mb-4'>
-										"Working with Ray transformed our
-										Columbus medical practice's finances.
-										His healthcare industry knowledge and
-										attention to compliance details gave us
-										complete peace of mind."
-									</p>
-									<div className='flex items-center'>
-										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
-											<span className='text-primary font-semibold text-sm'>
-												TP
-											</span>
-										</div>
-										<div>
-											<p className='font-semibold text-sm'>
-												Dr. Thomas Parker
-											</p>
-											<p className='text-xs text-muted-foreground'>
-												Parker Family Medicine, Columbus
+												Thompson Landscaping, Hilliard
 												OH
 											</p>
 										</div>
@@ -543,38 +468,31 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Service Areas in Columbus */}
+			{/* Hilliard Areas Served */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl font-bold mb-4'>
-								Serving All Columbus Area Neighborhoods
+								Serving All Hilliard Business Areas
 							</h2>
 							<p className='text-muted-foreground'>
 								Professional bookkeeping services throughout
-								Central Ohio
+								Hilliard, Ohio
 							</p>
 						</div>
 
-						<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+						<div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
 							{[
-								'Downtown Columbus',
-								'Short North',
-								'German Village',
-								'Grandview Heights',
-								'Clintonville',
-								'Bexley',
-								'Upper Arlington',
-								'Hilliard',
-								'Grove City',
-								'Reynoldsburg',
-								'Gahanna',
-								'Pickerington',
-								'New Albany',
-								'Lewis Center',
-								'Powell',
-								'Dublin',
+								'Old Hilliard',
+								'Cemetery Road Corridor',
+								'Hilliard Rome Road',
+								'Norwich Township',
+								'Britton Parkway',
+								'Alton & Darby Creek',
+								'Hilliard Station',
+								'Brown Township',
+								'Heritage Golf Club Area',
 							].map((area, index) => (
 								<div
 									key={index}
@@ -589,26 +507,25 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus CTA */}
+			{/* Hilliard CTA */}
 			<section className='py-16 bg-gradient-to-br from-primary/5 to-primary/10'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='grid lg:grid-cols-2 gap-12 items-center'>
 							<div>
 								<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
-									Ready to Partner with Columbus's
+									Ready to Partner with Hilliard's
 									<br />
 									<span className='text-primary'>
-										Most Trusted Bookkeeping Expert?
+										Trusted Bookkeeping Professional?
 									</span>
 								</h2>
 
 								<p className='text-xl text-muted-foreground mb-8'>
-									Join 75+ Columbus area businesses that rely
-									on Ray for professional financial
-									management. From startups to established
-									companies, get the expertise you need to
-									thrive in Central Ohio.
+									Join 35+ Hilliard businesses that trust Ray
+									with their financial management. From family
+									businesses to growing enterprises, get the
+									local expertise you need to succeed.
 								</p>
 
 								<div className='space-y-4 mb-8'>
@@ -619,7 +536,7 @@ export default function ColumbusServices() {
 												(555) 123-4567
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Serving all Columbus metro areas
+												Serving all Hilliard areas
 											</p>
 										</div>
 									</div>
@@ -630,7 +547,7 @@ export default function ColumbusServices() {
 												ray@gallowaybookkeeping.com
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Quick response guaranteed
+												Quick local response
 											</p>
 										</div>
 									</div>
@@ -638,11 +555,10 @@ export default function ColumbusServices() {
 										<MapPin className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												Serving Greater Columbus Area
+												Hilliard & Surrounding Areas
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Remote & in-person options
-												available
+												In-person meetings available
 											</p>
 										</div>
 									</div>
@@ -668,8 +584,8 @@ export default function ColumbusServices() {
 
 							<div>
 								<LeadMagnetForm
-									title='Get Your Free Columbus Business Guide'
-									description='"7 Financial Tricks for Central Ohio Service Businesses"'
+									title='Get Your Free Hilliard Business Guide'
+									description='"7 Financial Tips for Growing Hilliard Businesses"'
 									buttonText='Download Free Guide'
 									variant='default'
 								/>

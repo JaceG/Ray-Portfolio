@@ -19,17 +19,19 @@ import {
 	Shield,
 	Award,
 	Briefcase,
+	Home,
+	Heart,
 } from 'lucide-react';
 
 export const metadata = {
-	title: 'Columbus Ohio Bookkeeping Services | QuickBooks Expert | Ray Galloway',
+	title: 'Gahanna Ohio Bookkeeping Services | Community-Focused Financial Management',
 	description:
-		'Professional bookkeeping services for Columbus, OH businesses. QuickBooks ProAdvisor with 10+ years experience. Serving downtown Columbus to suburban areas.',
+		'Professional bookkeeping services for Gahanna, OH businesses. Local QuickBooks expert serving the Gahanna community with personalized financial management.',
 	keywords:
-		'bookkeeping Columbus Ohio, QuickBooks Columbus OH, accountant Columbus Ohio, small business bookkeeping Columbus, financial services Columbus OH',
+		'bookkeeping Gahanna Ohio, QuickBooks Gahanna OH, accountant Gahanna Ohio, small business bookkeeping Gahanna, community business financial services',
 };
 
-export default function ColumbusServices() {
+export default function GahannaServices() {
 	return (
 		<div className='min-h-screen bg-white'>
 			{/* Header */}
@@ -59,61 +61,57 @@ export default function ColumbusServices() {
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
 							<MapPin className='h-4 w-4 text-primary' />
 							<span className='text-sm font-medium text-primary'>
-								COLUMBUS, OHIO
+								GAHANNA, OHIO
 							</span>
 						</div>
 
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-							Expert Bookkeeping Services for
+							Community-Focused Bookkeeping for
 							<br />
 							<span className='text-primary'>
-								Columbus, Ohio Businesses
+								Gahanna, Ohio Businesses
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-							From downtown Columbus to the suburban business
-							districts, Ray Galloway provides professional
-							QuickBooks bookkeeping services to help your
-							business thrive in Central Ohio's competitive
-							market.
+							Serving Gahanna's vibrant business community with
+							personalized QuickBooks bookkeeping services. From
+							Old Gahanna to Creekside, supporting local
+							businesses with the financial management they need
+							to thrive.
 						</p>
 
 						<div className='max-w-4xl mx-auto mb-8 p-6 bg-white/80 rounded-lg shadow-sm'>
 							<p className='text-muted-foreground leading-relaxed'>
-								Columbus is the heartbeat of Ohio, and I've been
-								privileged to serve businesses across this
-								dynamic metropolitan area for over a decade.
-								From the bustling financial district downtown
-								where I've worked with Fortune 500 companies
-								near the Huntington Center, to the vibrant Short
-								North Arts District where I regularly attend
-								Gallery Hop and support creative entrepreneurs,
-								I understand the diverse economic landscape that
-								makes Columbus unique. I've helped businesses
-								navigate everything from the seasonal rhythms of
-								German Village restaurants during Oktoberfest,
-								to the year-round operations of Grandview
-								Heights professional services, and the rapid
-								growth of tech startups in the Arena District.
-								Whether your business is located in the historic
-								Brewery District with its converted warehouses,
-								the family-friendly neighborhoods of
-								Clintonville and Bexley, or the corporate
-								corridors stretching toward New Albany and
-								Dublin, I appreciate how Columbus's central
-								location and diverse economy create
-								opportunities for businesses of every size and
-								industry. I've seen firsthand how this city
-								supports innovation - from the research
-								partnerships with The Ohio State University to
-								the thriving startup ecosystem in places like
-								Rev1 Ventures - and I bring that same
-								forward-thinking approach to financial
-								management, helping Columbus businesses leverage
-								their position in one of America's most
-								business-friendly cities to achieve sustainable
-								growth and success.
+								Gahanna holds a special place in my heart as the
+								"Herb Capital of Ohio," and I've been deeply
+								involved in this community's business landscape
+								for years. From the charming Ohio Herb Center
+								where I've learned about the city's unique
+								herbal heritage and attended workshops, to the
+								bustling Creekside District with its scenic
+								views of Big Walnut Creek, I understand what
+								makes Gahanna businesses tick. I've had the
+								pleasure of working with clients who participate
+								in the annual Creekside Blues & Jazz Festival,
+								and I've seen firsthand how this community comes
+								together to support local enterprises. Whether
+								your business is nestled in Old Gahanna with its
+								historic charm, located near the Gahanna Woods
+								State Nature Preserve where many of my clients
+								enjoy hiking, or part of the vibrant commercial
+								areas along Hamilton Road and Granville Street,
+								I appreciate the strong community spirit that
+								defines this city. I've helped businesses
+								navigate the seasonal fluctuations that come
+								with Gahanna's tourism and event calendar, and I
+								understand the unique opportunities that arise
+								from being perfectly positioned between
+								Columbus's urban amenities and the natural
+								beauty of Big Walnut Creek - it's this blend of
+								community focus and business acumen that makes
+								Gahanna such a wonderful place to work and grow
+								a business.
 							</p>
 						</div>
 
@@ -135,22 +133,22 @@ export default function ColumbusServices() {
 							</Button>
 						</div>
 
-						{/* Columbus Stats */}
+						{/* Gahanna Stats */}
 						<div className='grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto'>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									75+
+									30+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Columbus Clients
+									Gahanna Clients
 								</div>
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									10+
+									7+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Years Experience
+									Years in Community
 								</div>
 							</div>
 							<div className='text-center'>
@@ -158,7 +156,7 @@ export default function ColumbusServices() {
 									5.0★
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Client Rating
+									Community Rating
 								</div>
 							</div>
 							<div className='text-center'>
@@ -174,47 +172,47 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus Business Expertise */}
+			{/* Why Gahanna Businesses Choose Ray */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Why Columbus Businesses Trust Ray
+								Why Gahanna Businesses Choose Ray
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Local expertise for Central Ohio's diverse
-								business landscape
+								Community-focused service for Gahanna's local
+								business owners
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 							<Card>
 								<CardContent className='pt-6'>
-									<Building className='h-12 w-12 text-primary mb-4' />
+									<Heart className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Columbus Market Knowledge
+										Community Connection
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Deep understanding of Columbus business
-										environment, from downtown corporations
-										to suburban service businesses in
-										Grandview, Clintonville, and beyond.
+										Deep roots in the Gahanna community,
+										understanding local business culture and
+										supporting the growth of neighborhood
+										enterprises.
 									</p>
 								</CardContent>
 							</Card>
 
 							<Card>
 								<CardContent className='pt-6'>
-									<Briefcase className='h-12 w-12 text-primary mb-4' />
+									<Home className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Diverse Industry Experience
+										Local Business Expertise
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Worked with Columbus businesses across
-										industries: professional services,
-										healthcare, restaurants, retail, and
-										technology startups.
+										Specialized experience with Gahanna's
+										diverse business mix, from Old Gahanna
+										shops to Creekside developments and
+										everything in between.
 									</p>
 								</CardContent>
 							</Card>
@@ -223,13 +221,13 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Users className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Central Ohio Network
+										Personal Relationships
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Strong relationships with Columbus area
-										banks, attorneys, CPAs, and business
-										advisors. Connected to the local
-										business community.
+										Building lasting relationships with
+										Gahanna business owners, providing
+										personalized service that larger firms
+										can't match.
 									</p>
 								</CardContent>
 							</Card>
@@ -238,27 +236,13 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Clock className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Flexible Service Options
+										Accessible & Responsive
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Remote services for efficiency, with
-										in-person meetings available throughout
-										the Columbus metro area when needed.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<TrendingUp className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										Growth-Focused Approach
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Understand Columbus's dynamic business
-										growth. Help scale your financial
-										systems as your business expands in
-										Central Ohio.
+										Always available for Gahanna clients
+										with quick response times and flexible
+										meeting options throughout the
+										community.
 									</p>
 								</CardContent>
 							</Card>
@@ -267,13 +251,28 @@ export default function ColumbusServices() {
 								<CardContent className='pt-6'>
 									<Shield className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Ohio Tax Expertise
+										Local Tax Knowledge
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Specialized knowledge of Ohio state tax
-										requirements, Columbus city tax
-										implications, and multi-jurisdiction
-										compliance.
+										Expert understanding of Ohio tax
+										requirements, Franklin County
+										regulations, and Gahanna-specific
+										business considerations.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card>
+								<CardContent className='pt-6'>
+									<Award className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Community Investment
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Committed to Gahanna's economic growth,
+										supporting local businesses and
+										contributing to the community's
+										prosperity.
 									</p>
 								</CardContent>
 							</Card>
@@ -282,68 +281,68 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus-Specific Services */}
+			{/* Gahanna Business Services */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Specialized Services for Columbus Businesses
+								Bookkeeping Services for Gahanna Businesses
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Tailored solutions for Central Ohio's business
-								community
+								Comprehensive financial management tailored to
+								local needs
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 gap-8'>
 							{[
 								{
-									icon: <Building className='h-8 w-8' />,
-									title: 'Multi-Location Business Management',
+									icon: <Calculator className='h-8 w-8' />,
+									title: 'Small Business Bookkeeping',
 									description:
-										'Perfect for Columbus businesses with multiple locations across Central Ohio.',
+										'Complete monthly bookkeeping services designed for Gahanna small businesses and local entrepreneurs.',
 									features: [
-										'Consolidated reporting',
-										'Location-specific P&L',
-										'Inter-company transactions',
-										'Franchise accounting',
+										'Monthly financial statements',
+										'Bank reconciliation',
+										'Expense categorization',
+										'QuickBooks setup & training',
 									],
 								},
 								{
-									icon: <Users className='h-8 w-8' />,
-									title: 'Professional Services Bookkeeping',
+									icon: <Home className='h-8 w-8' />,
+									title: 'Retail & Restaurant Support',
 									description:
-										"Specialized support for Columbus's thriving professional services sector.",
+										'Specialized accounting for Gahanna retail shops, restaurants, and hospitality businesses.',
 									features: [
-										'Project-based accounting',
-										'Time & billing integration',
-										'Client retainer management',
-										'Professional liability tracking',
+										'Daily sales tracking',
+										'Inventory management',
+										'Cost of goods sold',
+										'Seasonal business planning',
+									],
+								},
+								{
+									icon: <Briefcase className='h-8 w-8' />,
+									title: 'Service Business Management',
+									description:
+										'Tailored bookkeeping for Gahanna service providers, contractors, and professional services.',
+									features: [
+										'Job costing',
+										'Project profitability',
+										'Client billing support',
+										'Equipment depreciation',
 									],
 								},
 								{
 									icon: <TrendingUp className='h-8 w-8' />,
-									title: 'Startup & Scale-up Support',
+									title: 'Growth & Expansion Planning',
 									description:
-										'Help Columbus startups build solid financial foundations for growth.',
+										'Financial insights and planning to help Gahanna businesses grow and expand.',
 									features: [
-										'Investor reporting',
-										'Burn rate analysis',
-										'Funding preparation',
-										'Scalable systems setup',
-									],
-								},
-								{
-									icon: <Calculator className='h-8 w-8' />,
-									title: 'Restaurant & Hospitality',
-									description:
-										"Specialized accounting for Columbus's vibrant food and hospitality scene.",
-									features: [
-										'Cost of goods tracking',
-										'Tip reporting',
-										'Inventory management',
-										'Multi-revenue stream handling',
+										'Cash flow forecasting',
+										'Budget planning',
+										'Growth strategy support',
+										'Loan preparation',
 									],
 								},
 							].map((service, index) => (
@@ -382,16 +381,16 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus Business Success Stories */}
+			{/* Gahanna Success Stories */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Columbus Business Success Stories
+								Gahanna Business Success Stories
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Real results from Central Ohio businesses
+								Real results from Gahanna business owners
 							</p>
 						</div>
 
@@ -407,25 +406,25 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"Ray helped us scale from one Columbus
-										location to three across Central Ohio.
-										His multi-location expertise and
-										understanding of Ohio tax requirements
-										saved us from major compliance issues."
+										"Ray has been instrumental in helping
+										our Gahanna bakery grow from a small
+										startup to a thriving community
+										business. His personal approach and
+										local knowledge made all the
+										difference."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												MR
+												SC
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Maria Rodriguez
+												Sarah Chen
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Rodriguez Restaurants, Columbus
-												OH
+												Sweet Dreams Bakery, Gahanna OH
 											</p>
 										</div>
 									</div>
@@ -443,24 +442,25 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"As a Columbus tech startup, we needed
-										someone who understood both traditional
-										accounting and modern business models.
-										Ray's expertise helped us prepare for
-										Series A funding."
+										"As a Gahanna contractor, I needed
+										someone who understood the seasonal
+										nature of my business. Ray's cash flow
+										planning and tax strategies have been a
+										game-changer for our family business."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												DK
+												MJ
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												David Kim
+												Mike Johnson
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												TechFlow Solutions, Columbus OH
+												Johnson Home Improvements,
+												Gahanna OH
 											</p>
 										</div>
 									</div>
@@ -478,24 +478,24 @@ export default function ColumbusServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"Ray's knowledge of Columbus's business
-										landscape is incredible. He connected us
-										with the right bank and helped navigate
-										city requirements for our downtown
-										expansion."
+										"Ray's community focus and personal
+										attention set him apart. He truly cares
+										about Gahanna businesses and goes above
+										and beyond to help us succeed. Highly
+										recommend!"
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												AB
+												KR
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Amanda Brown
+												Karen Roberts
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Brown & Associates Law, Columbus
+												Gahanna Wellness Center, Gahanna
 												OH
 											</p>
 										</div>
@@ -515,24 +515,23 @@ export default function ColumbusServices() {
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
 										"Working with Ray transformed our
-										Columbus medical practice's finances.
-										His healthcare industry knowledge and
-										attention to compliance details gave us
-										complete peace of mind."
+										Gahanna retail shop's financial
+										management. His expertise in retail
+										accounting and local business knowledge
+										helped us optimize our operations."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												TP
+												DL
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Dr. Thomas Parker
+												David Lee
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Parker Family Medicine, Columbus
-												OH
+												Gahanna Gift Gallery, Gahanna OH
 											</p>
 										</div>
 									</div>
@@ -543,38 +542,31 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Service Areas in Columbus */}
+			{/* Gahanna Areas Served */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl font-bold mb-4'>
-								Serving All Columbus Area Neighborhoods
+								Serving All Gahanna Business Areas
 							</h2>
 							<p className='text-muted-foreground'>
 								Professional bookkeeping services throughout
-								Central Ohio
+								Gahanna, Ohio
 							</p>
 						</div>
 
-						<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+						<div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
 							{[
-								'Downtown Columbus',
-								'Short North',
-								'German Village',
-								'Grandview Heights',
-								'Clintonville',
-								'Bexley',
-								'Upper Arlington',
-								'Hilliard',
-								'Grove City',
-								'Reynoldsburg',
-								'Gahanna',
-								'Pickerington',
-								'New Albany',
-								'Lewis Center',
-								'Powell',
-								'Dublin',
+								'Old Gahanna',
+								'Creekside',
+								'Gahanna Woods',
+								'Lincoln High School Area',
+								'Granville Street',
+								'Hamilton Road Corridor',
+								'Morse Road Business District',
+								'Big Walnut Creek Area',
+								'Gahanna Municipal Airport',
 							].map((area, index) => (
 								<div
 									key={index}
@@ -589,26 +581,26 @@ export default function ColumbusServices() {
 				</div>
 			</section>
 
-			{/* Columbus CTA */}
+			{/* Gahanna CTA */}
 			<section className='py-16 bg-gradient-to-br from-primary/5 to-primary/10'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='grid lg:grid-cols-2 gap-12 items-center'>
 							<div>
 								<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
-									Ready to Partner with Columbus's
+									Ready to Join Gahanna's
 									<br />
 									<span className='text-primary'>
-										Most Trusted Bookkeeping Expert?
+										Thriving Business Community?
 									</span>
 								</h2>
 
 								<p className='text-xl text-muted-foreground mb-8'>
-									Join 75+ Columbus area businesses that rely
-									on Ray for professional financial
-									management. From startups to established
-									companies, get the expertise you need to
-									thrive in Central Ohio.
+									Join 30+ Gahanna businesses that trust Ray
+									with their financial management. Experience
+									the personal attention and community focus
+									that makes the difference for local
+									businesses.
 								</p>
 
 								<div className='space-y-4 mb-8'>
@@ -619,7 +611,7 @@ export default function ColumbusServices() {
 												(555) 123-4567
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Serving all Columbus metro areas
+												Serving all Gahanna areas
 											</p>
 										</div>
 									</div>
@@ -630,7 +622,7 @@ export default function ColumbusServices() {
 												ray@gallowaybookkeeping.com
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Quick response guaranteed
+												Personal response guaranteed
 											</p>
 										</div>
 									</div>
@@ -638,11 +630,10 @@ export default function ColumbusServices() {
 										<MapPin className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												Serving Greater Columbus Area
+												Gahanna & Surrounding Areas
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Remote & in-person options
-												available
+												Local meetings available
 											</p>
 										</div>
 									</div>
@@ -668,8 +659,8 @@ export default function ColumbusServices() {
 
 							<div>
 								<LeadMagnetForm
-									title='Get Your Free Columbus Business Guide'
-									description='"7 Financial Tricks for Central Ohio Service Businesses"'
+									title='Get Your Free Gahanna Business Guide'
+									description='"7 Financial Tips for Community-Focused Businesses"'
 									buttonText='Download Free Guide'
 									variant='default'
 								/>

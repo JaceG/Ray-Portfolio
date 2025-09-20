@@ -20,17 +20,18 @@ import {
 	Award,
 	Briefcase,
 	Home,
+	Crown,
 } from 'lucide-react';
 
 export const metadata = {
-	title: 'Dublin Ohio Bookkeeping Services | Professional QuickBooks Management',
+	title: 'New Albany Ohio Bookkeeping Services | Executive Financial Management',
 	description:
-		'Expert bookkeeping services for Dublin, OH businesses. Serving professional services, tech companies, and growing businesses in Dublin, Ohio with QuickBooks expertise.',
+		'Premium bookkeeping services for New Albany, OH businesses. Serving executives, entrepreneurs, and high-growth companies with sophisticated financial management.',
 	keywords:
-		'bookkeeping Dublin Ohio, QuickBooks Dublin OH, accountant Dublin Ohio, professional services bookkeeping, Dublin business financial services',
+		'bookkeeping New Albany Ohio, QuickBooks New Albany OH, executive bookkeeping, high-net-worth financial services, New Albany business accounting',
 };
 
-export default function DublinServices() {
+export default function NewAlbanyServices() {
 	return (
 		<div className='min-h-screen bg-white'>
 			{/* Header */}
@@ -60,71 +61,62 @@ export default function DublinServices() {
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
 							<MapPin className='h-4 w-4 text-primary' />
 							<span className='text-sm font-medium text-primary'>
-								DUBLIN, OHIO
+								NEW ALBANY, OHIO
 							</span>
 						</div>
 
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-							Premium Bookkeeping Services for
+							Executive-Level Bookkeeping for
 							<br />
 							<span className='text-primary'>
-								Dublin, Ohio Businesses
+								New Albany, Ohio Businesses
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-							Serving Dublin's thriving business community with
-							professional QuickBooks bookkeeping services. From
-							Bridge Street to Tuttle Crossing, help your business
-							achieve financial excellence.
+							Serving New Albany's distinguished business
+							community with premium QuickBooks bookkeeping
+							services. From Market Street to the New Albany
+							Country Club area, providing sophisticated financial
+							management for discerning business owners.
 						</p>
 
 						<div className='max-w-4xl mx-auto mb-8 p-6 bg-white/80 rounded-lg shadow-sm'>
 							<p className='text-muted-foreground leading-relaxed'>
-								Dublin represents the pinnacle of planned
-								community development and corporate excellence,
-								and I've had the privilege of serving this
-								sophisticated business community for years. From
-								the world-class corporate headquarters along the
-								Emerald Parkway corridor where I've worked with
-								Fortune 500 executives, to the innovative
-								startups in the Bridge Street District where I
-								regularly attend networking events and business
-								forums, I understand what sets Dublin apart as a
-								premier business destination. I've helped
-								companies navigate the complexities of operating
-								in a city that seamlessly blends residential
-								elegance with commercial sophistication, from
-								the historic Dublin Village area with its
-								charming Irish heritage celebrations, to the
-								cutting-edge developments near Metro Place and
-								the Dublin Corporate Woods. Whether your
-								business is located near the prestigious
-								Muirfield Village Golf Club where I've attended
-								numerous business development events, along the
-								bustling Tuttle Crossing commercial district, or
-								in the newer mixed-use developments that define
-								Dublin's commitment to work-life integration, I
-								appreciate the high standards and global
-								perspective that Dublin businesses maintain.
-								I've seen how this community attracts top talent
-								from around the world, supports innovative
-								business models, and creates an environment
-								where companies can scale from local success to
-								international prominence. Having worked with
-								everyone from boutique consulting firms to
-								multinational corporations, I understand that
-								Dublin businesses expect nothing less than
-								world-class service, and I deliver that level of
-								excellence while maintaining the personal touch
-								that makes all the difference in building
-								lasting business relationships.
+								New Albany represents the pinnacle of
+								master-planned community development, and I've
+								had the privilege of serving its distinguished
+								business community for years. From the
+								Georgian-style architecture that defines the
+								Market Square area to the corporate headquarters
+								in the New Albany International Business Park, I
+								understand the sophisticated financial needs of
+								this unique community. I've worked with
+								executives from companies near the Jeanne B.
+								McCoy Community Center for the Arts, where I've
+								attended numerous cultural events that showcase
+								New Albany's commitment to enriching the lives
+								of its residents. Whether your business is
+								located near the prestigious New Albany Country
+								Club, along the extensive network of leisure
+								trails that connect every neighborhood, or in
+								one of the newer developments near Central
+								College Road, I appreciate the high standards
+								and attention to detail that New Albany
+								businesses expect. Having helped clients
+								navigate everything from the New Albany Farmers
+								Market vendors to Fortune 500 executives, I
+								understand that this community demands nothing
+								less than executive-level service, and that's
+								exactly what I deliver - with the discretion and
+								professionalism that matches New Albany's
+								refined character.
 							</p>
 						</div>
 
 						<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
 							<CalendlyModal
-								buttonText='Schedule Free Consultation'
+								buttonText='Schedule Executive Consultation'
 								buttonSize='lg'
 								buttonClassName='px-8 py-6 text-lg'
 							/>
@@ -140,38 +132,38 @@ export default function DublinServices() {
 							</Button>
 						</div>
 
-						{/* Dublin Stats */}
+						{/* New Albany Stats */}
 						<div className='grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto'>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									40+
+									25+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Dublin Clients
+									New Albany Clients
 								</div>
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									95%
+									$50M+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Client Retention
+									Assets Managed
 								</div>
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									5.0★
+									100%
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Average Rating
+									Client Satisfaction
 								</div>
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									Same Day
+									2hr
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Response
+									Response Time
 								</div>
 							</div>
 						</div>
@@ -179,105 +171,105 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Why Dublin Businesses Choose Ray */}
+			{/* Why New Albany Executives Choose Ray */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Why Dublin's Leading Businesses Choose Ray
+								Why New Albany Executives Choose Ray
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Specialized expertise for Dublin's sophisticated
-								business environment
+								Premium service for New Albany's sophisticated
+								business community
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
-							<Card>
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
 								<CardContent className='pt-6'>
-									<Briefcase className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										Professional Services Focus
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Extensive experience with Dublin's
-										concentration of consulting firms, law
-										practices, financial services, and
-										technology companies.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<TrendingUp className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										High-Growth Business Expertise
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Specialized in supporting Dublin's
-										fast-growing companies with scalable
-										financial systems and investor-ready
-										reporting.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<Building className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										Corporate District Knowledge
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Familiar with Dublin's corporate
-										landscape, from Bridge Street to Metro
-										Place, understanding unique business
-										requirements.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<Users className='h-12 w-12 text-primary mb-4' />
+									<Crown className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
 										Executive-Level Service
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										White-glove service that meets the high
-										standards expected by Dublin's executive
-										and entrepreneurial community.
+										White-glove financial management that
+										meets the high standards expected by New
+										Albany's executive and entrepreneurial
+										community.
 									</p>
 								</CardContent>
 							</Card>
 
-							<Card>
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
+								<CardContent className='pt-6'>
+									<Briefcase className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										High-Net-Worth Expertise
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Specialized experience managing complex
+										financial structures, multiple entities,
+										and sophisticated investment portfolios
+										common in New Albany.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
+								<CardContent className='pt-6'>
+									<Building className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Corporate Headquarters Support
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Understanding of New Albany's role as a
+										corporate headquarters hub, with
+										expertise in multi-location and
+										subsidiary management.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
 								<CardContent className='pt-6'>
 									<Shield className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Compliance & Risk Management
+										Confidentiality & Discretion
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Advanced compliance expertise for Dublin
-										businesses with complex regulatory
-										requirements and fiduciary
-										responsibilities.
+										Absolute confidentiality and
+										professional discretion in handling
+										sensitive financial information for
+										high-profile clients.
 									</p>
 								</CardContent>
 							</Card>
 
-							<Card>
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
 								<CardContent className='pt-6'>
-									<Clock className='h-12 w-12 text-primary mb-4' />
+									<TrendingUp className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Responsive Partnership
+										Strategic Financial Planning
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Understand the fast-paced Dublin
-										business environment. Quick turnaround
-										and proactive communication always.
+										Beyond bookkeeping - strategic financial
+										insights that support wealth building
+										and business expansion goals.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
+								<CardContent className='pt-6'>
+									<Users className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Elite Professional Network
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Connections with New Albany's top
+										attorneys, wealth managers, and business
+										advisors for comprehensive support.
 									</p>
 								</CardContent>
 							</Card>
@@ -286,68 +278,68 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Dublin-Specific Services */}
+			{/* Premium Services */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Premium Services for Dublin Businesses
+								Premium Financial Services for New Albany
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Sophisticated financial management for
-								sophisticated businesses
+								Sophisticated solutions for sophisticated
+								businesses
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 gap-8'>
 							{[
 								{
-									icon: <Briefcase className='h-8 w-8' />,
-									title: 'Professional Services Accounting',
+									icon: <Crown className='h-8 w-8' />,
+									title: 'Executive Financial Management',
 									description:
-										"Specialized bookkeeping for Dublin's consulting, legal, and professional service firms.",
+										'Comprehensive financial oversight for executives and high-net-worth business owners.',
 									features: [
-										'Project profitability tracking',
-										'Time & billing integration',
-										'Client retainer management',
-										'Partner distribution calculations',
-									],
-								},
-								{
-									icon: <TrendingUp className='h-8 w-8' />,
-									title: 'Executive Financial Reporting',
-									description:
-										'Board-ready financial statements and executive dashboards for decision making.',
-									features: [
-										'Executive summary reports',
-										'KPI dashboards',
-										'Variance analysis',
-										'Board presentation materials',
+										'Multi-entity consolidation',
+										'Executive compensation tracking',
+										'Board-ready financial reports',
+										'Strategic financial analysis',
 									],
 								},
 								{
 									icon: <Building className='h-8 w-8' />,
-									title: 'Corporate Tax-Ready Organization',
+									title: 'Corporate Headquarters Support',
 									description:
-										"Strategic tax document organization and compliance for Dublin's corporate entities.",
+										'Specialized services for New Albany corporate headquarters and holding companies.',
 									features: [
-										'Corporate tax returns',
-										'Multi-state compliance',
-										'Tax strategy planning',
-										'Audit support',
+										'Subsidiary management',
+										'Intercompany transactions',
+										'Consolidated reporting',
+										'Corporate compliance',
 									],
 								},
 								{
-									icon: <Calculator className='h-8 w-8' />,
-									title: 'Investment & Asset Management',
+									icon: <TrendingUp className='h-8 w-8' />,
+									title: 'Investment & Portfolio Tracking',
 									description:
-										'Sophisticated tracking for businesses with complex investment portfolios.',
+										'Sophisticated tracking and reporting for complex investment portfolios.',
 									features: [
-										'Investment tracking',
-										'Asset depreciation',
-										'Portfolio reporting',
-										'Capital gains analysis',
+										'Investment performance tracking',
+										'Capital gains/loss reporting',
+										'Portfolio diversification analysis',
+										'Tax-loss harvesting support',
+									],
+								},
+								{
+									icon: <Shield className='h-8 w-8' />,
+									title: 'Wealth Preservation Planning',
+									description:
+										'Strategic financial planning focused on wealth preservation and tax optimization.',
+									features: [
+										'Tax strategy optimization',
+										'Estate planning support',
+										'Trust accounting',
+										'Succession planning',
 									],
 								},
 							].map((service, index) => (
@@ -388,16 +380,16 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Dublin Success Stories */}
+			{/* New Albany Success Stories */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Dublin Business Success Stories
+								New Albany Executive Success Stories
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Trusted by Dublin's most successful companies
+								Trusted by New Albany's business leaders
 							</p>
 						</div>
 
@@ -413,26 +405,25 @@ export default function DublinServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"Ray transformed our Dublin consulting
-										firm's financial reporting. His
-										executive-level insights and
-										professional presentation helped us
-										secure our largest client contract to
-										date."
+										"Ray's executive-level service and
+										discretion are exactly what we needed
+										for our New Albany headquarters. His
+										sophisticated approach to multi-entity
+										management saved us significant time and
+										money."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												CW
+												RH
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Catherine Williams
+												Robert Harrison
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Williams Strategy Group, Dublin
-												OH
+												Harrison Holdings, New Albany OH
 											</p>
 										</div>
 									</div>
@@ -450,24 +441,25 @@ export default function DublinServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"As a Dublin tech company preparing for
-										acquisition, we needed pristine
-										financials. Ray's attention to detail
-										and investor-ready reporting was
-										instrumental in our successful exit."
+										"As a New Albany entrepreneur with
+										multiple ventures, I needed someone who
+										could handle complexity with
+										sophistication. Ray's strategic insights
+										have been invaluable for our growth."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												JS
+												EL
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												James Sullivan
+												Elizabeth Lancaster
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												DataFlow Technologies, Dublin OH
+												Lancaster Ventures, New Albany
+												OH
 											</p>
 										</div>
 									</div>
@@ -478,17 +470,17 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Dublin Business Districts */}
+			{/* New Albany Areas */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl font-bold mb-4'>
-								Serving All Dublin Business Districts
+								Serving New Albany's Premier Business Districts
 							</h2>
 							<p className='text-muted-foreground'>
-								Professional bookkeeping services throughout
-								Dublin, Ohio
+								Executive bookkeeping services throughout New
+								Albany, Ohio
 							</p>
 						</div>
 
@@ -500,11 +492,13 @@ export default function DublinServices() {
 										Corporate Districts
 									</h3>
 									<ul className='space-y-2 text-sm text-muted-foreground'>
-										<li>• Bridge Street District</li>
-										<li>• Metro Place</li>
-										<li>• Tuttle Crossing Area</li>
-										<li>• Emerald Corporate Center</li>
-										<li>• Dublin Corporate Woods</li>
+										<li>
+											• Market Street Corporate Center
+										</li>
+										<li>• New Albany Business Park</li>
+										<li>• Innovation Campus</li>
+										<li>• Central College Road</li>
+										<li>• Bevelhymer Road Corridor</li>
 									</ul>
 								</CardContent>
 							</Card>
@@ -513,14 +507,14 @@ export default function DublinServices() {
 								<CardContent className='pt-6'>
 									<Home className='h-8 w-8 text-primary mb-4' />
 									<h3 className='font-semibold mb-3'>
-										Residential Business Areas
+										Executive Residential Areas
 									</h3>
 									<ul className='space-y-2 text-sm text-muted-foreground'>
-										<li>• Historic Dublin</li>
-										<li>• Riverside Drive Corridor</li>
-										<li>• Avery Road Business District</li>
-										<li>• Dublin Village Center</li>
-										<li>• Sawmill Road Corridor</li>
+										<li>• New Albany Country Club</li>
+										<li>• Fenway</li>
+										<li>• The Golf Club</li>
+										<li>• Forest Park</li>
+										<li>• Wexford</li>
 									</ul>
 								</CardContent>
 							</Card>
@@ -529,48 +523,48 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Premium CTA */}
+			{/* Executive CTA */}
 			<section className='py-16 bg-gradient-to-br from-primary/5 to-primary/10'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='grid lg:grid-cols-2 gap-12 items-center'>
 							<div>
 								<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
-									Ready to Experience
+									Ready for Executive-Level
 									<br />
 									<span className='text-primary'>
-										Dublin's Premier Bookkeeping Service?
+										Financial Management?
 									</span>
 								</h2>
 
 								<p className='text-xl text-muted-foreground mb-8'>
-									Join Dublin's most successful businesses who
-									trust Ray with their financial management.
-									From startups to established corporations,
-									experience the difference that professional
-									expertise makes.
+									Join New Albany's most successful executives
+									and entrepreneurs who trust Ray with their
+									sophisticated financial management needs.
+									Experience the difference that premium
+									service makes.
 								</p>
 
 								<div className='space-y-4 mb-8'>
 									<div className='flex items-center gap-3'>
-										<Award className='h-5 w-5 text-primary' />
+										<Crown className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												QuickBooks ProAdvisor Certified
+												Executive-Level Service
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Advanced QuickBooks expertise
+												White-glove financial management
 											</p>
 										</div>
 									</div>
 									<div className='flex items-center gap-3'>
-										<Users className='h-5 w-5 text-primary' />
+										<Shield className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												40+ Dublin Clients Served
+												Complete Confidentiality
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Proven track record of success
+												Absolute discretion guaranteed
 											</p>
 										</div>
 									</div>
@@ -578,10 +572,10 @@ export default function DublinServices() {
 										<Clock className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												Same-Day Response Guarantee
+												Priority Response
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												When your business can't wait
+												2-hour response time
 											</p>
 										</div>
 									</div>
@@ -599,7 +593,7 @@ export default function DublinServices() {
 										className='px-8 py-6 text-lg'
 										asChild>
 										<Link href='/free-guide'>
-											Get Executive Guide
+											Executive Financial Guide
 										</Link>
 									</Button>
 								</div>
@@ -607,101 +601,12 @@ export default function DublinServices() {
 
 							<div>
 								<LeadMagnetForm
-									title='Executive Financial Guide for Dublin Businesses'
-									description='"7 Advanced Financial Strategies for Professional Services"'
+									title='Executive Financial Management Guide'
+									description='"7 Wealth-Building Strategies for New Albany Executives"'
 									buttonText='Download Executive Guide'
 									variant='default'
 								/>
 							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Dublin Business Resources */}
-			<section className='py-16 bg-white'>
-				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-					<div className='max-w-4xl mx-auto'>
-						<div className='text-center mb-12'>
-							<h2 className='text-3xl font-bold mb-4'>
-								Dublin Business Resources
-							</h2>
-							<p className='text-muted-foreground'>
-								Essential resources for Dublin, Ohio business
-								owners
-							</p>
-						</div>
-
-						<div className='grid md:grid-cols-2 gap-6'>
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										City of Dublin Economic Development
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Business incentives, development
-										opportunities, and municipal services
-									</p>
-									<a
-										href='https://dublinohiousa.gov'
-										target='_blank'
-										rel='noopener noreferrer'
-										className='text-primary text-sm hover:underline'>
-										Visit dublinohiousa.gov →
-									</a>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										Dublin Chamber of Commerce
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Networking events, business advocacy,
-										and professional development
-									</p>
-									<a
-										href='#'
-										className='text-primary text-sm hover:underline'>
-										Chamber membership →
-									</a>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										Ohio SCORE Dublin
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Free business mentoring and educational
-										workshops
-									</p>
-									<a
-										href='https://dublin.score.org'
-										target='_blank'
-										rel='noopener noreferrer'
-										className='text-primary text-sm hover:underline'>
-										SCORE Dublin chapter →
-									</a>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										Dublin Professional Networks
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Connect with Dublin's professional
-										service providers
-									</p>
-									<span className='text-primary text-sm'>
-										Contact Ray for introductions
-									</span>
-								</CardContent>
-							</Card>
 						</div>
 					</div>
 				</div>

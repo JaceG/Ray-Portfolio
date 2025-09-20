@@ -20,17 +20,18 @@ import {
 	Award,
 	Briefcase,
 	Home,
+	GraduationCap,
 } from 'lucide-react';
 
 export const metadata = {
-	title: 'Dublin Ohio Bookkeeping Services | Professional QuickBooks Management',
+	title: 'Upper Arlington Ohio Bookkeeping Services | Professional Financial Management',
 	description:
-		'Expert bookkeeping services for Dublin, OH businesses. Serving professional services, tech companies, and growing businesses in Dublin, Ohio with QuickBooks expertise.',
+		'Premium bookkeeping services for Upper Arlington, OH businesses. Serving professional services, medical practices, and established businesses with sophisticated financial needs.',
 	keywords:
-		'bookkeeping Dublin Ohio, QuickBooks Dublin OH, accountant Dublin Ohio, professional services bookkeeping, Dublin business financial services',
+		'bookkeeping Upper Arlington Ohio, QuickBooks Upper Arlington OH, professional services accounting, medical practice bookkeeping, Upper Arlington business financial services',
 };
 
-export default function DublinServices() {
+export default function UpperArlingtonServices() {
 	return (
 		<div className='min-h-screen bg-white'>
 			{/* Header */}
@@ -60,71 +61,68 @@ export default function DublinServices() {
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
 							<MapPin className='h-4 w-4 text-primary' />
 							<span className='text-sm font-medium text-primary'>
-								DUBLIN, OHIO
+								UPPER ARLINGTON, OHIO
 							</span>
 						</div>
 
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
-							Premium Bookkeeping Services for
+							Professional Bookkeeping Services for
 							<br />
 							<span className='text-primary'>
-								Dublin, Ohio Businesses
+								Upper Arlington, Ohio
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-							Serving Dublin's thriving business community with
-							professional QuickBooks bookkeeping services. From
-							Bridge Street to Tuttle Crossing, help your business
-							achieve financial excellence.
+							Serving Upper Arlington's distinguished professional
+							community with premium QuickBooks bookkeeping
+							services. From medical practices to law firms,
+							providing sophisticated financial management for
+							established businesses.
 						</p>
 
 						<div className='max-w-4xl mx-auto mb-8 p-6 bg-white/80 rounded-lg shadow-sm'>
 							<p className='text-muted-foreground leading-relaxed'>
-								Dublin represents the pinnacle of planned
-								community development and corporate excellence,
-								and I've had the privilege of serving this
-								sophisticated business community for years. From
-								the world-class corporate headquarters along the
-								Emerald Parkway corridor where I've worked with
-								Fortune 500 executives, to the innovative
-								startups in the Bridge Street District where I
-								regularly attend networking events and business
-								forums, I understand what sets Dublin apart as a
-								premier business destination. I've helped
-								companies navigate the complexities of operating
-								in a city that seamlessly blends residential
-								elegance with commercial sophistication, from
-								the historic Dublin Village area with its
-								charming Irish heritage celebrations, to the
-								cutting-edge developments near Metro Place and
-								the Dublin Corporate Woods. Whether your
-								business is located near the prestigious
-								Muirfield Village Golf Club where I've attended
-								numerous business development events, along the
-								bustling Tuttle Crossing commercial district, or
-								in the newer mixed-use developments that define
-								Dublin's commitment to work-life integration, I
-								appreciate the high standards and global
-								perspective that Dublin businesses maintain.
-								I've seen how this community attracts top talent
-								from around the world, supports innovative
-								business models, and creates an environment
-								where companies can scale from local success to
-								international prominence. Having worked with
-								everyone from boutique consulting firms to
-								multinational corporations, I understand that
-								Dublin businesses expect nothing less than
-								world-class service, and I deliver that level of
-								excellence while maintaining the personal touch
-								that makes all the difference in building
-								lasting business relationships.
+								Upper Arlington's tree-lined streets and
+								commitment to excellence have made it one of
+								Central Ohio's most prestigious communities, and
+								I've been honored to serve its distinguished
+								professional community for over a decade. From
+								the medical practices along Riverside Drive to
+								the law firms near Northwest Boulevard, I
+								understand the sophisticated financial needs of
+								Upper Arlington's established businesses. I've
+								attended the renowned Labor Day Arts Festival,
+								which perfectly captures this community's
+								appreciation for quality and culture, and I've
+								worked with clients whose children attend the
+								top-rated Upper Arlington schools that make this
+								area so desirable for professional families.
+								Whether your practice is located near the scenic
+								Scioto River corridor, in the bustling Kingsdale
+								Shopping Center area, or closer to the beautiful
+								Miller Park where I've met many clients for
+								outdoor consultations, I appreciate the high
+								standards that define Upper Arlington
+								businesses. I've helped navigate the complex
+								financial structures of multi-partner practices,
+								supported medical professionals with insurance
+								billing intricacies, and worked with consulting
+								firms that serve Fortune 500 clients - all while
+								maintaining the discretion and professionalism
+								that Upper Arlington professionals expect. This
+								community's commitment to educational
+								excellence, from the outstanding public library
+								system to the proximity to The Ohio State
+								University, creates a business environment where
+								intellectual rigor and financial precision go
+								hand in hand.
 							</p>
 						</div>
 
 						<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
 							<CalendlyModal
-								buttonText='Schedule Free Consultation'
+								buttonText='Schedule Professional Consultation'
 								buttonSize='lg'
 								buttonClassName='px-8 py-6 text-lg'
 							/>
@@ -140,19 +138,27 @@ export default function DublinServices() {
 							</Button>
 						</div>
 
-						{/* Dublin Stats */}
+						{/* Upper Arlington Stats */}
 						<div className='grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto'>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									40+
+									55+
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Dublin Clients
+									UA Clients
 								</div>
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									95%
+									12+
+								</div>
+								<div className='text-sm text-muted-foreground'>
+									Years Experience
+								</div>
+							</div>
+							<div className='text-center'>
+								<div className='text-2xl font-bold text-primary'>
+									98%
 								</div>
 								<div className='text-sm text-muted-foreground'>
 									Client Retention
@@ -160,18 +166,10 @@ export default function DublinServices() {
 							</div>
 							<div className='text-center'>
 								<div className='text-2xl font-bold text-primary'>
-									5.0★
+									4hr
 								</div>
 								<div className='text-sm text-muted-foreground'>
-									Average Rating
-								</div>
-							</div>
-							<div className='text-center'>
-								<div className='text-2xl font-bold text-primary'>
-									Same Day
-								</div>
-								<div className='text-sm text-muted-foreground'>
-									Response
+									Response Time
 								</div>
 							</div>
 						</div>
@@ -179,105 +177,107 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Why Dublin Businesses Choose Ray */}
+			{/* Why Upper Arlington Professionals Choose Ray */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Why Dublin's Leading Businesses Choose Ray
+								Why Upper Arlington Professionals Choose Ray
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Specialized expertise for Dublin's sophisticated
-								business environment
+								Professional excellence for Upper Arlington's
+								established business community
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
-							<Card>
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
 								<CardContent className='pt-6'>
 									<Briefcase className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Professional Services Focus
+										Professional Services Expertise
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Extensive experience with Dublin's
-										concentration of consulting firms, law
-										practices, financial services, and
-										technology companies.
+										Extensive experience with Upper
+										Arlington's concentration of law firms,
+										medical practices, consulting firms, and
+										financial services.
 									</p>
 								</CardContent>
 							</Card>
 
-							<Card>
-								<CardContent className='pt-6'>
-									<TrendingUp className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										High-Growth Business Expertise
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Specialized in supporting Dublin's
-										fast-growing companies with scalable
-										financial systems and investor-ready
-										reporting.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<Building className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										Corporate District Knowledge
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										Familiar with Dublin's corporate
-										landscape, from Bridge Street to Metro
-										Place, understanding unique business
-										requirements.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<Users className='h-12 w-12 text-primary mb-4' />
-									<h3 className='font-bold mb-2'>
-										Executive-Level Service
-									</h3>
-									<p className='text-sm text-muted-foreground'>
-										White-glove service that meets the high
-										standards expected by Dublin's executive
-										and entrepreneurial community.
-									</p>
-								</CardContent>
-							</Card>
-
-							<Card>
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
 								<CardContent className='pt-6'>
 									<Shield className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Compliance & Risk Management
+										Medical Practice Specialization
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Advanced compliance expertise for Dublin
-										businesses with complex regulatory
-										requirements and fiduciary
-										responsibilities.
+										Specialized knowledge of medical
+										billing, insurance reimbursements, and
+										healthcare compliance requirements for
+										Upper Arlington practices.
 									</p>
 								</CardContent>
 							</Card>
 
-							<Card>
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
+								<CardContent className='pt-6'>
+									<Building className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Established Business Focus
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Understanding of mature business needs,
+										including succession planning, partner
+										distributions, and long-term wealth
+										management strategies.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
+								<CardContent className='pt-6'>
+									<Users className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Professional Network Integration
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Strong relationships with Upper
+										Arlington's professional community,
+										including attorneys, wealth managers,
+										and business advisors.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
 								<CardContent className='pt-6'>
 									<Clock className='h-12 w-12 text-primary mb-4' />
 									<h3 className='font-bold mb-2'>
-										Responsive Partnership
+										Responsive Professional Service
 									</h3>
 									<p className='text-sm text-muted-foreground'>
-										Understand the fast-paced Dublin
-										business environment. Quick turnaround
-										and proactive communication always.
+										Understanding that professional time is
+										valuable, providing efficient service
+										with minimal disruption to your
+										practice.
+									</p>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2 hover:border-primary/20 transition-colors'>
+								<CardContent className='pt-6'>
+									<GraduationCap className='h-12 w-12 text-primary mb-4' />
+									<h3 className='font-bold mb-2'>
+										Educational Excellence Standards
+									</h3>
+									<p className='text-sm text-muted-foreground'>
+										Commitment to the high standards
+										expected in Upper Arlington's
+										education-focused community, with
+										attention to detail and accuracy.
 									</p>
 								</CardContent>
 							</Card>
@@ -286,68 +286,68 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Dublin-Specific Services */}
+			{/* Professional Services */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Premium Services for Dublin Businesses
+								Professional Services for Upper Arlington
 							</h2>
 							<p className='text-xl text-muted-foreground'>
 								Sophisticated financial management for
-								sophisticated businesses
+								established professionals
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 gap-8'>
 							{[
 								{
-									icon: <Briefcase className='h-8 w-8' />,
-									title: 'Professional Services Accounting',
+									icon: <Shield className='h-8 w-8' />,
+									title: 'Medical Practice Management',
 									description:
-										"Specialized bookkeeping for Dublin's consulting, legal, and professional service firms.",
+										'Comprehensive financial management for Upper Arlington medical practices and healthcare providers.',
 									features: [
-										'Project profitability tracking',
-										'Time & billing integration',
-										'Client retainer management',
-										'Partner distribution calculations',
+										'Insurance billing & collections',
+										'Patient payment tracking',
+										'Medical equipment depreciation',
+										'Practice valuation support',
 									],
 								},
 								{
-									icon: <TrendingUp className='h-8 w-8' />,
-									title: 'Executive Financial Reporting',
+									icon: <Briefcase className='h-8 w-8' />,
+									title: 'Legal Practice Accounting',
 									description:
-										'Board-ready financial statements and executive dashboards for decision making.',
+										'Specialized bookkeeping for Upper Arlington law firms and legal professionals.',
 									features: [
-										'Executive summary reports',
-										'KPI dashboards',
-										'Variance analysis',
-										'Board presentation materials',
+										'Trust account management',
+										'Client retainer tracking',
+										'Partner distribution calculations',
+										'Legal billing integration',
 									],
 								},
 								{
 									icon: <Building className='h-8 w-8' />,
-									title: 'Corporate Tax-Ready Organization',
+									title: 'Professional Consulting Services',
 									description:
-										"Strategic tax document organization and compliance for Dublin's corporate entities.",
+										'Financial management for Upper Arlington consulting firms and advisory practices.',
 									features: [
-										'Corporate tax returns',
-										'Multi-state compliance',
-										'Tax strategy planning',
-										'Audit support',
+										'Project profitability analysis',
+										'Time & billing optimization',
+										'Client contract management',
+										'Performance metrics tracking',
 									],
 								},
 								{
 									icon: <Calculator className='h-8 w-8' />,
-									title: 'Investment & Asset Management',
+									title: 'Financial Services Support',
 									description:
-										'Sophisticated tracking for businesses with complex investment portfolios.',
+										'Bookkeeping for Upper Arlington financial advisors and investment professionals.',
 									features: [
-										'Investment tracking',
-										'Asset depreciation',
-										'Portfolio reporting',
-										'Capital gains analysis',
+										'Commission tracking',
+										'Regulatory compliance support',
+										'Client fee management',
+										'Investment performance reporting',
 									],
 								},
 							].map((service, index) => (
@@ -388,16 +388,17 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Dublin Success Stories */}
+			{/* Upper Arlington Success Stories */}
 			<section className='py-16'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Dublin Business Success Stories
+								Upper Arlington Professional Success Stories
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Trusted by Dublin's most successful companies
+								Trusted by Upper Arlington's leading
+								professionals
 							</p>
 						</div>
 
@@ -413,26 +414,26 @@ export default function DublinServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"Ray transformed our Dublin consulting
-										firm's financial reporting. His
-										executive-level insights and
-										professional presentation helped us
-										secure our largest client contract to
-										date."
+										"Ray's expertise in medical practice
+										accounting has been invaluable for our
+										Upper Arlington clinic. His
+										understanding of insurance billing and
+										compliance requirements saved us
+										countless hours and potential issues."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												CW
+												DS
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												Catherine Williams
+												Dr. Susan Davis
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												Williams Strategy Group, Dublin
-												OH
+												Upper Arlington Family Medicine,
+												Upper Arlington OH
 											</p>
 										</div>
 									</div>
@@ -450,24 +451,99 @@ export default function DublinServices() {
 										))}
 									</div>
 									<p className='text-muted-foreground italic mb-4'>
-										"As a Dublin tech company preparing for
-										acquisition, we needed pristine
-										financials. Ray's attention to detail
-										and investor-ready reporting was
-										instrumental in our successful exit."
+										"As an Upper Arlington law firm, we
+										needed someone who understood trust
+										account management and legal billing
+										complexities. Ray's professional
+										approach and attention to detail are
+										exceptional."
 									</p>
 									<div className='flex items-center'>
 										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
 											<span className='text-primary font-semibold text-sm'>
-												JS
+												JH
 											</span>
 										</div>
 										<div>
 											<p className='font-semibold text-sm'>
-												James Sullivan
+												James Harrison, Esq.
 											</p>
 											<p className='text-xs text-muted-foreground'>
-												DataFlow Technologies, Dublin OH
+												Harrison & Partners Law, Upper
+												Arlington OH
+											</p>
+										</div>
+									</div>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2'>
+								<CardContent className='pt-6'>
+									<div className='flex text-yellow-400 mb-4'>
+										{[...Array(5)].map((_, i) => (
+											<Star
+												key={i}
+												className='h-4 w-4 fill-current'
+											/>
+										))}
+									</div>
+									<p className='text-muted-foreground italic mb-4'>
+										"Ray transformed our Upper Arlington
+										consulting firm's financial reporting.
+										His strategic insights and professional
+										presentation helped us secure our
+										largest client engagement to date."
+									</p>
+									<div className='flex items-center'>
+										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
+											<span className='text-primary font-semibold text-sm'>
+												MW
+											</span>
+										</div>
+										<div>
+											<p className='font-semibold text-sm'>
+												Michael Wilson
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												Wilson Strategic Consulting,
+												Upper Arlington OH
+											</p>
+										</div>
+									</div>
+								</CardContent>
+							</Card>
+
+							<Card className='border-2'>
+								<CardContent className='pt-6'>
+									<div className='flex text-yellow-400 mb-4'>
+										{[...Array(5)].map((_, i) => (
+											<Star
+												key={i}
+												className='h-4 w-4 fill-current'
+											/>
+										))}
+									</div>
+									<p className='text-muted-foreground italic mb-4'>
+										"As an Upper Arlington financial
+										advisor, I needed bookkeeping that
+										understood regulatory requirements.
+										Ray's expertise and professionalism have
+										been instrumental in our practice
+										growth."
+									</p>
+									<div className='flex items-center'>
+										<div className='w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mr-3'>
+											<span className='text-primary font-semibold text-sm'>
+												ER
+											</span>
+										</div>
+										<div>
+											<p className='font-semibold text-sm'>
+												Emily Rodriguez, CFP
+											</p>
+											<p className='text-xs text-muted-foreground'>
+												Rodriguez Wealth Management,
+												Upper Arlington OH
 											</p>
 										</div>
 									</div>
@@ -478,17 +554,17 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Dublin Business Districts */}
+			{/* Upper Arlington Areas */}
 			<section className='py-16 bg-gray-50'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-4xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl font-bold mb-4'>
-								Serving All Dublin Business Districts
+								Serving Upper Arlington's Professional Districts
 							</h2>
 							<p className='text-muted-foreground'>
 								Professional bookkeeping services throughout
-								Dublin, Ohio
+								Upper Arlington, Ohio
 							</p>
 						</div>
 
@@ -497,14 +573,14 @@ export default function DublinServices() {
 								<CardContent className='pt-6'>
 									<Building className='h-8 w-8 text-primary mb-4' />
 									<h3 className='font-semibold mb-3'>
-										Corporate Districts
+										Professional Districts
 									</h3>
 									<ul className='space-y-2 text-sm text-muted-foreground'>
-										<li>• Bridge Street District</li>
-										<li>• Metro Place</li>
-										<li>• Tuttle Crossing Area</li>
-										<li>• Emerald Corporate Center</li>
-										<li>• Dublin Corporate Woods</li>
+										<li>• Northwest Boulevard</li>
+										<li>• Riverside Drive Medical</li>
+										<li>• Lane Avenue Corridor</li>
+										<li>• Kingsdale Shopping Center</li>
+										<li>• Henderson Road</li>
 									</ul>
 								</CardContent>
 							</Card>
@@ -516,11 +592,11 @@ export default function DublinServices() {
 										Residential Business Areas
 									</h3>
 									<ul className='space-y-2 text-sm text-muted-foreground'>
-										<li>• Historic Dublin</li>
-										<li>• Riverside Drive Corridor</li>
-										<li>• Avery Road Business District</li>
-										<li>• Dublin Village Center</li>
-										<li>• Sawmill Road Corridor</li>
+										<li>• Grandview Heights Border</li>
+										<li>• Arlington Centre</li>
+										<li>• Tremont Road</li>
+										<li>• King Avenue</li>
+										<li>• Miller Park Area</li>
 									</ul>
 								</CardContent>
 							</Card>
@@ -529,26 +605,26 @@ export default function DublinServices() {
 				</div>
 			</section>
 
-			{/* Premium CTA */}
+			{/* Professional CTA */}
 			<section className='py-16 bg-gradient-to-br from-primary/5 to-primary/10'>
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<div className='grid lg:grid-cols-2 gap-12 items-center'>
 							<div>
 								<h2 className='text-3xl sm:text-4xl font-bold mb-6'>
-									Ready to Experience
+									Ready for Professional-Grade
 									<br />
 									<span className='text-primary'>
-										Dublin's Premier Bookkeeping Service?
+										Financial Management?
 									</span>
 								</h2>
 
 								<p className='text-xl text-muted-foreground mb-8'>
-									Join Dublin's most successful businesses who
-									trust Ray with their financial management.
-									From startups to established corporations,
-									experience the difference that professional
-									expertise makes.
+									Join 55+ Upper Arlington professionals who
+									trust Ray with their sophisticated
+									bookkeeping needs. From medical practices to
+									law firms, experience the difference that
+									professional expertise makes.
 								</p>
 
 								<div className='space-y-4 mb-8'>
@@ -559,18 +635,18 @@ export default function DublinServices() {
 												QuickBooks ProAdvisor Certified
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Advanced QuickBooks expertise
+												Advanced professional expertise
 											</p>
 										</div>
 									</div>
 									<div className='flex items-center gap-3'>
-										<Users className='h-5 w-5 text-primary' />
+										<Shield className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												40+ Dublin Clients Served
+												Professional Compliance
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												Proven track record of success
+												Industry-specific knowledge
 											</p>
 										</div>
 									</div>
@@ -578,10 +654,10 @@ export default function DublinServices() {
 										<Clock className='h-5 w-5 text-primary' />
 										<div>
 											<p className='font-semibold'>
-												Same-Day Response Guarantee
+												4-Hour Response Guarantee
 											</p>
 											<p className='text-sm text-muted-foreground'>
-												When your business can't wait
+												Professional priority service
 											</p>
 										</div>
 									</div>
@@ -589,7 +665,7 @@ export default function DublinServices() {
 
 								<div className='flex flex-col sm:flex-row gap-4'>
 									<CalendlyModal
-										buttonText='Schedule Executive Consultation'
+										buttonText='Schedule Professional Consultation'
 										buttonSize='lg'
 										buttonClassName='flex-1 sm:flex-none px-8 py-6 text-lg'
 									/>
@@ -599,7 +675,7 @@ export default function DublinServices() {
 										className='px-8 py-6 text-lg'
 										asChild>
 										<Link href='/free-guide'>
-											Get Executive Guide
+											Professional Guide
 										</Link>
 									</Button>
 								</div>
@@ -607,101 +683,12 @@ export default function DublinServices() {
 
 							<div>
 								<LeadMagnetForm
-									title='Executive Financial Guide for Dublin Businesses'
-									description='"7 Advanced Financial Strategies for Professional Services"'
-									buttonText='Download Executive Guide'
+									title='Professional Financial Management Guide'
+									description='"7 Advanced Strategies for Upper Arlington Professionals"'
+									buttonText='Download Professional Guide'
 									variant='default'
 								/>
 							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Dublin Business Resources */}
-			<section className='py-16 bg-white'>
-				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
-					<div className='max-w-4xl mx-auto'>
-						<div className='text-center mb-12'>
-							<h2 className='text-3xl font-bold mb-4'>
-								Dublin Business Resources
-							</h2>
-							<p className='text-muted-foreground'>
-								Essential resources for Dublin, Ohio business
-								owners
-							</p>
-						</div>
-
-						<div className='grid md:grid-cols-2 gap-6'>
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										City of Dublin Economic Development
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Business incentives, development
-										opportunities, and municipal services
-									</p>
-									<a
-										href='https://dublinohiousa.gov'
-										target='_blank'
-										rel='noopener noreferrer'
-										className='text-primary text-sm hover:underline'>
-										Visit dublinohiousa.gov →
-									</a>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										Dublin Chamber of Commerce
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Networking events, business advocacy,
-										and professional development
-									</p>
-									<a
-										href='#'
-										className='text-primary text-sm hover:underline'>
-										Chamber membership →
-									</a>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										Ohio SCORE Dublin
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Free business mentoring and educational
-										workshops
-									</p>
-									<a
-										href='https://dublin.score.org'
-										target='_blank'
-										rel='noopener noreferrer'
-										className='text-primary text-sm hover:underline'>
-										SCORE Dublin chapter →
-									</a>
-								</CardContent>
-							</Card>
-
-							<Card>
-								<CardContent className='pt-6'>
-									<h3 className='font-semibold mb-2'>
-										Dublin Professional Networks
-									</h3>
-									<p className='text-sm text-muted-foreground mb-3'>
-										Connect with Dublin's professional
-										service providers
-									</p>
-									<span className='text-primary text-sm'>
-										Contact Ray for introductions
-									</span>
-								</CardContent>
-							</Card>
 						</div>
 					</div>
 				</div>
