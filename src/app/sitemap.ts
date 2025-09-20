@@ -103,13 +103,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.8,
 		},
 		{
-			url: `${baseUrl}/blog/delaware-construction-bookkeeping-mistakes`,
+			url: `${baseUrl}/blog/columbus-construction-bookkeeping-mistakes`,
 			lastModified: new Date(),
 			changeFrequency: 'monthly',
 			priority: 0.7,
 		},
 		{
 			url: `${baseUrl}/blog/columbus-construction-tax-strategies`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
+		{
+			url: `${baseUrl}/blog/quickbooks-job-costing-construction`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
+		{
+			url: `${baseUrl}/blog/construction-cash-flow-management`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
+		{
+			url: `${baseUrl}/blog/dublin-construction-business-growth`,
+			lastModified: new Date(),
+			changeFrequency: 'monthly',
+			priority: 0.7,
+		},
+		{
+			url: `${baseUrl}/blog/construction-expense-tracking-system`,
 			lastModified: new Date(),
 			changeFrequency: 'monthly',
 			priority: 0.7,

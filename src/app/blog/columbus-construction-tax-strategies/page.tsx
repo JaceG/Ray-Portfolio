@@ -497,11 +497,11 @@ export default function ColumbusConstructionTax() {
 						<div className='grid md:grid-cols-3 gap-6'>
 							{[
 								{
-									title: '5 Costly Bookkeeping Mistakes Delaware Construction Companies Make',
+									title: '5 Costly Bookkeeping Mistakes Columbus Construction Companies Make',
 									excerpt:
-										'Financial errors that cost Delaware contractors thousands each year.',
-									slug: 'delaware-construction-bookkeeping-mistakes',
-									location: 'Delaware, OH',
+										'Financial errors that cost Columbus area contractors thousands each year.',
+									slug: 'columbus-construction-bookkeeping-mistakes',
+									location: 'Columbus, OH',
 									category: 'Job Costing',
 								},
 								{
@@ -509,7 +509,7 @@ export default function ColumbusConstructionTax() {
 									excerpt:
 										'Master QuickBooks job costing for better project profitability.',
 									slug: 'quickbooks-job-costing-construction',
-									location: 'Delaware & Columbus',
+									location: 'Columbus Area',
 									category: 'QuickBooks',
 								},
 								{

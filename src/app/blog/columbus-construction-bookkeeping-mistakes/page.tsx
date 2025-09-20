@@ -22,14 +22,14 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-	title: '5 Costly Bookkeeping Mistakes Delaware Construction Companies Make | Ray Galloway',
+	title: '5 Costly Bookkeeping Mistakes Columbus Construction Companies Make | Ray Galloway',
 	description:
-		'Avoid the financial errors that cost Delaware contractors thousands. Expert job costing and bookkeeping advice from QuickBooks ProAdvisor Ray Galloway.',
+		'Avoid the financial errors that cost Columbus area contractors thousands. Expert job costing and bookkeeping advice from QuickBooks ProAdvisor Ray Galloway.',
 	keywords:
-		'Delaware construction bookkeeping, construction accounting mistakes, job costing Delaware, construction tax deductions Delaware OH',
+		'Columbus construction bookkeeping, construction accounting mistakes, job costing Columbus, construction tax deductions Columbus OH',
 };
 
-export default function DelawareConstructionMistakes() {
+export default function ColumbusConstructionMistakes() {
 	return (
 		<div className='min-h-screen bg-white'>
 			{/* Header */}
@@ -66,7 +66,7 @@ export default function DelawareConstructionMistakes() {
 								Blog
 							</Link>
 							<span>/</span>
-							<span>Delaware Construction Mistakes</span>
+							<span>Columbus Construction Mistakes</span>
 						</nav>
 
 						{/* Article Meta */}
@@ -80,7 +80,7 @@ export default function DelawareConstructionMistakes() {
 							<div className='flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full'>
 								<MapPin className='h-4 w-4 text-gray-600' />
 								<span className='text-sm font-medium text-gray-600'>
-									Delaware, OH
+									Columbus, OH
 								</span>
 							</div>
 							<div className='flex items-center gap-2 text-sm text-muted-foreground'>
@@ -95,12 +95,12 @@ export default function DelawareConstructionMistakes() {
 
 						{/* Title */}
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6 leading-tight'>
-							5 Costly Bookkeeping Mistakes Delaware Construction
+							5 Costly Bookkeeping Mistakes Columbus Construction
 							Companies Make
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8'>
-							These financial errors cost Delaware contractors an
+							These financial errors cost Columbus area contractors an
 							average of $15,000 per year. Learn how to avoid them
 							and protect your construction business's bottom
 							line.
@@ -149,15 +149,15 @@ export default function DelawareConstructionMistakes() {
 							{/* Introduction */}
 							<p className='text-lg leading-relaxed mb-8'>
 								As a QuickBooks ProAdvisor who's worked with
-								over 50 construction companies in Delaware and
-								the Columbus area, I've seen the same costly
+								over 75 construction companies throughout the
+								Columbus metropolitan area, I've seen the same costly
 								bookkeeping mistakes repeated over and over.
 								These errors don't just hurt your bottom
 								line—they can put your entire business at risk.
 							</p>
 
 							<p className='text-lg leading-relaxed mb-8'>
-								If you're a Delaware construction company owner,
+								If you're a Columbus area construction company owner,
 								this article could save you thousands of dollars
 								this year. Let's dive into the five most
 								expensive mistakes I see and exactly how to fix
@@ -175,7 +175,7 @@ export default function DelawareConstructionMistakes() {
 										</h2>
 										<p className='text-red-800 mb-4'>
 											<strong>The Problem:</strong> Many
-											Delaware contractors I work with are
+											Columbus area contractors I work with are
 											shocked to discover they're losing
 											money on jobs they thought were
 											profitable. Without proper job
@@ -186,7 +186,7 @@ export default function DelawareConstructionMistakes() {
 							</div>
 
 							<p className='text-lg leading-relaxed mb-6'>
-								Last month, I helped a Delaware contractor
+								Last month, I helped a Columbus area contractor
 								discover they were losing $3,200 on every
 								kitchen remodel because they weren't tracking
 								material waste and change orders properly.
@@ -240,7 +240,7 @@ export default function DelawareConstructionMistakes() {
 										</h3>
 										<p className='text-muted-foreground mb-4'>
 											Let me help you set up proper job
-											costing for your Delaware
+											costing for your Columbus area
 											construction business.
 										</p>
 										<CalendlyModal
@@ -266,7 +266,7 @@ export default function DelawareConstructionMistakes() {
 											your personal truck for job sites,
 											buying materials with personal
 											cards, or mixing fuel receipts
-											creates a nightmare for Delaware
+											creates a nightmare for Columbus area
 											construction companies come tax
 											time.
 										</p>

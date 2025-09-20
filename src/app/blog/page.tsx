@@ -40,15 +40,15 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
 	{
-		slug: 'delaware-construction-bookkeeping-mistakes',
-		title: '5 Costly Bookkeeping Mistakes Delaware Construction Companies Make',
+		slug: 'columbus-construction-bookkeeping-mistakes',
+		title: '5 Costly Bookkeeping Mistakes Columbus Construction Companies Make',
 		excerpt:
-			'Discover the financial errors that cost Delaware contractors thousands each year and how to avoid them with proper job costing systems.',
+			'Discover the financial errors that cost Columbus area contractors thousands each year and how to avoid them with proper job costing systems.',
 		publishDate: '2024-11-28',
 		readTime: '8 min read',
 		category: 'Job Costing',
-		location: 'Delaware, OH',
-		image: '/images/blog/delaware-construction-site.jpg',
+		location: 'Columbus, OH',
+		image: '/images/blog/columbus-construction-site.jpg',
 		featured: true,
 	},
 	{
@@ -71,7 +71,7 @@ const blogPosts: BlogPost[] = [
 		publishDate: '2024-11-22',
 		readTime: '12 min read',
 		category: 'QuickBooks',
-		location: 'Delaware & Columbus',
+		location: 'Columbus Area',
 		image: '/images/blog/quickbooks-construction-dashboard.jpg',
 	},
 	{
@@ -104,7 +104,7 @@ const blogPosts: BlogPost[] = [
 		publishDate: '2024-11-13',
 		readTime: '6 min read',
 		category: 'Expense Management',
-		location: 'Delaware & Columbus',
+		location: 'Columbus Area',
 		image: '/images/blog/construction-expense-tracking.jpg',
 	},
 ];
@@ -150,14 +150,14 @@ export default function BlogHomepage() {
 							Financial Insights for
 							<br />
 							<span className='text-primary'>
-								Delaware & Columbus Construction
+								Columbus Area Construction
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
 							Expert bookkeeping advice, job costing strategies,
 							and tax tips specifically for construction companies
-							in Delaware, Columbus, and Central Ohio.
+							in Columbus and Central Ohio.
 						</p>
 
 						<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
@@ -225,8 +225,7 @@ export default function BlogHomepage() {
 								Featured Construction Insights
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Essential reading for Delaware and Columbus area
-								contractors
+								Essential reading for Columbus area contractors
 							</p>
 						</div>
 
@@ -397,12 +396,11 @@ export default function BlogHomepage() {
 										</h3>
 										<p className='text-lg text-muted-foreground mb-4'>
 											QuickBooks ProAdvisor specializing
-											in Delaware and Columbus area
-											construction companies. With 10+
-											years of experience helping
-											contractors optimize their job
-											costing, manage cash flow, and
-											maximize profits.
+											in Columbus area construction
+											companies. With 10+ years of
+											experience helping contractors
+											optimize their job costing, manage
+											cash flow, and maximize profits.
 										</p>
 
 										<div className='flex flex-wrap justify-center lg:justify-start gap-4 mb-6'>
@@ -421,7 +419,7 @@ export default function BlogHomepage() {
 											<div className='flex items-center gap-2 px-3 py-1 bg-qb-green-100 rounded-full'>
 												<MapPin className='h-4 w-4 text-primary' />
 												<span className='text-sm font-medium text-primary'>
-													Delaware Local
+													Columbus Area
 												</span>
 											</div>
 										</div>
@@ -448,7 +446,7 @@ export default function BlogHomepage() {
 						</h2>
 						<p className='text-muted-foreground mb-8'>
 							Get weekly insights delivered to your inbox. No
-							spam, just valuable tips for Delaware and Columbus
+							spam, just valuable tips for Columbus area
 							construction companies.
 						</p>
 
