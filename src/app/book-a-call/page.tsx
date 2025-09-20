@@ -26,11 +26,11 @@ export default function BookACall() {
 							Ray Galloway Bookkeeping
 						</Link>
 						<div className='flex items-center space-x-4'>
-							<Link
+							{/* <Link
 								href='/auth'
 								className='text-sm font-medium hover:text-primary transition-colors'>
 								Client Login
-							</Link>
+							</Link> */}
 						</div>
 					</div>
 				</div>

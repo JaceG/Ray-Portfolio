@@ -106,10 +106,13 @@ export default function AuthPage() {
 											</label>
 										</div>
 
-										<Button asChild className='w-full'>
+										{/* <Button asChild className='w-full'>
 											<Link href='/dashboard'>
 												Login to Dashboard
 											</Link>
+										</Button> */}
+										<Button className='w-full' disabled>
+											Dashboard Coming Soon
 										</Button>
 									</form>
 
