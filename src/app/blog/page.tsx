@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CalendlyModal } from '@/components/CalendlyModal';
-import { 
-	ArrowLeft, 
-	Calendar, 
-	Clock, 
+import {
+	ArrowLeft,
+	Calendar,
+	Clock,
 	User,
 	MapPin,
 	ArrowRight,
@@ -15,13 +15,15 @@ import {
 	Calculator,
 	TrendingUp,
 	FileText,
-	Award
+	Award,
 } from 'lucide-react';
 
 export const metadata = {
 	title: 'Construction Bookkeeping Blog | Delaware & Columbus OH | Ray Galloway',
-	description: 'Expert bookkeeping tips for Delaware and Columbus construction companies. Job costing, tax strategies, and financial management advice from QuickBooks ProAdvisor Ray Galloway.',
-	keywords: 'construction bookkeeping, Delaware construction accounting, Columbus construction companies, job costing, construction tax strategies',
+	description:
+		'Expert bookkeeping tips for Delaware and Columbus construction companies. Job costing, tax strategies, and financial management advice from QuickBooks ProAdvisor Ray Galloway.',
+	keywords:
+		'construction bookkeeping, Delaware construction accounting, Columbus construction companies, job costing, construction tax strategies',
 };
 
 interface BlogPost {
@@ -40,7 +42,8 @@ const blogPosts: BlogPost[] = [
 	{
 		slug: 'delaware-construction-bookkeeping-mistakes',
 		title: '5 Costly Bookkeeping Mistakes Delaware Construction Companies Make',
-		excerpt: 'Discover the financial errors that cost Delaware contractors thousands each year and how to avoid them with proper job costing systems.',
+		excerpt:
+			'Discover the financial errors that cost Delaware contractors thousands each year and how to avoid them with proper job costing systems.',
 		publishDate: '2024-11-28',
 		readTime: '8 min read',
 		category: 'Job Costing',
@@ -51,10 +54,11 @@ const blogPosts: BlogPost[] = [
 	{
 		slug: 'columbus-construction-tax-strategies',
 		title: 'Columbus Construction Tax Strategies That Save Thousands',
-		excerpt: 'Learn the specific tax deductions and strategies that Columbus area construction businesses use to minimize their tax burden legally.',
+		excerpt:
+			'Learn the specific tax deductions and strategies that Columbus area construction businesses use to minimize their tax burden legally.',
 		publishDate: '2024-11-25',
 		readTime: '10 min read',
-		category: 'Tax Planning',
+		category: 'Financial Planning',
 		location: 'Columbus, OH',
 		image: '/images/blog/columbus-downtown-construction.jpg',
 		featured: true,
@@ -62,7 +66,8 @@ const blogPosts: BlogPost[] = [
 	{
 		slug: 'quickbooks-job-costing-construction',
 		title: 'QuickBooks Job Costing for Construction: A Complete Guide',
-		excerpt: 'Master QuickBooks job costing to track project profitability, manage subcontractor payments, and make data-driven decisions.',
+		excerpt:
+			'Master QuickBooks job costing to track project profitability, manage subcontractor payments, and make data-driven decisions.',
 		publishDate: '2024-11-22',
 		readTime: '12 min read',
 		category: 'QuickBooks',
@@ -72,7 +77,8 @@ const blogPosts: BlogPost[] = [
 	{
 		slug: 'construction-cash-flow-management',
 		title: 'How Construction Companies Can Improve Cash Flow by 40%',
-		excerpt: 'Simple strategies to optimize cash flow, manage payment schedules, and avoid the feast-or-famine cycle common in construction.',
+		excerpt:
+			'Simple strategies to optimize cash flow, manage payment schedules, and avoid the feast-or-famine cycle common in construction.',
 		publishDate: '2024-11-19',
 		readTime: '7 min read',
 		category: 'Cash Flow',
@@ -82,7 +88,8 @@ const blogPosts: BlogPost[] = [
 	{
 		slug: 'dublin-construction-business-growth',
 		title: 'Growing Your Dublin Construction Business: Financial Foundations',
-		excerpt: 'Essential financial systems every Dublin construction company needs to scale from startup to multi-million dollar operation.',
+		excerpt:
+			'Essential financial systems every Dublin construction company needs to scale from startup to multi-million dollar operation.',
 		publishDate: '2024-11-16',
 		readTime: '9 min read',
 		category: 'Business Growth',
@@ -92,7 +99,8 @@ const blogPosts: BlogPost[] = [
 	{
 		slug: 'construction-expense-tracking-system',
 		title: 'The 5-Category Expense System Every Contractor Needs',
-		excerpt: 'Simplify your expense tracking with this proven system that saves construction companies 10+ hours per month on bookkeeping.',
+		excerpt:
+			'Simplify your expense tracking with this proven system that saves construction companies 10+ hours per month on bookkeeping.',
 		publishDate: '2024-11-13',
 		readTime: '6 min read',
 		category: 'Expense Management',
@@ -102,8 +110,8 @@ const blogPosts: BlogPost[] = [
 ];
 
 export default function BlogHomepage() {
-	const featuredPosts = blogPosts.filter(post => post.featured);
-	const recentPosts = blogPosts.filter(post => !post.featured);
+	const featuredPosts = blogPosts.filter((post) => post.featured);
+	const recentPosts = blogPosts.filter((post) => !post.featured);
 
 	return (
 		<div className='min-h-screen bg-white'>
@@ -133,18 +141,23 @@ export default function BlogHomepage() {
 					<div className='max-w-4xl mx-auto text-center'>
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
 							<Hammer className='h-4 w-4 text-primary' />
-							<span className='text-sm font-medium text-primary'>CONSTRUCTION EXPERTISE</span>
+							<span className='text-sm font-medium text-primary'>
+								CONSTRUCTION EXPERTISE
+							</span>
 						</div>
-						
+
 						<h1 className='text-4xl sm:text-5xl font-bold mb-6'>
 							Financial Insights for
 							<br />
-							<span className='text-primary'>Delaware & Columbus Construction</span>
+							<span className='text-primary'>
+								Delaware & Columbus Construction
+							</span>
 						</h1>
-						
+
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-							Expert bookkeeping advice, job costing strategies, and tax tips specifically 
-							for construction companies in Delaware, Columbus, and Central Ohio.
+							Expert bookkeeping advice, job costing strategies,
+							and tax tips specifically for construction companies
+							in Delaware, Columbus, and Central Ohio.
 						</p>
 
 						<div className='flex flex-col sm:flex-row gap-4 justify-center mb-12'>
@@ -153,7 +166,11 @@ export default function BlogHomepage() {
 								buttonSize='lg'
 								buttonClassName='px-8 py-6 text-lg'
 							/>
-							<Button variant='outline' size='lg' className='px-8 py-6 text-lg' asChild>
+							<Button
+								variant='outline'
+								size='lg'
+								className='px-8 py-6 text-lg'
+								asChild>
 								<Link href='/free-guide'>
 									Download Free Construction Guide
 								</Link>
@@ -163,20 +180,36 @@ export default function BlogHomepage() {
 						{/* Blog Stats */}
 						<div className='grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto'>
 							<div className='text-center'>
-								<div className='text-2xl font-bold text-primary'>50+</div>
-								<div className='text-sm text-muted-foreground'>Construction Clients</div>
+								<div className='text-2xl font-bold text-primary'>
+									50+
+								</div>
+								<div className='text-sm text-muted-foreground'>
+									Construction Clients
+								</div>
 							</div>
 							<div className='text-center'>
-								<div className='text-2xl font-bold text-primary'>100+</div>
-								<div className='text-sm text-muted-foreground'>Blog Articles</div>
+								<div className='text-2xl font-bold text-primary'>
+									100+
+								</div>
+								<div className='text-sm text-muted-foreground'>
+									Blog Articles
+								</div>
 							</div>
 							<div className='text-center'>
-								<div className='text-2xl font-bold text-primary'>10+</div>
-								<div className='text-sm text-muted-foreground'>Years Experience</div>
+								<div className='text-2xl font-bold text-primary'>
+									10+
+								</div>
+								<div className='text-sm text-muted-foreground'>
+									Years Experience
+								</div>
 							</div>
 							<div className='text-center'>
-								<div className='text-2xl font-bold text-primary'>$2M+</div>
-								<div className='text-sm text-muted-foreground'>Projects Managed</div>
+								<div className='text-2xl font-bold text-primary'>
+									$2M+
+								</div>
+								<div className='text-sm text-muted-foreground'>
+									Projects Managed
+								</div>
 							</div>
 						</div>
 					</div>
@@ -192,20 +225,28 @@ export default function BlogHomepage() {
 								Featured Construction Insights
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Essential reading for Delaware and Columbus area contractors
+								Essential reading for Delaware and Columbus area
+								contractors
 							</p>
 						</div>
 
 						<div className='grid lg:grid-cols-2 gap-8 mb-16'>
 							{featuredPosts.map((post, index) => (
-								<Card key={post.slug} className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
+								<Card
+									key={post.slug}
+									className='overflow-hidden hover:shadow-xl transition-shadow duration-300'>
 									<div className='relative h-64 bg-gray-100'>
 										{/* TODO: Add actual construction site photos */}
 										<div className='absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center'>
 											<div className='text-center text-white'>
 												<Building className='h-16 w-16 mx-auto mb-4' />
-												<p className='text-sm'>Construction Image Placeholder</p>
-												<p className='text-xs opacity-75'>Add: {post.image}</p>
+												<p className='text-sm'>
+													Construction Image
+													Placeholder
+												</p>
+												<p className='text-xs opacity-75'>
+													Add: {post.image}
+												</p>
 											</div>
 										</div>
 										<div className='absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium'>
@@ -215,28 +256,35 @@ export default function BlogHomepage() {
 											{post.readTime}
 										</div>
 									</div>
-									
+
 									<CardContent className='p-6'>
 										<div className='flex items-center gap-2 mb-3'>
 											<MapPin className='h-4 w-4 text-primary' />
-											<span className='text-sm text-primary font-medium'>{post.location}</span>
+											<span className='text-sm text-primary font-medium'>
+												{post.location}
+											</span>
 										</div>
-										
+
 										<h3 className='text-xl font-bold mb-3 leading-tight'>
 											{post.title}
 										</h3>
-										
+
 										<p className='text-muted-foreground mb-4 leading-relaxed'>
 											{post.excerpt}
 										</p>
-										
+
 										<div className='flex items-center justify-between'>
 											<div className='flex items-center gap-2 text-sm text-muted-foreground'>
 												<Calendar className='h-4 w-4' />
-												<span>{new Date(post.publishDate).toLocaleDateString()}</span>
+												<span>
+													{new Date(
+														post.publishDate
+													).toLocaleDateString()}
+												</span>
 											</div>
 											<Button asChild>
-												<Link href={`/blog/${post.slug}`}>
+												<Link
+													href={`/blog/${post.slug}`}>
 													Read More
 													<ArrowRight className='ml-2 h-4 w-4' />
 												</Link>
@@ -259,19 +307,24 @@ export default function BlogHomepage() {
 								Latest Construction Bookkeeping Tips
 							</h2>
 							<p className='text-muted-foreground'>
-								Stay ahead with the latest strategies and insights
+								Stay ahead with the latest strategies and
+								insights
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 							{recentPosts.map((post) => (
-								<Card key={post.slug} className='overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full'>
+								<Card
+									key={post.slug}
+									className='overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full'>
 									<div className='relative h-48 bg-gray-100'>
 										{/* TODO: Add actual construction photos */}
 										<div className='absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/20 flex items-center justify-center'>
 											<div className='text-center text-primary'>
 												<Calculator className='h-12 w-12 mx-auto mb-2' />
-												<p className='text-xs'>Add: {post.image}</p>
+												<p className='text-xs'>
+													Add: {post.image}
+												</p>
 											</div>
 										</div>
 										<div className='absolute top-3 left-3 bg-primary text-white px-2 py-1 rounded text-xs font-medium'>
@@ -281,28 +334,35 @@ export default function BlogHomepage() {
 											{post.readTime}
 										</div>
 									</div>
-									
+
 									<CardContent className='p-4 flex-1'>
 										<div className='flex items-center gap-2 mb-2'>
 											<MapPin className='h-3 w-3 text-primary' />
-											<span className='text-xs text-primary font-medium'>{post.location}</span>
+											<span className='text-xs text-primary font-medium'>
+												{post.location}
+											</span>
 										</div>
-										
+
 										<h3 className='text-lg font-bold mb-2 leading-tight'>
 											{post.title}
 										</h3>
-										
+
 										<p className='text-sm text-muted-foreground mb-4 leading-relaxed'>
 											{post.excerpt}
 										</p>
-										
+
 										<div className='flex items-center justify-between mt-auto'>
 											<div className='flex items-center gap-2 text-xs text-muted-foreground'>
 												<Calendar className='h-3 w-3' />
-												<span>{new Date(post.publishDate).toLocaleDateString()}</span>
+												<span>
+													{new Date(
+														post.publishDate
+													).toLocaleDateString()}
+												</span>
 											</div>
 											<Button size='sm' asChild>
-												<Link href={`/blog/${post.slug}`}>
+												<Link
+													href={`/blog/${post.slug}`}>
 													Read More
 												</Link>
 											</Button>
@@ -330,32 +390,42 @@ export default function BlogHomepage() {
 											</div>
 										</div>
 									</div>
-									
+
 									<div className='flex-1 text-center lg:text-left'>
 										<h3 className='text-2xl font-bold mb-2'>
 											About Ray Galloway
 										</h3>
 										<p className='text-lg text-muted-foreground mb-4'>
-											QuickBooks ProAdvisor specializing in Delaware and Columbus area 
-											construction companies. With 10+ years of experience helping contractors 
-											optimize their job costing, manage cash flow, and maximize profits.
+											QuickBooks ProAdvisor specializing
+											in Delaware and Columbus area
+											construction companies. With 10+
+											years of experience helping
+											contractors optimize their job
+											costing, manage cash flow, and
+											maximize profits.
 										</p>
-										
+
 										<div className='flex flex-wrap justify-center lg:justify-start gap-4 mb-6'>
 											<div className='flex items-center gap-2 px-3 py-1 bg-qb-green-100 rounded-full'>
 												<Award className='h-4 w-4 text-primary' />
-												<span className='text-sm font-medium text-primary'>QuickBooks ProAdvisor</span>
+												<span className='text-sm font-medium text-primary'>
+													QuickBooks ProAdvisor
+												</span>
 											</div>
 											<div className='flex items-center gap-2 px-3 py-1 bg-qb-green-100 rounded-full'>
 												<Hammer className='h-4 w-4 text-primary' />
-												<span className='text-sm font-medium text-primary'>Construction Specialist</span>
+												<span className='text-sm font-medium text-primary'>
+													Construction Specialist
+												</span>
 											</div>
 											<div className='flex items-center gap-2 px-3 py-1 bg-qb-green-100 rounded-full'>
 												<MapPin className='h-4 w-4 text-primary' />
-												<span className='text-sm font-medium text-primary'>Delaware Local</span>
+												<span className='text-sm font-medium text-primary'>
+													Delaware Local
+												</span>
 											</div>
 										</div>
-										
+
 										<CalendlyModal
 											buttonText='Schedule Construction Consultation'
 											buttonSize='lg'
@@ -377,10 +447,11 @@ export default function BlogHomepage() {
 							Stay Updated with Construction Financial Tips
 						</h2>
 						<p className='text-muted-foreground mb-8'>
-							Get weekly insights delivered to your inbox. No spam, just valuable 
-							tips for Delaware and Columbus construction companies.
+							Get weekly insights delivered to your inbox. No
+							spam, just valuable tips for Delaware and Columbus
+							construction companies.
 						</p>
-						
+
 						{/* TODO: Replace with actual email signup form */}
 						<div className='bg-white rounded-lg p-6 shadow-lg'>
 							<div className='flex flex-col sm:flex-row gap-4'>
@@ -394,7 +465,8 @@ export default function BlogHomepage() {
 								</Button>
 							</div>
 							<p className='text-xs text-muted-foreground mt-3'>
-								Join 500+ construction business owners getting weekly tips
+								Join 500+ construction business owners getting
+								weekly tips
 							</p>
 						</div>
 					</div>

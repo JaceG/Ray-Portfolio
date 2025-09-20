@@ -457,11 +457,11 @@ export default function Dashboard() {
 							</CardContent>
 						</Card>
 
-						{/* Tax Preparation */}
+						{/* Tax-Ready Organization */}
 						<Card>
 							<CardHeader>
 								<CardTitle className='text-lg'>
-									Tax Preparation
+									Tax-Ready Organization
 								</CardTitle>
 							</CardHeader>
 							<CardContent>

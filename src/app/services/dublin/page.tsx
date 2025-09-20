@@ -285,9 +285,9 @@ export default function DublinServices() {
 								},
 								{
 									icon: <Building className='h-8 w-8' />,
-									title: 'Corporate Tax Planning',
+									title: 'Corporate Tax-Ready Organization',
 									description:
-										"Strategic tax planning and compliance for Dublin's corporate entities.",
+										"Strategic tax document organization and compliance for Dublin's corporate entities.",
 									features: [
 										'Corporate tax returns',
 										'Multi-state compliance',

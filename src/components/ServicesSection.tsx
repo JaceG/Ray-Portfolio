@@ -55,9 +55,9 @@ const services = [
 	},
 	{
 		icon: Shield,
-		title: 'Tax Prep Support',
+		title: 'Tax-Ready Organization',
 		description:
-			'Year-end financial statements and organized records that make tax preparation smooth and stress-free.',
+			'Year-end financial statements and organized records that make working with your tax preparer smooth and stress-free.',
 		details: [
 			'Year-end financial statements',
 			'1099 preparation & filing',

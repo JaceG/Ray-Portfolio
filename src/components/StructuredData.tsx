@@ -118,9 +118,9 @@ export function LocalBusinessStructuredData({
 				'@type': 'Offer',
 				itemOffered: {
 					'@type': 'Service',
-					name: 'Tax Preparation Support',
+					name: 'Tax-Ready Organization',
 					description:
-						'Year-round tax planning and preparation assistance',
+						'Year-round tax document organization and preparation assistance',
 				},
 			},
 			{
@@ -181,7 +181,7 @@ export function PersonStructuredData({
 			'Bookkeeping',
 			'QuickBooks',
 			'Small Business Accounting',
-			'Tax Preparation',
+			'Tax Document Organization',
 			'Financial Analysis',
 			'Business Consulting',
 		],

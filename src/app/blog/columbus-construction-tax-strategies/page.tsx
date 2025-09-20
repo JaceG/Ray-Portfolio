@@ -76,7 +76,7 @@ export default function ColumbusConstructionTax() {
 							<div className='flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full'>
 								<PiggyBank className='h-4 w-4 text-primary' />
 								<span className='text-sm font-medium text-primary'>
-									Tax Planning
+									Financial Planning
 								</span>
 							</div>
 							<div className='flex items-center gap-2 px-3 py-1 bg-gray-100 rounded-full'>

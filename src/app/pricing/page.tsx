@@ -8,27 +8,23 @@ import {
 	Check,
 	X,
 	Calculator,
-	DollarSign,
 	TrendingUp,
 	Clock,
 	Shield,
 	Award,
-	Users,
 	Hammer,
 	Building,
 	Star,
 	Phone,
 	Mail,
-	CheckCircle,
-	AlertCircle,
 } from 'lucide-react';
 
 export const metadata = {
-	title: 'Construction Bookkeeping Pricing | Delaware & Columbus OH | Ray Galloway',
+	title: 'Professional Bookkeeping Pricing | Columbus Ohio | Ray Galloway',
 	description:
-		'Transparent pricing for construction bookkeeping services. Packages designed for Delaware and Columbus area contractors. First month 50% off.',
+		'Transparent pricing for professional bookkeeping services. Packages designed for Columbus Ohio area businesses. First month 50% off.',
 	keywords:
-		'construction bookkeeping pricing, Delaware construction accounting costs, Columbus contractor bookkeeping rates, QuickBooks ProAdvisor pricing',
+		'bookkeeping pricing, Columbus Ohio accounting costs, small business bookkeeping rates, QuickBooks ProAdvisor pricing',
 };
 
 interface PricingTier {
@@ -46,67 +42,66 @@ interface PricingTier {
 
 const pricingTiers: PricingTier[] = [
 	{
-		name: 'Startup Contractor',
-		price: '$297',
-		originalPrice: '$397',
-		description: 'Perfect for new construction companies getting organized',
+		name: 'Startup Business',
+		price: '$597',
+		originalPrice: '$895',
+		description: 'Perfect for new businesses getting organized',
 		features: [
 			'Monthly bookkeeping & reconciliation',
-			'Basic job costing setup',
+			'Basic financial reporting',
 			'Quarterly financial statements',
-			'Tax preparation support',
+			'Tax-ready financial organization',
 			'QuickBooks setup & training',
 			'Email support',
 			'Monthly check-in call',
 		],
 		notIncluded: [
 			'Weekly reporting',
-			'Advanced job costing',
+			'Advanced analytics',
 			'Payroll processing',
 		],
-		ideal: 'New contractors, 1-5 projects per month',
+		ideal: 'New businesses, basic bookkeeping needs',
 		ctaText: 'Start Startup Package',
 	},
 	{
-		name: 'Growing Contractor',
-		price: '$497',
-		originalPrice: '$597',
-		description:
-			'Comprehensive bookkeeping for established construction businesses',
+		name: 'Growing Business',
+		price: '$997',
+		originalPrice: '$1,495',
+		description: 'Comprehensive bookkeeping for established businesses',
 		features: [
 			'Everything in Startup Package',
-			'Advanced job costing & profitability analysis',
+			'Advanced financial analysis & profitability tracking',
 			'Weekly financial reports',
 			'Cash flow forecasting',
-			'Subcontractor payment tracking',
-			'Equipment depreciation management',
+			'Vendor payment tracking',
+			'Asset depreciation management',
 			'Priority phone support',
 			'Bi-weekly strategy calls',
 		],
 		notIncluded: ['Daily bookkeeping', 'Payroll processing'],
 		recommended: true,
 		popular: true,
-		ideal: 'Established contractors, 5-15 projects per month',
+		ideal: 'Established businesses, moderate complexity',
 		ctaText: 'Choose Growing Package',
 	},
 	{
-		name: 'Enterprise Contractor',
-		price: '$797',
-		originalPrice: '$897',
+		name: 'Enterprise Business',
+		price: '$2,197',
+		originalPrice: '$3,295',
 		description:
-			'Full-service financial management for large construction operations',
+			'Full-service financial management for large business operations',
 		features: [
 			'Everything in Growing Package',
 			'Daily bookkeeping & transaction monitoring',
-			'Multi-project dashboard',
+			'Multi-location dashboard',
 			'Payroll processing & reporting',
-			'Advanced tax planning',
+			'Tax-ready financial planning',
 			'Investor-ready financial statements',
 			'Same-day response guarantee',
 			'Weekly strategy sessions',
 			'CFO-level insights',
 		],
-		ideal: 'Large contractors, 15+ projects, multiple crews',
+		ideal: 'Large businesses, complex operations, multiple locations',
 		ctaText: 'Get Enterprise Package',
 	},
 ];
@@ -141,7 +136,7 @@ export default function PricingPage() {
 						<div className='inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6'>
 							<Hammer className='h-4 w-4 text-primary' />
 							<span className='text-sm font-medium text-primary'>
-								CONSTRUCTION SPECIALISTS
+								BUSINESS SPECIALISTS
 							</span>
 						</div>
 
@@ -149,15 +144,15 @@ export default function PricingPage() {
 							Transparent Pricing for
 							<br />
 							<span className='text-primary'>
-								Delaware Construction Companies
+								Columbus Ohio Businesses
 							</span>
 						</h1>
 
 						<p className='text-xl text-muted-foreground mb-8 max-w-3xl mx-auto'>
-							Professional bookkeeping packages designed
-							specifically for construction businesses. Save 60+
-							hours per year and increase profit margins with
-							expert financial management.
+							Professional bookkeeping packages designed for
+							growing businesses. Save 60+ hours per year and
+							increase profit margins with expert financial
+							management.
 						</p>
 
 						{/* Promotional Banner */}
@@ -170,11 +165,10 @@ export default function PricingPage() {
 								<Star className='h-6 w-6 fill-current' />
 							</div>
 							<p className='text-xl font-semibold mb-2'>
-								50% Off Your First Month
+								50% Off Your First 3 Months
 							</p>
 							<p className='text-sm opacity-90'>
-								For new Delaware and Columbus area construction
-								clients
+								For new Columbus area business clients
 							</p>
 						</div>
 
@@ -223,30 +217,30 @@ export default function PricingPage() {
 					<div className='max-w-7xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl sm:text-4xl font-bold mb-4'>
-								Choose Your Construction Bookkeeping Package
+								Choose Your Business Bookkeeping Package
 							</h2>
 							<p className='text-xl text-muted-foreground'>
-								Designed specifically for Delaware and Columbus
-								area contractors
+								Designed specifically for Columbus Ohio area
+								businesses
 							</p>
 						</div>
 
-						<div className='grid lg:grid-cols-3 gap-8'>
-							{pricingTiers.map((tier, index) => (
+						<div className='grid lg:grid-cols-3 gap-8 pt-8'>
+							{pricingTiers.map((tier) => (
 								<Card
 									key={tier.name}
-									className={`relative overflow-hidden ${
+									className={`relative ${
 										tier.recommended
-											? 'border-2 border-primary shadow-xl scale-105'
-											: 'border'
+											? 'border-2 border-primary shadow-xl scale-105 overflow-visible'
+											: 'border overflow-hidden'
 									} ${
 										tier.popular
 											? 'ring-2 ring-primary/20'
 											: ''
 									}`}>
 									{tier.recommended && (
-										<div className='absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-											<div className='bg-primary text-white px-4 py-1 rounded-full text-sm font-medium'>
+										<div className='absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10'>
+											<div className='bg-primary text-white px-4 py-1 rounded-full text-sm font-medium shadow-lg'>
 												Most Popular
 											</div>
 										</div>
@@ -270,7 +264,7 @@ export default function PricingPage() {
 													{tier.originalPrice}
 												</span>
 												<span className='ml-2 text-red-600 font-medium'>
-													First Month 50% Off!
+													First 3 Months 50% Off!
 												</span>
 											</div>
 										)}
@@ -322,7 +316,7 @@ export default function PricingPage() {
 
 										<p className='text-xs text-muted-foreground text-center mt-3'>
 											No setup fees • Cancel anytime •
-											30-day guarantee
+											90-day guarantee
 										</p>
 									</CardContent>
 								</Card>
@@ -363,13 +357,13 @@ export default function PricingPage() {
 												true,
 											],
 											[
-												'Job Costing Setup',
+												'Financial Reporting Setup',
 												true,
 												true,
 												true,
 											],
 											[
-												'Tax Preparation Support',
+												'Tax-Ready Organization',
 												true,
 												true,
 												true,
@@ -381,7 +375,7 @@ export default function PricingPage() {
 												true,
 											],
 											[
-												'Advanced Job Costing',
+												'Advanced Analytics',
 												false,
 												true,
 												true,
@@ -399,7 +393,7 @@ export default function PricingPage() {
 												true,
 											],
 											[
-												'Subcontractor Tracking',
+												'Vendor Tracking',
 												false,
 												true,
 												true,
@@ -475,7 +469,7 @@ export default function PricingPage() {
 				<div className='container mx-auto px-4 sm:px-6 lg:px-8'>
 					<div className='max-w-6xl mx-auto'>
 						<ROICalculator
-							title='ROI Calculator for Construction Companies'
+							title='ROI Calculator for Your Business'
 							description='See how much you could save with professional bookkeeping'
 						/>
 					</div>
@@ -488,27 +482,27 @@ export default function PricingPage() {
 					<div className='max-w-6xl mx-auto'>
 						<div className='text-center mb-12'>
 							<h2 className='text-3xl font-bold mb-4'>
-								Why Delaware Construction Companies Choose Ray
+								Why Columbus Businesses Choose Ray
 							</h2>
 							<p className='text-muted-foreground'>
-								More than just bookkeeping - it's construction
-								business optimization
+								More than just bookkeeping - it's business
+								optimization
 							</p>
 						</div>
 
 						<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 							{[
 								{
-									icon: <Hammer className='h-8 w-8' />,
-									title: 'Construction Industry Expertise',
+									icon: <Building className='h-8 w-8' />,
+									title: 'Industry Expertise',
 									description:
-										'Specialized knowledge of job costing, equipment depreciation, and construction-specific tax deductions.',
+										'Specialized knowledge across multiple industries with expertise in financial reporting, asset management, and tax-ready record organization.',
 								},
 								{
-									icon: <Building className='h-8 w-8' />,
-									title: 'Local Delaware Knowledge',
+									icon: <Hammer className='h-8 w-8' />,
+									title: 'Local Columbus Knowledge',
 									description:
-										'Born and raised in Delaware, understanding local regulations, permits, and business environment.',
+										'Deep understanding of Columbus area regulations, compliance requirements, and local business environment.',
 								},
 								{
 									icon: <Calculator className='h-8 w-8' />,
@@ -565,8 +559,7 @@ export default function PricingPage() {
 								Frequently Asked Questions
 							</h2>
 							<p className='text-muted-foreground'>
-								Common questions from Delaware and Columbus
-								construction companies
+								Common questions from Columbus area businesses
 							</p>
 						</div>
 
@@ -575,27 +568,27 @@ export default function PricingPage() {
 								{
 									question:
 										"What's included in the first month 50% off promotion?",
-									answer: 'All new Delaware and Columbus construction clients get 50% off their first month of any package. This includes full setup, QuickBooks configuration, and all regular services.',
+									answer: 'All new Columbus area business clients get 50% off their first month of any package. This includes full setup, QuickBooks configuration, and all regular services.',
 								},
 								{
 									question:
-										'Do you work with construction companies outside Delaware and Columbus?',
-									answer: 'While I specialize in Delaware and Columbus area construction companies, I do work with contractors throughout Ohio and can provide remote services nationwide.',
+										'Do you work with businesses outside Columbus?',
+									answer: 'While I specialize in Columbus area businesses, I do work with companies throughout Ohio and can provide remote services nationwide.',
 								},
 								{
 									question:
-										'How quickly can you get my construction books organized?',
-									answer: 'Most Delaware construction companies see their books fully organized within 2-3 weeks. For catch-up work, it depends on how far behind you are, but typically 4-6 weeks for complete cleanup.',
+										'How quickly can you get my business books organized?',
+									answer: 'Most Columbus area businesses see their books fully organized within 2-3 weeks. For catch-up work, it depends on how far behind you are, but typically 4-6 weeks for complete cleanup.',
 								},
 								{
 									question:
-										'Do you handle payroll for construction companies?',
-									answer: 'Yes, payroll processing is included in the Enterprise package and available as an add-on for other packages. This includes certified payroll for prevailing wage jobs.',
+										'Do you handle payroll for businesses?',
+									answer: 'Yes, payroll processing is included in the Enterprise package and available as an add-on for other packages. This includes all payroll tax filings and compliance requirements.',
 								},
 								{
 									question:
 										"What if I'm not satisfied with the service?",
-									answer: "I offer a 30-day money-back guarantee. If you're not completely satisfied with your construction bookkeeping service, I'll refund your first month payment.",
+									answer: 'I offer a 30-day money-back guarantee. If you&apos;re not completely satisfied with your bookkeeping service, I&apos;ll refund your first month payment.',
 								},
 							].map((faq, index) => (
 								<Card key={index}>
@@ -623,9 +616,9 @@ export default function PricingPage() {
 							Finances?
 						</h2>
 						<p className='text-xl text-muted-foreground mb-8'>
-							Join 50+ Delaware and Columbus construction
-							companies that trust Ray with their financial
-							management. Schedule your free consultation today.
+							Join 50+ Columbus area businesses that trust Ray
+							with their financial management. Schedule your free
+							consultation today.
 						</p>
 
 						<div className='bg-white rounded-xl shadow-lg p-8 mb-8'>
@@ -662,7 +655,7 @@ export default function PricingPage() {
 
 						<div className='flex flex-col sm:flex-row gap-4 justify-center'>
 							<CalendlyModal
-								buttonText='Schedule Free Construction Consultation'
+								buttonText='Schedule Free Business Consultation'
 								buttonSize='lg'
 								buttonClassName='px-8 py-6 text-lg'
 							/>

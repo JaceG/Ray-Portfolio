@@ -283,9 +283,9 @@ export default function DelawareOHServices() {
 								},
 								{
 									icon: <FileText className='h-8 w-8' />,
-									title: 'Tax Preparation Support',
+									title: 'Tax-Ready Organization',
 									description:
-										'Year-round tax planning and preparation support for Delaware businesses.',
+										'Year-round tax document organization and preparation support for Delaware businesses.',
 									features: [
 										'Quarterly tax estimates',
 										'Tax document preparation',

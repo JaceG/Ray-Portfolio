@@ -34,7 +34,7 @@ export default function Footer() {
 						<ul className='space-y-2 text-qb-green-100'>
 							<li>Monthly Bookkeeping</li>
 							<li>Financial Statements</li>
-							<li>Tax Preparation Support</li>
+							<li>Tax-Ready Organization</li>
 							<li>Payroll Processing</li>
 							<li>Financial Analysis</li>
 							<li>QuickBooks Training</li>
@@ -75,7 +75,7 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className='border-t border-qb-green-700 mt-12 pt-8 text-center text-qb-green-200'>
+				<div className='border-t border-qb-green-700 mt-12 pt-12 text-center text-qb-green-200'>
 					<p>
 						&copy; 2024 Ray Galloway Professional Bookkeeping. All
 						rights reserved. | Privacy Policy | Terms of Service

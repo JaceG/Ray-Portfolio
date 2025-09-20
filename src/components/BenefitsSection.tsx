@@ -35,7 +35,7 @@ export function BenefitsSection() {
 			icon: <Shield className='h-8 w-8' />,
 			title: 'Stay Tax-Ready Year-Round',
 			description:
-				'Organized records and proactive tax planning so April 15th is never stressful again.',
+				'Organized records and tax-ready documentation so working with your tax preparer is never stressful again.',
 		},
 		{
 			icon: <CheckCircle className='h-8 w-8' />,
@@ -47,7 +47,7 @@ export function BenefitsSection() {
 			icon: <Calculator className='h-8 w-8' />,
 			title: 'Local Columbus Area Knowledge',
 			description:
-				'Understanding of Ohio tax laws and Columbus area business regulations that affect your bottom line.',
+				'Understanding of Ohio compliance requirements and Columbus area business regulations that affect your bottom line.',
 		},
 	];
 

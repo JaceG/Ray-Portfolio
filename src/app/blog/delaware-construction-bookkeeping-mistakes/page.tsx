@@ -528,7 +528,7 @@ export default function DelawareConstructionMistakes() {
 										'Specific tax deductions for Columbus area construction businesses.',
 									slug: 'columbus-construction-tax-strategies',
 									location: 'Columbus, OH',
-									category: 'Tax Planning',
+									category: 'Financial Planning',
 								},
 								{
 									title: 'QuickBooks Job Costing for Construction: Complete Guide',
