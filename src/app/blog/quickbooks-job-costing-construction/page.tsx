@@ -237,7 +237,7 @@ export default function QuickBooksJobCosting() {
 									<li className='flex items-start gap-3'>
 										<CheckCircle className='h-5 w-5 text-primary mt-0.5 flex-shrink-0' />
 										<span>
-											<strong>Enable Class Tracking:</strong> Go to Edit > Preferences > Accounting > Company Preferences and check "Use class tracking"
+											<strong>Enable Class Tracking:</strong> Go to Edit &gt; Preferences &gt; Accounting &gt; Company Preferences and check "Use class tracking"
 										</span>
 									</li>
 									<li className='flex items-start gap-3'>
