@@ -8,6 +8,7 @@ import {
 	Calendar,
 	Clock,
 	User,
+	Users,
 	MapPin,
 	Hammer,
 	Building,
